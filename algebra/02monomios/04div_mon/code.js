@@ -170,3 +170,189 @@ function mostrarPuntos(ids){
 			elem.innerHTML = ".";
 	}
 }
+
+class Monomio {
+    constructor(
+        coeficiente = null,
+        literales = null,
+        exponentes = null,
+        idCoeficiente = "coef_1",
+        idsLiterales = ["lit1_1", "lit2_1"],
+        idsExponentes = ["exp1_1", "exp2_1"]
+    ) {
+        // Asignación de atributos de IDs para el DOM
+        this.idCoeficiente = idCoeficiente;
+        this.idsLiterales = idsLiterales;
+        this.idsExponentes = idsExponentes; // (Se asume que la segunda lista de IDs es para exponentes)
+
+        // 1. Manejo de Literales
+        if (literales === null) {
+            this.cantidadLiterales = 2;
+            // Utiliza la función externa solicitada para obtener 2 letras aleatorias
+            this.literales = nLetrasDistintas(2);
+        } else {
+            this.literales = literales;
+            this.cantidadLiterales = literales.length;
+        }
+
+        // 2. Manejo del Coeficiente (Por defecto entero > 1, ej: entre 2 y 10)
+        if (coeficiente === null) {
+            this.coeficiente = Math.floor(Math.random() * 9) + 2;
+        } else {
+            this.coeficiente = coeficiente;
+        }
+
+        // 3. Manejo de Exponentes (Por defecto enteros aleatorios entre 1 y 5)
+        if (exponentes === null) {
+            this.exponentes = Array.from(
+                { length: this.cantidadLiterales },
+                () => Math.floor(Math.random() * 5) + 1
+            );
+        } else {
+            this.exponentes = exponentes;
+        }
+    }
+
+    // --- MÉTODOS AUXILIARES ---
+
+    // Genera una estructura del tipo { 'x': 2, 'y': 3 } para comparar términos sin importar el orden
+    _obtenerMapaVariables() {
+        let mapa = {};
+        for (let i = 0; i < this.cantidadLiterales; i++) {
+            let lit = this.literales[i];
+            let exp = this.exponentes[i];
+            mapa[lit] = (mapa[lit] || 0) + exp;
+        }
+        return mapa;
+    }
+
+    // --- MÉRITO DE SEMEJANZA ---
+
+    esSemejante(otroMonomio) {
+        const mapaThis = this._obtenerMapaVariables();
+        const mapaOtro = otroMonomio._obtenerMapaVariables();
+
+        const llavesThis = Object.keys(mapaThis);
+        const llavesOtro = Object.keys(mapaOtro);
+
+        if (llavesThis.length !== llavesOtro.length) return false;
+
+        for (let lit of llavesThis) {
+            if (mapaOtro[lit] !== mapaThis[lit]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // --- MÉTODOS ARITMÉTICOS ---
+
+    sumar(otroMonomio) {
+        if (!this.esSemejante(otroMonomio)) {
+            throw new Error("No se pueden sumar monomios no semejantes.");
+        }
+        return new Monomio(
+            this.coeficiente + otroMonomio.coeficiente,
+            [...this.literales],
+            [...this.exponentes],
+            this.idCoeficiente,
+            this.idsLiterales,
+            this.idsExponentes
+        );
+    }
+
+    restar(otroMonomio) {
+        if (!this.esSemejante(otroMonomio)) {
+            throw new Error("No se pueden restar monomios no semejantes.");
+        }
+        return new Monomio(
+            this.coeficiente - otroMonomio.coeficiente,
+            [...this.literales],
+            [...this.exponentes],
+            this.idCoeficiente,
+            this.idsLiterales,
+            this.idsExponentes
+        );
+    }
+
+    multiplicar(otroMonomio) {
+        let nuevoCoeficiente = this.coeficiente * otroMonomio.coeficiente;
+        
+        // Sumar exponentes de bases iguales
+        let mapaCombined = this._obtenerMapaVariables();
+        let mapaOtro = otroMonomio._obtenerMapaVariables();
+
+        for (let lit in mapaOtro) {
+            mapaCombined[lit] = (mapaCombined[lit] || 0) + mapaOtro[lit];
+        }
+
+        let nuevasLiterales = Object.keys(mapaCombined);
+        let nuevosExponentes = Object.values(mapaCombined);
+
+        return new Monomio(nuevoCoeficiente, nuevasLiterales, nuevosExponentes);
+    }
+
+    dividir(otroMonomio) {
+        let nuevoCoeficiente = this.coeficiente / otroMonomio.coeficiente;
+
+        // Restar exponentes de bases iguales
+        let mapaCombined = this._obtenerMapaVariables();
+        let mapaOtro = otroMonomio._obtenerMapaVariables();
+
+        for (let lit in mapaOtro) {
+            mapaCombined[lit] = (mapaCombined[lit] || 0) - mapaOtro[lit];
+        }
+
+        let nuevasLiterales = [];
+        let nuevosExponentes = [];
+
+        for (let lit in mapaCombined) {
+            if (mapaCombined[lit] !== 0) { // Si el exponente da 0, x^0 = 1 (se elimina la literal)
+                nuevasLiterales.push(lit);
+                nuevosExponentes.push(mapaCombined[lit]);
+            }
+        }
+
+        return new Monomio(nuevoCoeficiente, nuevasLiterales, nuevosExponentes);
+    }
+
+    // --- MÉTODO DE INYECCIÓN EN DOM (HTML) ---
+
+    escribeMonomio() {
+        // 1. Inyectar Coeficiente
+        const elemCoef = document.getElementById(this.idCoeficiente);
+        if (elemCoef) {
+            // Convención algebraia: Si el coeficiente es 1, opcionalmente se oculta o se escribe
+            // Además, si el coeficiente es -1, se puede mostrar como "-" en lugar de "-1"
+            if (this.coeficiente === 1) {
+                elemCoef.textContent = ""; // O podrías poner "1" si prefieres mostrarlo
+            } else if (this.coeficiente === -1) {
+                elemCoef.textContent = "-";
+            } else {
+                elemCoef.textContent = this.coeficiente;
+            }
+        }
+
+        // 2. Inyectar Literales
+        for (let i = 0; i < this.idsLiterales.length; i++) {
+            const elemLit = document.getElementById(this.idsLiterales[i]);
+            if (elemLit) {
+                elemLit.textContent = this.literales[i] !== undefined ? this.literales[i] : "";
+            }
+        }
+
+        // 3. Inyectar Exponentes
+        for (let i = 0; i < this.idsExponentes.length; i++) {
+            const elemExp = document.getElementById(this.idsExponentes[i]);
+            if (elemExp) {
+                let exp = this.exponentes[i];
+                if (exp !== undefined) {
+                    // Si el exponente es 1, no se suele mostrar en álgebra
+                    elemExp.textContent = exp === 1 ? "" : exp;
+                } else {
+                    elemExp.textContent = "";
+                }
+            }
+        }
+    }
+}
