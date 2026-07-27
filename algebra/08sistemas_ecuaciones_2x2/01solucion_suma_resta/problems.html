@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Título del sitio de inicio -->
+		<title> Sistemas 2x2 - Suma y Resta </title>
+		
+		<!-- Para ligar con el archivo CSS -->
+		<link rel = "stylesheet" href = "styles.css">
+
+		<!-- Para el javascript-->
+		<script src = "code.js"></script>
+		
+		<!--Para la fuente "Mulish"-->
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		
+		<!-- Para el favicon -->
+		<link rel = "icon" type = "image/x-icon" href = "../../../images/favicon.jpg">
+		
+		<!-- Para que se ajuste al dispositivo -->
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		
+		<!-- Para emojis y acentos (un poco como en LaTeX)-->
+		<meta charset = "UTF-8">
+		
+		<!-- Para íconos japo pro-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	</head>
+	
+	<!-- Empieza el cuerpo del sitio -->
+	<body>
+	
+	<!-- Empieza con el banner -->
+	<section id = "banner">
+		<img src = "../../../images/utm.jpg" class = "fadeInUp animacion--normal banner-img">
+		
+		<!-- Caja para el texto -->
+		<div class = "banner-text">
+			<!-- UTM, IFM y Jefatura de carrera -->
+			<h2 class = "fadeInUp animacion--normal">Universidad Tecnológica de la Mixteca</h2>
+			<h2 class = "fadeInUp animacion--normal">Instituto de Física y Matemáticas</h2>
+			<h2 class = "fadeInUp animacion--normal">Jefatura de Carrera de la Licenciatura en Matemáticas Aplicadas</h2>
+		</div>
+	
+	<!-- Termina el banner -->
+	</section>
+
+	<!-- Sección principal (sistemas de ecuaciones 2x2)-->
+	<div id = "tema-title">
+		<h3>Sistemas de Ecuaciones 2x2</h3>
+	</div>
+	
+	<!-- Empieza la lista de temas -->
+	<div class = "top-nav">
+		<a href = "../../../index.html" id = "home"><span></span>Volver al inicio</a>
+		
+		<nav>
+			<a href = "../01solucion_suma_resta/problems.html"><span></span>Suma y Resta</a>
+			<a href = "../02solucion_sustitucion/problems.html"><span></span>Sustitución</a>
+			<a href = "../03determinantes_2x2/problems.html"><span></span>Determinantes 2x2</a>
+			<a href = "../04regla_cramer/problems.html"><span></span>Regla de Cramer</a>
+		</nav>
+	</div>
+	<!-- Termina la lista de temas -->
+
+	<!-- Subtema en el que está-->
+	<section id = "subtema" >
+		<div id = "subtema-title">
+			<h2>Suma y Resta</h2>
+		</div>
+	</section>
+
+	<!--Ejercicio 1: Determinar si un número entero es positivo, negativo
+	o cero cuando el número siempre es negativo-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 1</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Determinar el signo</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá un número. Tu trabajo es determinar si el número es positivo, negativo o cero. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el signo del número.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio1" onclick = "Ejercicio01()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "n_1"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta1" onclick="Respuesta01()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_1"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 1-->
+	
+
+
+
+	<section id = "congrats">
+		<h2>¡Felicidades!</h2>
+		<p>Has llegado al final de este tema. Ya puedes pasar al siguiente.</p>
+	</section>
+
+	<section id = "desplazar">
+		<a class = "desp izq no--decoration" href = "../../07ecuaciones_segundo_grado/05exponentes_fraccionarios/problems.html">
+			<i class="fa fa-arrow-left"></i>
+			<div class = "desp-text">
+				Exponentes <br> Fraccionarios
+			</div>
+		</a>
+		
+		<a class = "desp der no--decoration" href = "../02solucion_sustitucion/problems.html">
+			<div class = "desp-text">
+				Sustitución
+			</div>
+			<i class="fa fa-arrow-right"></i>
+		</a>
+	</section>
+	
+	<section id = "website-end"> </section>
+	
+	
+	</body>
+	
+	
+</html>
