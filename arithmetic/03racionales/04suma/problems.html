@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Título del sitio de inicio -->
+		<title> Racionales - Suma </title>
+		
+		<!-- Para ligar con el archivo CSS -->
+		<link rel = "stylesheet" href = "styles.css">
+
+		<!-- Para el javascript-->
+		<script src = "code.js"></script>
+		
+		<!--Para la fuente "Mulish"-->
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		
+		<!-- Para el favicon -->
+		<link rel = "icon" type = "image/x-icon" href = "../../../images/favicon.jpg">
+		
+		<!-- Para que se ajuste al dispositivo -->
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		
+		<!-- Para emojis y acentos (un poco como en LaTeX)-->
+		<meta charset = "UTF-8">
+		
+		<!-- Para íconos japo pro-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	</head>
+	
+	<!-- Empieza el cuerpo del sitio -->
+	<body>
+	
+	<!-- Empieza con el banner -->
+	<section id = "banner">
+		<img src = "../../../images/utm.jpg" class = "fadeInUp animacion--normal banner-img">
+		
+		<!-- Caja para el texto -->
+		<div class = "banner-text">
+			<!-- UTM, IFM y Jefatura de carrera -->
+			<h2 class = "fadeInUp animacion--normal">Universidad Tecnológica de la Mixteca</h2>
+			<h2 class = "fadeInUp animacion--normal">Instituto de Física y Matemáticas</h2>
+			<h2 class = "fadeInUp animacion--normal">Jefatura de Carrera de la Licenciatura en Matemáticas Aplicadas</h2>
+		</div>
+	
+	<!-- Termina el banner -->
+	</section>
+
+	<!-- Sección principal (racionales)-->
+	<div id = "tema-title">
+		<h3>Números Racionales</h3>
+	</div>
+	
+	<!-- Empieza la lista de temas -->
+	<div class = "top-nav">
+		<a href = "../../../index.html" id = "home"><span></span>Volver al inicio</a>
+		
+		<nav>
+			<a href = "../01frac_equiv/problems.html"><span></span>Fracciones equivalentes</a>
+			<a href = "../02simp_frac/problems.html"><span></span>Simplificación de Fracciones</a>
+			<a href = "../03orden/problems.html"><span></span>Comparación de acuerdo al orden</a>
+			<a href = "../04suma/problems.html"><span></span>Suma</a>
+			<a href = "../05resta/problems.html"><span></span>Resta</a>
+			<a href = "../06multiplicacion/problems.html"><span></span>Multiplicación</a>
+			<a href = "../07division/problems.html"><span></span>División</a>
+			<!-- <a href = "../08operaciones_combinadas/problems.html"><span></span>Operaciones combinadas</a> -->
+		</nav>
+	</div>
+	<!-- Termina la lista de temas -->
+
+	<!-- Subtema en el que está-->
+	<section id = "subtema" >
+		<div id = "subtema-title">
+			<h2>Suma de fracciones</h2>
+		</div>
+	</section>
+
+	<!--Ejercicio 1:
+	Se dan dos racionales positivos. El alumno debe resolver la suma y dar el resultado en forma simplificada. 
+	Se utiliza la función "Ejercicio01()" para generar los números aleatorios y la función "Respuesta01()" para mostrar la respuesta.
+	-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 1</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Suma de dos fracciones</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma de fracciones que debes resolver. Tu trabajo es determinar el resultado de esta suma. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado correcto.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio1" onclick = "Ejercicio01()">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<mfrac>
+								<mn id="a_1"></mn>
+								<mn id="b_1"></mn>
+							</mfrac>
+							<mo id="op1_1"></mo>
+							<mfrac>
+								<mn id="c_1"></mn>
+								<mn id="d_1"></mn>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta1" onclick="Respuesta01()">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_1">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_1">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_1">&ZeroWidthSpace;</mn>
+								<mn id = "dr_1">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 1-->
+
+	<!--Ejercicio 2:
+	El primer racional es negativo, y el segundo es positivo.
+	El alumno debe hacer la suma de ambos racionales. Lo único que cambia es que se debe
+	agregar un operador para el signo menos del primer racional-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 2</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Suma de dos fracciones</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma de fracciones que debes resolver. Tu trabajo es determinar el resultado de esta suma. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado correcto.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio2" onclick = "Ejercicio02()">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<mo id="signo1_2"></mo>
+							<mfrac>
+								<mn id="a_2"></mn>
+								<mn id="b_2"></mn>
+							</mfrac>
+							<mo id="op1_2"></mo>
+							<mfrac>
+								<mn id="c_2"></mn>
+								<mn id="d_2"></mn>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta2" onclick="Respuesta02()">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_2">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_2">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_2">&ZeroWidthSpace;</mn>
+								<mn id = "dr_2">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 2-->
+
+	<!--Ejercicio 3:
+	Es como el Ejercicio 1, pero ahora se debe sumar un racional positivo 
+	con un racional negativo. Nuevamente, deben tener el mismo denominador-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 3</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Suma de dos fracciones</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma de fracciones que debes resolver. Tu trabajo es determinar el resultado de esta suma. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado correcto.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio3" onclick = "Ejercicio03()">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<mfrac>
+								<mn id="a_3"></mn>
+								<mn id="b_3"></mn>
+							</mfrac>
+							<mo id="op1_3"></mo>
+
+							<!--Utiliza mfenced para ponerle paréntesis grandes
+							al segundo término de la resta-->
+							<mfenced open = "(" close = ")" class = "fenced">
+								<mo id = "lp1_3"></mo>
+								<mo id = "signo1_3"></mo>
+								<mfrac>
+									<mn id="c_3"></mn>
+									<mn id="d_3"></mn>
+								</mfrac>
+								<mo id = "rp1_3"></mo>
+							</mfenced>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta3" onclick="Respuesta03()">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_3">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_3">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_3">&ZeroWidthSpace;</mn>
+								<mn id = "dr_3">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 3-->
+
+	<!--Ejercicio 4:
+	Se parece al Ejercicio 3, pero ahora se hace la suma de dos fracciones negativas-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 4</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Suma de dos fracciones</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma de fracciones que debes resolver. Tu trabajo es determinar el resultado de esta suma. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado correcto.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio4" onclick = "Ejercicio04()">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<mo id="signo1_4"></mo>
+							<mfrac>
+								<mn id="a_4"></mn>
+								<mn id="b_4"></mn>
+							</mfrac>
+							<mo id="op1_4"></mo>
+
+							<!--Utiliza mfenced para ponerle paréntesis grandes
+							al segundo término de la resta-->
+							<mfenced open = "(" close = ")" class = "fenced">
+								<mo id = "lp1_4"></mo>
+								<mo id = "signo2_4"></mo>
+								<mfrac>
+									<mn id="c_4"></mn>
+									<mn id="d_4"></mn>
+								</mfrac>
+								<mo id = "rp1_4"></mo>
+							</mfenced>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta4" onclick="Respuesta04()">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_4">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_4">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_4">&ZeroWidthSpace;</mn>
+								<mn id = "dr_4">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 4-->
+
+	<!--Ejercicio 5
+	Es idéntico al Ejercicio 1, solo hace falta cambiar los IDs y las funciones correspondientes-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 5</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Suma de dos fracciones</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma de fracciones que debes resolver. Tu trabajo es determinar el resultado de esta suma. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado correcto.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio5" onclick = "Ejercicio05()">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<mfrac>
+								<mn id="a_5"></mn>
+								<mn id="b_5"></mn>
+							</mfrac>
+							<mo id="op1_5"></mo>
+							<mfrac>
+								<mn id="c_5"></mn>
+								<mn id="d_5"></mn>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta5" onclick="Respuesta05()">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_5">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_5">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_5">&ZeroWidthSpace;</mn>
+								<mn id = "dr_5">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 5-->
+
+	<!--Ejercicio 6
+	Es idéntico al Ejercicio 2. Solo hace falta cambiar los IDs y las funciones correspondientes-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 6</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Suma de dos fracciones</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma de fracciones que debes resolver. Tu trabajo es determinar el resultado de esta suma. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado correcto.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio6" onclick = "Ejercicio06()">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<mo id="signo1_6"></mo>
+							<mfrac>
+								<mn id="a_6"></mn>
+								<mn id="b_6"></mn>
+							</mfrac>
+							<mo id="op1_6"></mo>
+							<mfrac>
+								<mn id="c_6"></mn>
+								<mn id="d_6"></mn>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta6" onclick="Respuesta06()">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_6">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_6">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_6">&ZeroWidthSpace;</mn>
+								<mn id = "dr_6">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 6-->
+
+	<!--Ejercicio 7
+	Es idéntico al Ejercicio 3. Solo hace falta cambiar los IDs y las funciones correspondientes-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 7</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Suma de dos fracciones</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma de fracciones que debes resolver. Tu trabajo es determinar el resultado de esta suma. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado correcto.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio7" onclick = "Ejercicio07()">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<mfrac>
+								<mn id="a_7"></mn>
+								<mn id="b_7"></mn>
+							</mfrac>
+							<mo id="op1_7"></mo>
+
+							<!--Utiliza mfenced para ponerle paréntesis grandes
+							al segundo término de la resta-->
+							<mfenced open = "(" close = ")" class = "fenced">
+								<mo id = "lp1_7"></mo>
+								<mo id = "signo1_7"></mo>
+								<mfrac>
+									<mn id="c_7"></mn>
+									<mn id="d_7"></mn>
+								</mfrac>
+								<mo id = "rp1_7"></mo>
+							</mfenced>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta7" onclick="Respuesta07()">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_7">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_7">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_7">&ZeroWidthSpace;</mn>
+								<mn id = "dr_7">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 7-->
+
+	<!--Ejercicio 8
+	Es idéntico al Ejercicio 4. Solo hace falta cambiar los identificadores y las funciones correspondientes-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 8</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Suma de dos fracciones</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma de fracciones que debes resolver. Tu trabajo es determinar el resultado de esta suma. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado correcto.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio8" onclick = "Ejercicio08()">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<mo id="signo1_8"></mo>
+							<mfrac>
+								<mn id="a_8"></mn>
+								<mn id="b_8"></mn>
+							</mfrac>
+							<mo id="op1_8"></mo>
+
+							<!--Utiliza mfenced para ponerle paréntesis grandes
+							al segundo término de la resta-->
+							<mfenced open = "(" close = ")" class = "fenced">
+								<mo id = "lp1_8"></mo>
+								<mo id = "signo2_8"></mo>
+								<mfrac>
+									<mn id="c_8"></mn>
+									<mn id="d_8"></mn>
+								</mfrac>
+								<mo id = "rp1_8"></mo>
+							</mfenced>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta8" onclick="Respuesta08()">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_8">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_8">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_8">&ZeroWidthSpace;</mn>
+								<mn id = "dr_8">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 8-->
+
+	<!--Ejercicio 9:
+	Suma de un entero positivo con una fracción positiva-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 9</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Suma de un entero con una fracción</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma de un entero con una fracción que debes resolver. Tu trabajo es determinar el resultado de esta suma. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado correcto.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio9" onclick = "Ejercicio09()">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<mn id="ent_9"></mn>
+							<mo id="op1_9"></mo>
+							<mfrac>
+								<mn id="a_9"></mn>
+								<mn id="b_9"></mn>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta9" onclick="Respuesta09()">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_9">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_9">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_9">&ZeroWidthSpace;</mn>
+								<mn id = "dr_9">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 9-->
+
+	<!--Ejercicio 10:
+	Suma de un entero negativo con una fracción positiva-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 10</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Suma de un entero con una fracción</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma de un entero con una fracción que debes resolver. Tu trabajo es determinar el resultado de esta suma. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado correcto.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio10" onclick = "Ejercicio10()">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<mo id="signo1_10"></mo>
+							<mn id="ent_10"></mn>
+							<mo id="op1_10"></mo>
+							<mfrac>
+								<mn id="a_10"></mn>
+								<mn id="b_10"></mn>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta10" onclick="Respuesta10()">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_10">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_10">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_10">&ZeroWidthSpace;</mn>
+								<mn id = "dr_10">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 10-->
+
+	<!--Ejercicio 11:
+	Suma de un entero positivo con una fracción negativa-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 11</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Suma de un entero con una fracción</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma de un entero con una fracción que debes resolver. Tu trabajo es determinar el resultado de esta suma. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado correcto.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio11" onclick = "Ejercicio11()">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<mn id="ent_11"></mn>
+							<mo id="op1_11"></mo>
+							<!--Al tratarse de una fracción negativa, debe utilizar
+							mfenced para agregarle paréntesis grandes-->
+							<mfenced open = "(" close = ")" class = "fenced">
+								<mo id = "lp1_11"></mo>
+								<mo id = "signo1_11"></mo>
+								<mfrac>
+									<mn id="a_11"></mn>
+									<mn id="b_11"></mn>
+								</mfrac>
+								<mo id = "rp1_11"></mo>
+							</mfenced>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta11" onclick="Respuesta11()">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_11">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_11">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_11">&ZeroWidthSpace;</mn>
+								<mn id = "dr_11">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 11-->
+
+	<!--Ejercicio 12:
+	Suma de un entero negativo con una fracción negativa-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 12</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Suma de un entero con una fracción</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma de un entero con una fracción que debes resolver. Tu trabajo es determinar el resultado de esta suma. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado correcto.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio12" onclick = "Ejercicio12()">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<mo id="signo1_12"></mo>
+							<mn id="ent_12"></mn>
+							<mo id="op1_12"></mo>
+							<!--Al tratarse de una fracción negativa, debe utilizar
+							mfenced para agregarle paréntesis grandes-->
+							<mfenced open = "(" close = ")" class = "fenced">
+								<mo id = "lp1_12"></mo>
+								<mo id = "signo2_12"></mo>
+								<mfrac>
+									<mn id="a_12"></mn>
+									<mn id="b_12"></mn>
+								</mfrac>
+								<mo id = "rp1_12"></mo>
+							</mfenced>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta12" onclick="Respuesta12()">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_12">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_12">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_12">&ZeroWidthSpace;</mn>
+								<mn id = "dr_12">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 12-->
+
+
+	<section id = "congrats">
+		<h2>¡Felicidades!</h2>
+		<p>Has llegado al final de este tema. Ya puedes pasar al siguiente.</p>
+	</section>
+
+	<section id = "desplazar">
+		<a class = "desp izq no--decoration" href = "../03orden/problems.html">
+			<i class="fa fa-arrow-left"></i>
+			<div class = "desp-text">
+				Comparación <br>por orden
+			</div>
+		</a>
+		
+		<a class = "desp der no--decoration" href = "../05resta/problems.html">
+			<div class = "desp-text">
+				Resta
+			</div>
+			<i class="fa fa-arrow-right"></i>
+		</a>
+	</section>
+	
+	<section id = "website-end"> </section>
+	
+	
+	</body>
+	
+	
+</html>

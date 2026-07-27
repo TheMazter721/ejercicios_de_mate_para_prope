@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Título del sitio de inicio -->
+		<title> Naturales - Resta </title>
+		
+		<!-- Para ligar con el archivo CSS -->
+		<link rel = "stylesheet" href = "styles.css">
+
+		<!-- Para el javascript-->
+		<script src = "code.js"></script>
+		
+		<!--Para la fuente "Molish"-->
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		
+		<!-- Para el favicon -->
+		<link rel = "icon" type = "image/x-icon" href = "../../../images/favicon.jpg">
+		
+		<!-- Para que se ajuste al dispositivo -->
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		
+		<!-- Para emojis y acentos (un poco como en LaTeX)-->
+		<meta charset = "UTF-8">
+		
+		<!-- Para íconos japo pro-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	</head>
+	
+	<!-- Empieza el cuerpo del sitio -->
+	<body>
+	
+	<!-- Empieza con el banner -->
+	<section id = "banner">
+		<img src = "../../../images/utm.jpg" class = "fadeInUp animacion--normal banner-img">
+		
+		<!-- Caja para el texto -->
+		<div class = "banner-text">
+			<!-- UTM, IFM y Jefatura de carrera -->
+			<h2 class = "fadeInUp animacion--normal">Universidad Tecnológica de la Mixteca</h2>
+			<h2 class = "fadeInUp animacion--normal">Instituto de Física y Matemáticas</h2>
+			<h2 class = "fadeInUp animacion--normal">Jefatura de Carrera de la Licenciatura en Matemáticas Aplicadas</h2>
+		</div>
+	
+	<!-- Termina el banner -->
+	</section>
+
+	<!-- Sección principal (naturales)-->
+	<div id = "tema-title">
+		<h3>Números naturales</h3>
+	</div>
+	
+	<!-- Empieza la lista de temas -->
+	<div class = "top-nav">
+		<a href = "../../../index.html" id = "home"><span></span>Volver al inicio</a>
+		
+		<nav>
+			<a href = "../01suma/problems.html"><span></span>Suma</a>
+			<a href = "../02orden/problems.html"><span></span>Comparación de acuerdo al orden</a>
+			<a href = "../03resta/problems.html"><span></span>Resta</a>
+			<a href = "../04mult/problems.html"><span></span>Multiplicación</a>
+			<a href = "../05divisibilidad/problems.html"><span></span>Criterios de divisibilidad</a>
+			<a href = "../06primos/problems.html"><span></span>Factorización</a>
+			<a href = "../07mcd/problems.html"><span></span>Máximo común divisor</a>
+			<a href = "../08mcm/problems.html"><span></span>Mínimo común múltiplo</a>
+		</nav>
+	</div>
+	<!-- Termina la lista de temas -->
+
+	<!-- Subtema en el que está-->
+	<section id = "subtema" >
+		<div id = "subtema-title">
+			<h2>Resta</h2>
+		</div>
+	</section>
+
+	<!--Ejercicio 1: Resta de dos números de un dígito-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 1</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					A continuación, verás una resta de números naturales
+					que debes resolver.
+					Si el resultado es un número natural, debes calcularlo; 
+					si no, debes indicar que <strong>el resultado no es un número natural.</strong><br><br>
+					Cuando estés listo, haz click en "Generar problema". Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta".
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio1" onclick = "Ejercicio1()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "rs1_1"></mn>
+							<mo id = "op_1"></mo>
+							<mn id = "rs2_1"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta1" onclick="Respuesta1()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_1"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!-- Ejercicio 2: Resta de un número de un dígito y uno de dos dígitos-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 2</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					A continuación, verás una resta de números naturales
+					que debes resolver.
+					Si el resultado es un número natural, debes calcularlo; 
+					si no, debes indicar que <strong>el resultado no es un número natural.</strong><br><br>
+					Cuando estés listo, haz click en "Generar problema". Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta".
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio2" onclick = "Ejercicio2()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "rs1_2"></mn>
+							<mo id = "op_2"></mo>
+							<mn id = "rs2_2"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta2" onclick="Respuesta2()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_2"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!-- Ejercicio 3: Resta de dos números de dos dígitos-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 3</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					A continuación, verás una resta de números naturales
+					que debes resolver.
+					Si el resultado es un número natural, debes calcularlo; 
+					si no, debes indicar que <strong>el resultado no es un número natural.</strong><br><br>
+					Cuando estés listo, haz click en "Generar problema". Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta".
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio3" onclick = "Ejercicio3()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "rs1_3"></mn>
+							<mo id = "op_3"></mo>
+							<mn id = "rs2_3"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta3" onclick="Respuesta3()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_3"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<section id = "congrats">
+		<h2>¡Felicidades!</h2>
+		<p>Has llegado al final de este tema. Ya puedes pasar al siguiente.</p>
+	</section>
+
+	<section id = "desplazar">
+		<a class = "desp izq no--decoration" href = "../02orden/problems.html">
+			<i class="fa fa-arrow-left"></i>
+			<div class = "desp-text">
+				Comparación <br>por orden
+			</div>
+		</a>
+		
+		<a class = "desp der no--decoration" href = "../04mult/problems.html">
+			<div class = "desp-text">
+				Multiplicación
+			</div>
+			<i class="fa fa-arrow-right"></i>
+		</a>
+	</section>
+	
+	<section id = "website-end"> </section>
+	
+	</body>
+	
+	
+</html>

@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Título del sitio de inicio -->
+		<title> Racionales - Comparación por orden </title>
+		
+		<!-- Para ligar con el archivo CSS -->
+		<link rel = "stylesheet" href = "styles.css">
+
+		<!-- Para el javascript-->
+		<script src = "code.js"></script>
+		
+		<!--Para la fuente "Mulish"-->
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		
+		<!-- Para el favicon -->
+		<link rel = "icon" type = "image/x-icon" href = "../../../images/favicon.jpg">
+		
+		<!-- Para que se ajuste al dispositivo -->
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		
+		<!-- Para emojis y acentos (un poco como en LaTeX)-->
+		<meta charset = "UTF-8">
+		
+		<!-- Para íconos japo pro-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	</head>
+	
+	<!-- Empieza el cuerpo del sitio -->
+	<body>
+	
+	<!-- Empieza con el banner -->
+	<section id = "banner">
+		<img src = "../../../images/utm.jpg" class = "fadeInUp animacion--normal banner-img">
+		
+		<!-- Caja para el texto -->
+		<div class = "banner-text">
+			<!-- UTM, IFM y Jefatura de carrera -->
+			<h2 class = "fadeInUp animacion--normal">Universidad Tecnológica de la Mixteca</h2>
+			<h2 class = "fadeInUp animacion--normal">Instituto de Física y Matemáticas</h2>
+			<h2 class = "fadeInUp animacion--normal">Jefatura de Carrera de la Licenciatura en Matemáticas Aplicadas</h2>
+		</div>
+	
+	<!-- Termina el banner -->
+	</section>
+
+	<!-- Sección principal (racionales)-->
+	<div id = "tema-title">
+		<h3>Números Racionales</h3>
+	</div>
+	
+	<!-- Empieza la lista de temas -->
+	<div class = "top-nav">
+		<a href = "../../../index.html" id = "home"><span></span>Volver al inicio</a>
+		
+		<nav>
+			<a href = "../01frac_equiv/problems.html"><span></span>Fracciones equivalentes</a>
+			<a href = "../02simp_frac/problems.html"><span></span>Simplificación de Fracciones</a>
+			<a href = "../03orden/problems.html"><span></span>Comparación de acuerdo al orden</a>
+			<a href = "../04suma/problems.html"><span></span>Suma</a>
+			<a href = "../05resta/problems.html"><span></span>Resta</a>
+			<a href = "../06multiplicacion/problems.html"><span></span>Multiplicación</a>
+			<a href = "../07division/problems.html"><span></span>División</a>
+			<!-- <a href = "../08operaciones_combinadas/problems.html"><span></span>Operaciones combinadas</a> -->
+		</nav>
+	</div>
+	<!-- Termina la lista de temas -->
+
+	<!-- Subtema en el que está-->
+	<section id = "subtema" >
+		<div id = "subtema-title">
+			<h2>Comparación de acuerdo al orden</h2>
+		</div>
+	</section>
+
+	<!--
+	En el archivo code.js se escribió una función general para generar ejercicios. Esta función se llama Ejercicio, y tiene varios parámetros.
+	La función genera dos racionales, y los escribe en la página. Además, guarda la respuesta en el arreglo de respuestas. 
+	La respuesta es un arreglo con dos racionales, el primero es el menor y el segundo es el mayor.
+
+	FUNCIÓN GENERAL PARA GENERAR EJERCICIOS
+
+	Estos ejercicios son para comparar dos racionales. La función genera dos fracciones, y las escribe en la página. 
+	Además, guarda la respuesta en el arreglo de respuestas.
+
+	Esta función cuenta con varios parámetros
+
+	n: Número de ejercicio. Sirve para construir las etiquetas correspondientes
+	same_den: Puede ser 1 o 0. Es 1 si se requiere que ambos denominadores sean iguales
+	neg1: Puede ser 1 o 0. Es 1 si y sólo si se requiere que la primera fracción sea negativa
+	neg2: Puede ser 1 o 0. Es 1 si y sólo si se requiere que la segunda fracción sea negativa
+	ent1: Puede ser 1 0 0. Es 1 si y sólo si se requiere que la primera fracción sea un entero
+
+	Además, se diseñó una función para mostrar la respuesta. Esta función se llama Respuesta, y tiene un parámetro dos parámetros:
+	n: Número de ejercicio. Sirve para construir las etiquetas correspondientes
+	menor: Es una bandera. Es 1 si y sólo si se requiere que el menor racional se escriba primero, y el mayor después.
+	Es 0 si y sólo si se requiere que el mayor racional se escriba primero, y el menor después.
+	-->
+
+	<!--Ejercicio 1: 
+	Comparar dos racionales positivos con el mismo denominador-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 1</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Comparación de racionales positivos con el signo menor que</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo menor que.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio1" onclick = "Ejercicio(1, 1, 0, 0, 0)">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<mfrac>
+								<mn id = "a_1"></mn>
+								<mn id = "b_1"></mn>
+							</mfrac>
+							<mspace width = "0.3em"></mspace>
+							<mn id = "coma_1"></mn>
+							<mspace width = "0.3em"></mspace>
+							<mfrac>
+								<mn id = "c_1"></mn>
+								<mn id = "d_1"></mn>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta1" onclick="Respuesta(1, 1)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<!-- Por si hay un signo -->
+							<mo id = "signor1_1">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr1_1">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr1_1"></mn>
+								<mn id = "dr1_1"></mn>
+							</mfrac>
+
+							<!-- Signo para la comparación -->
+							<mo id = "signo_1">&ZeroWidthSpace;</mo>
+
+							<!-- Por si hay un signo -->
+							<mo id = "signor2_1">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr2_1">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr2_1"></mn>
+								<mn id = "dr2_1"></mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 1-->
+
+	<!--Ejercicio 2:
+	Es similar al Ejercicio 1, pero ahora la primera fracción es positiva
+	y la segunda fracción es negativa. Se mantienen los denominadores iguales-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 2</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Comparación de racionales, uno positivo y otro negativo, con el signo menor que</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo menor que.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio2" onclick = "Ejercicio(2, 1, 1, 0, 0)">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow class = "contenedor-signo">
+							<!--Para el signo menos-->
+							<mo id = "signo1_2">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "a_2"></mn>
+								<mn id = "b_2"></mn>
+							</mfrac>
+							<mspace width = "0.3em"></mspace>
+							<mn id = "coma_2"></mn>
+							<mspace width = "0.3em"></mspace>
+							<mfrac>
+								<mn id = "c_2"></mn>
+								<mn id = "d_2"></mn>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta2" onclick="Respuesta(2, 1)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<!-- Por si hay un signo -->
+							<mo id = "signor1_2">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr1_2">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr1_2"></mn>
+								<mn id = "dr1_2"></mn>
+							</mfrac>
+
+							<!-- Signo para la comparación -->
+							<mo id = "signo_2">&ZeroWidthSpace;</mo>
+
+							<!-- Por si hay un signo -->
+							<mo id = "signor2_2">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr2_2">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr2_2"></mn>
+								<mn id = "dr2_2"></mn>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 2-->
+
+	<!--Ejercicio 3:
+	Es similar al Ejercicio 1, pero ahora la primera fracción es negativa
+	y la segunda fracción es positiva. Se mantienen los denominadores iguales-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 3</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Comparación de racionales, uno positivo y otro negativo, con el signo menor que</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo menor que.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio3" onclick = "Ejercicio(3, 1, 0, 1, 0)">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow class = "contenedor-signo">
+							<mfrac>
+								<mn id = "a_3"></mn>
+								<mn id = "b_3"></mn>
+							</mfrac>
+							<mspace width = "0.3em"></mspace>
+							<mn id = "coma_3"></mn>
+							<mspace width = "0.3em"></mspace>
+							<!--Para el signo menos-->
+							<mo id = "signo2_3">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "c_3"></mn>
+								<mn id = "d_3"></mn>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta3" onclick="Respuesta(3, 1)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<!-- Por si hay un signo -->
+							<mo id = "signor1_3">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr1_3">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr1_3"></mn>
+								<mn id = "dr1_3"></mn>
+							</mfrac>
+
+							<!-- Signo para la comparación -->
+							<mo id = "signo_3">&ZeroWidthSpace;</mo>
+
+							<!-- Por si hay un signo -->
+							<mo id = "signor2_3">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr2_3">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr2_3"></mn>
+								<mn id = "dr2_3"></mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 3-->
+
+	<!--Ejercicio 4:
+	Es similar al Ejercicio 3, pero esta vez se hace la comparación de dos racionales negativos.
+	Se mantienen los denominadores iguales-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 4</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Comparación de racionales negativos con el signo menor que</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo menor que.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio4" onclick = "Ejercicio(4, 1, 1, 1, 0)">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow class = "contenedor-signo">
+							<!--Para el signo menos-->
+							<mo id = "signo1_4">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "a_4"></mn>
+								<mn id = "b_4"></mn>
+							</mfrac>
+							<mspace width = "0.3em"></mspace>
+							<mn id = "coma_4"></mn>
+							<mspace width = "0.3em"></mspace>
+							<!--Para el signo menos-->
+							<mo id = "signo2_4">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "c_4"></mn>
+								<mn id = "d_4"></mn>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta4" onclick="Respuesta(4, 1)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<!-- Por si hay un signo -->
+							<mo id = "signor1_4">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr1_4">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr1_4"></mn>
+								<mn id = "dr1_4"></mn>
+							</mfrac>
+
+							<!-- Signo para la comparación -->
+							<mo id = "signo_4">&ZeroWidthSpace;</mo>
+
+							<!-- Por si hay un signo -->
+							<mo id = "signor2_4">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr2_4">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr2_4"></mn>
+								<mn id = "dr2_4"></mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 4-->
+
+	<!--Ejercicio 5:
+	En esta ocasión es MUY SIMILAR al Ejercicio 1, pero en esta ocasión
+	no hay restricciones sobre los denominadores-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 5</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Comparación de racionales positivos con el signo menor que</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo menor que.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio5" onclick = "Ejercicio(5, 0, 0, 0, 0)">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow class = "contenedor-signo">
+							<mfrac>
+								<mn id = "a_5"></mn>
+								<mn id = "b_5"></mn>
+							</mfrac>
+							<mspace width = "0.3em"></mspace>
+							<mn id = "coma_5"></mn>
+							<mspace width = "0.3em"></mspace>
+							<mfrac>
+								<mn id = "c_5"></mn>
+								<mn id = "d_5"></mn>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta5" onclick="Respuesta(5, 1)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<!-- Por si hay un signo -->
+							<mo id = "signor1_5">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr1_5">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr1_5"></mn>
+								<mn id = "dr1_5"></mn>
+							</mfrac>
+
+							<!-- Signo para la comparación -->
+							<mo id = "signo_5">&ZeroWidthSpace;</mo>
+
+							<!-- Por si hay un signo -->
+							<mo id = "signor2_5">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr2_5">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr2_5"></mn>
+								<mn id = "dr2_5"></mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 5-->
+
+	<!--Ejercicio 6:
+	Tiene la misma lógica del Ejercicio 2, pero en esta ocasión
+	no hay restricciones sobre los denominadores-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 6</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Comparación de racionales, uno positivo y otro negativo, con el signo menor que</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo menor que.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio6" onclick = "Ejercicio(6, 0, 1, 0, 0)">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow class = "contenedor-signo">
+							<!--Para el signo menos-->
+							<mo id = "signo1_6">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "a_6"></mn>
+								<mn id = "b_6"></mn>
+							</mfrac>
+							<mspace width = "0.3em"></mspace>
+							<mn id = "coma_6"></mn>
+							<mspace width = "0.3em"></mspace>
+							<mfrac>
+								<mn id = "c_6"></mn>
+								<mn id = "d_6"></mn>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta6" onclick="Respuesta(6, 1)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<!-- Por si hay un signo -->
+							<mo id = "signor1_6">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr1_6">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr1_6"></mn>
+								<mn id = "dr1_6"></mn>
+							</mfrac>
+
+							<!-- Signo para la comparación -->
+							<mo id = "signo_6">&ZeroWidthSpace;</mo>
+
+							<!-- Por si hay un signo -->
+							<mo id = "signor2_6">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr2_6">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr2_6"></mn>
+								<mn id = "dr2_6"></mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 6-->
+
+	<!--Ejercicio 7:
+	Tiene la misma lógica del Ejercicio 3, pero en esta ocasión
+	no hay restricciones sobre los denominadores-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 7</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Comparación de racionales, uno positivo y otro negativo, con el signo menor que</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo menor que.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio7" onclick = "Ejercicio(7, 0, 0, 1, 0)">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow class = "contenedor-signo">
+							<mfrac>
+								<mn id = "a_7"></mn>
+								<mn id = "b_7"></mn>
+							</mfrac>
+							<mspace width = "0.3em"></mspace>
+							<mn id = "coma_7"></mn>
+							<mspace width = "0.3em"></mspace>
+							<!--Para el signo menos-->
+							<mo id = "signo2_7">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "c_7"></mn>
+								<mn id = "d_7"></mn>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta7" onclick="Respuesta(7, 1)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<!-- Por si hay un signo -->
+							<mo id = "signor1_7">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr1_7">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr1_7"></mn>
+								<mn id = "dr1_7"></mn>
+							</mfrac>
+
+							<!-- Signo para la comparación -->
+							<mo id = "signo_7">&ZeroWidthSpace;</mo>
+
+							<!-- Por si hay un signo -->
+							<mo id = "signor2_7">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr2_7">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr2_7"></mn>
+								<mn id = "dr2_7"></mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 7-->
+
+	<!--Ejercicio 8:
+	Tiene la misma lógica del Ejercicio 4, pero en esta ocasión
+	no hay restricciones sobre los denominadores-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 8</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Comparación de racionales negativos con el signo menor que</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo menor que.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio8" onclick = "Ejercicio(8, 0, 1, 1, 0)">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow class = "contenedor-signo">
+							<!--Para el signo menos-->
+							<mo id = "signo1_8">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "a_8"></mn>
+								<mn id = "b_8"></mn>
+							</mfrac>
+							<mspace width = "0.3em"></mspace>
+							<mn id = "coma_8"></mn>
+							<mspace width = "0.3em"></mspace>
+							<!--Para el signo menos-->
+							<mo id = "signo2_8">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "c_8"></mn>
+								<mn id = "d_8"></mn>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta8" onclick="Respuesta(8, 1)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<!-- Por si hay un signo -->
+							<mo id = "signor1_8">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr1_8">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr1_8"></mn>
+								<mn id = "dr1_8"></mn>
+							</mfrac>
+
+							<!-- Signo para la comparación -->
+							<mo id = "signo_8">&ZeroWidthSpace;</mo>
+
+							<!-- Por si hay un signo -->
+							<mo id = "signor2_8">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr2_8">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr2_8"></mn>
+								<mn id = "dr2_8"></mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 8-->
+
+	<!--Ejercicio 9:
+	Esta vez, se hace la comparación de un entero con un racional positivo.
+	Para ello, se llama la función Ejercicio(9, 0, 0, 0, 1, 0).
+	Además, en lugar de usar a_9 y b_9, se utiliza ent1_9 para el entero
+	del ejercicio -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 9</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Comparación de un entero positivo con un racional positivo con el signo menor que</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo menor que.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio9" onclick = "Ejercicio(9, 0, 0, 0, 1)">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow class = "contenedor-signo">
+							<!--Para el entero-->
+							<mn id = "ent1_9"></mn>
+							<mspace width = "0.3em"></mspace>
+							<mn id = "coma_9"></mn>
+							<mspace width = "0.3em"></mspace>
+							<mfrac>
+								<mn id = "c_9"></mn>
+								<mn id = "d_9"></mn>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta9" onclick="Respuesta(9, 1)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<!-- Por si hay un signo -->
+							<mo id = "signor1_9">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr1_9">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr1_9"></mn>
+								<mn id = "dr1_9"></mn>
+							</mfrac>
+
+							<!-- Signo para la comparación -->
+							<mo id = "signo_9">&ZeroWidthSpace;</mo>
+
+							<!-- Por si hay un signo -->
+							<mo id = "signor2_9">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr2_9">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr2_9"></mn>
+								<mn id = "dr2_9"></mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 9-->
+
+	<!--Ejercicio 10:
+	Ahora se compara un entero negativo con una fracción positiva-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 10</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Comparación de un entero negativo con un racional positivo con el signo menor que</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo menor que.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio10" onclick = "Ejercicio(10, 0, 1, 0, 1)">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow class = "contenedor-signo">
+							<!--Para el signo menos-->
+							<mo id = "signo1_10">&ZeroWidthSpace;</mo>
+							<!--Para el entero-->
+							<mn id = "ent1_10"></mn>
+							<mspace width = "0.3em"></mspace>
+							<mn id = "coma_10"></mn>
+							<mspace width = "0.3em"></mspace>
+							<mfrac>
+								<mn id = "c_10"></mn>
+								<mn id = "d_10"></mn>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta10" onclick="Respuesta(10, 1)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow>
+							<!-- Por si hay un signo -->
+							<mo id = "signor1_10">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr1_10">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr1_10"></mn>
+								<mn id = "dr1_10"></mn>
+							</mfrac>
+
+							<!-- Signo para la comparación -->
+							<mo id = "signo_10">&ZeroWidthSpace;</mo>
+
+							<!-- Por si hay un signo -->
+							<mo id = "signor2_10">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr2_10">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr2_10"></mn>
+								<mn id = "dr2_10"></mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 10-->
+
+	<!--Ejercicio 11:
+	Para este ejercicio, se hace la comparación de un entero positivo
+	con una fracción negativa-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 11</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Comparación de un entero positivo con un racional negativo con el signo menor que</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo menor que.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio11" onclick = "Ejercicio(11, 0, 0, 1, 1)">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow class = "contenedor-signo">
+							<!--Para el entero-->
+							<mn id = "ent1_11"></mn>
+							<mspace width = "0.3em"></mspace>
+							<mn id = "coma_11"></mn>
+							<mspace width = "0.3em"></mspace>
+							<!--Para el signo menos-->
+							<mo id = "signo2_11">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "c_11"></mn>
+								<mn id = "d_11"></mn>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta11" onclick="Respuesta(11, 1)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow class = "contenedor-signo">
+							<!-- Por si hay un signo -->
+							<mo id = "signor1_11">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr1_11">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr1_11"></mn>
+								<mn id = "dr1_11"></mn>
+							</mfrac>
+
+							<!-- Signo para la comparación -->
+							<mo id = "signo_11">&ZeroWidthSpace;</mo>
+
+							<!-- Por si hay un signo -->
+							<mo id = "signor2_11">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr2_11">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr2_11"></mn>
+								<mn id = "dr2_11"></mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 11-->
+
+	<!--Ejercicio 12:
+    En este ejercicio se hace la comparación de un entero negativo
+	con un racional negativo-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 12</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Comparación de un entero negativo con un racional negativo con el signo menor que</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo menor que.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio12" onclick = "Ejercicio(12, 0, 1, 1, 1)">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow class = "contenedor-signo">
+							<!--Para el signo menos-->
+							<mo id = "signo1_12">&ZeroWidthSpace;</mo>
+							<!--Para el entero-->
+							<mn id = "ent1_12"></mn>
+							<mspace width = "0.3em"></mspace>
+							<mn id = "coma_12"></mn>
+							<mspace width = "0.3em"></mspace>
+							<!--Para el signo menos-->
+							<mo id = "signo2_12">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "c_12"></mn>
+								<mn id = "d_12"></mn>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta12" onclick="Respuesta(12, 1)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<mrow class = "contenedor-signo">
+							<!-- Por si hay un signo -->
+							<mo id = "signor1_12">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr1_12">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr1_12"></mn>
+								<mn id = "dr1_12"></mn>
+							</mfrac>
+
+							<!-- Signo para la comparación -->
+							<mo id = "signo_12">&ZeroWidthSpace;</mo>
+
+							<!-- Por si hay un signo -->
+							<mo id = "signor2_12">&ZeroWidthSpace;</mo>
+							<!-- Por si hay un entero -->
+							<mo id = "intr2_12">&ZeroWidthSpace;</mo>
+							<mfrac>
+								<mn id = "nr2_12"></mn>
+								<mn id = "dr2_12"></mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 12-->
+
+
+
+    <!--Ejercicio 13:
+    Comparación de racionales positivos con el signo mayor que-->
+    <section class = "problem">
+        <section class = "enunciado">
+            <h2>Ejercicio 13</h2>
+            <div class = "general-box instructions">
+                <h3>Instrucciones</h3>
+                <p>
+                    <strong>Comparación de racionales positivos con el signo mayor que</strong><br>
+                    Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+                    aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo mayor que.
+                    Cuando creas tener 
+                    la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+                    <br>
+                    <strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+                    sientas listo, pasa al siguiente Ejercicio.
+                </p>
+            </div>
+            <div class = "particular general-box">
+                <button type = "button" id = "ejercicio13" onclick = "Ejercicio(13, 1, 0, 0, 0)">Generar problema</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow>
+                            <mfrac>
+                                <mn id = "a_13"></mn>
+                                <mn id = "b_13"></mn>
+                            </mfrac>
+                            <mspace width = "0.3em"></mspace>
+                            <mn id = "coma_13"></mn>
+                            <mspace width = "0.3em"></mspace>
+                            <mfrac>
+                                <mn id = "c_13"></mn>
+                                <mn id = "d_13"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </p>
+            </div>
+        </section>
+
+        <section class = "answer">
+            <div class = "answer-box general-box">
+                <button type = "button" id = "repuesta13" onclick="Respuesta(13, 0)">Respuesta</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow>
+                            <mo id = "signor1_13">&ZeroWidthSpace;</mo>
+                            <mo id = "intr1_13">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr1_13"></mn>
+                                <mn id = "dr1_13"></mn>
+                            </mfrac>
+                            <mo id = "signo_13">&ZeroWidthSpace;</mo>
+                            <mo id = "signor2_13">&ZeroWidthSpace;</mo>
+                            <mo id = "intr2_13">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr2_13"></mn>
+                                <mn id = "dr2_13"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>   
+                </p>
+            </div>
+        </section>
+    </section> <!--Termina el Ejercicio 13-->
+
+    <!--Ejercicio 14:
+    Comparación de racionales, uno positivo y otro negativo, con el signo mayor que-->
+    <section class = "problem">
+        <section class = "enunciado">
+            <h2>Ejercicio 14</h2>
+            <div class = "general-box instructions">
+                <h3>Instrucciones</h3>
+                <p>
+                    <strong>Comparación de racionales, uno positivo y otro negativo, con el signo mayor que</strong><br>
+                    Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+                    aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo mayor que.
+                    Cuando creas tener 
+                    la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+                    <br>
+                    <strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+                    sientas listo, pasa al siguiente Ejercicio.
+                </p>
+            </div>
+            <div class = "particular general-box">
+                <button type = "button" id = "ejercicio14" onclick = "Ejercicio(14, 1, 1, 0, 0)">Generar problema</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mo id = "signo1_14">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "a_14"></mn>
+                                <mn id = "b_14"></mn>
+                            </mfrac>
+                            <mspace width = "0.3em"></mspace>
+                            <mn id = "coma_14"></mn>
+                            <mspace width = "0.3em"></mspace>
+                            <mfrac>
+                                <mn id = "c_14"></mn>
+                                <mn id = "d_14"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </p>
+            </div>
+        </section>
+
+        <section class = "answer">
+            <div class = "answer-box general-box">
+                <button type = "button" id = "repuesta14" onclick="Respuesta(14, 0)">Respuesta</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mo id = "signor1_14">&ZeroWidthSpace;</mo>
+                            <mo id = "intr1_14">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr1_14"></mn>
+                                <mn id = "dr1_14"></mn>
+                            </mfrac>
+                            <mo id = "signo_14">&ZeroWidthSpace;</mo>
+                            <mo id = "signor2_14">&ZeroWidthSpace;</mo>
+                            <mo id = "intr2_14">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr2_14"></mn>
+                                <mn id = "dr2_14"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>   
+                </p>
+            </div>
+        </section>
+    </section> <!--Termina el Ejercicio 14-->
+
+    <!--Ejercicio 15:
+    Comparación de racionales, uno positivo y otro negativo, con el signo mayor que-->
+    <section class = "problem">
+        <section class = "enunciado">
+            <h2>Ejercicio 15</h2>
+            <div class = "general-box instructions">
+                <h3>Instrucciones</h3>
+                <p>
+                    <strong>Comparación de racionales, uno positivo y otro negativo, con el signo mayor que</strong><br>
+                    Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+                    aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo mayor que.
+                    Cuando creas tener 
+                    la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+                    <br>
+                    <strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+                    sientas listo, pasa al siguiente Ejercicio.
+                </p>
+            </div>
+            <div class = "particular general-box">
+                <button type = "button" id = "ejercicio15" onclick = "Ejercicio(15, 1, 0, 1, 0)">Generar problema</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mfrac>
+                                <mn id = "a_15"></mn>
+                                <mn id = "b_15"></mn>
+                            </mfrac>
+                            <mspace width = "0.3em"></mspace>
+                            <mn id = "coma_15"></mn>
+                            <mspace width = "0.3em"></mspace>
+                            <mo id = "signo2_15">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "c_15"></mn>
+                                <mn id = "d_15"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </p>
+            </div>
+        </section>
+
+        <section class = "answer">
+            <div class = "answer-box general-box">
+                <button type = "button" id = "repuesta15" onclick="Respuesta(15, 0)">Respuesta</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mo id = "signor1_15">&ZeroWidthSpace;</mo>
+                            <mo id = "intr1_15">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr1_15"></mn>
+                                <mn id = "dr1_15"></mn>
+                            </mfrac>
+                            <mo id = "signo_15">&ZeroWidthSpace;</mo>
+                            <mo id = "signor2_15">&ZeroWidthSpace;</mo>
+                            <mo id = "intr2_15">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr2_15"></mn>
+                                <mn id = "dr2_15"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>   
+                </p>
+            </div>
+        </section>
+    </section> <!--Termina el Ejercicio 15-->
+
+    <!--Ejercicio 16:
+    Comparación de racionales negativos con el signo mayor que-->
+    <section class = "problem">
+        <section class = "enunciado">
+            <h2>Ejercicio 16</h2>
+            <div class = "general-box instructions">
+                <h3>Instrucciones</h3>
+                <p>
+                    <strong>Comparación de racionales negativos con el signo mayor que</strong><br>
+                    Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+                    aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo mayor que.
+                    Cuando creas tener 
+                    la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+                    <br>
+                    <strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+                    sientas listo, pasa al siguiente Ejercicio.
+                </p>
+            </div>
+            <div class = "particular general-box">
+                <button type = "button" id = "ejercicio16" onclick = "Ejercicio(16, 1, 1, 1, 0)">Generar problema</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mo id = "signo1_16">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "a_16"></mn>
+                                <mn id = "b_16"></mn>
+                            </mfrac>
+                            <mspace width = "0.3em"></mspace>
+                            <mn id = "coma_16"></mn>
+                            <mspace width = "0.3em"></mspace>
+                            <mo id = "signo2_16">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "c_16"></mn>
+                                <mn id = "d_16"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </p>
+            </div>
+        </section>
+
+        <section class = "answer">
+            <div class = "answer-box general-box">
+                <button type = "button" id = "repuesta16" onclick="Respuesta(16, 0)">Respuesta</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mo id = "signor1_16">&ZeroWidthSpace;</mo>
+                            <mo id = "intr1_16">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr1_16"></mn>
+                                <mn id = "dr1_16"></mn>
+                            </mfrac>
+                            <mo id = "signo_16">&ZeroWidthSpace;</mo>
+                            <mo id = "signor2_16">&ZeroWidthSpace;</mo>
+                            <mo id = "intr2_16">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr2_16"></mn>
+                                <mn id = "dr2_16"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>   
+                </p>
+            </div>
+        </section>
+    </section> <!--Termina el Ejercicio 16-->
+
+    <!--Ejercicio 17:
+    Comparación de racionales positivos con el signo mayor que-->
+    <section class = "problem">
+        <section class = "enunciado">
+            <h2>Ejercicio 17</h2>
+            <div class = "general-box instructions">
+                <h3>Instrucciones</h3>
+                <p>
+                    <strong>Comparación de racionales positivos con el signo mayor que</strong><br>
+                    Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+                    aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo mayor que.
+                    Cuando creas tener 
+                    la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+                    <br>
+                    <strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+                    sientas listo, pasa al siguiente Ejercicio.
+                </p>
+            </div>
+            <div class = "particular general-box">
+                <button type = "button" id = "ejercicio17" onclick = "Ejercicio(17, 0, 0, 0, 0)">Generar problema</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mfrac>
+                                <mn id = "a_17"></mn>
+                                <mn id = "b_17"></mn>
+                            </mfrac>
+                            <mspace width = "0.3em"></mspace>
+                            <mn id = "coma_17"></mn>
+                            <mspace width = "0.3em"></mspace>
+                            <mfrac>
+                                <mn id = "c_17"></mn>
+                                <mn id = "d_17"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </p>
+            </div>
+        </section>
+
+        <section class = "answer">
+            <div class = "answer-box general-box">
+                <button type = "button" id = "repuesta17" onclick="Respuesta(17, 0)">Respuesta</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mo id = "signor1_17">&ZeroWidthSpace;</mo>
+                            <mo id = "intr1_17">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr1_17"></mn>
+                                <mn id = "dr1_17"></mn>
+                            </mfrac>
+                            <mo id = "signo_17">&ZeroWidthSpace;</mo>
+                            <mo id = "signor2_17">&ZeroWidthSpace;</mo>
+                            <mo id = "intr2_17">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr2_17"></mn>
+                                <mn id = "dr2_17"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>   
+                </p>
+            </div>
+        </section>
+    </section> <!--Termina el Ejercicio 17-->
+
+    <!--Ejercicio 18:
+    Comparación de racionales, uno positivo y otro negativo, con el signo mayor que-->
+    <section class = "problem">
+        <section class = "enunciado">
+            <h2>Ejercicio 18</h2>
+            <div class = "general-box instructions">
+                <h3>Instrucciones</h3>
+                <p>
+                    <strong>Comparación de racionales, uno positivo y otro negativo, con el signo mayor que</strong><br>
+                    Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+                    aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo mayor que.
+                    Cuando creas tener 
+                    la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+                    <br>
+                    <strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+                    sientas listo, pasa al siguiente Ejercicio.
+                </p>
+            </div>
+            <div class = "particular general-box">
+                <button type = "button" id = "ejercicio18" onclick = "Ejercicio(18, 0, 1, 0, 0)">Generar problema</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mo id = "signo1_18">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "a_18"></mn>
+                                <mn id = "b_18"></mn>
+                            </mfrac>
+                            <mspace width = "0.3em"></mspace>
+                            <mn id = "coma_18"></mn>
+                            <mspace width = "0.3em"></mspace>
+                            <mfrac>
+                                <mn id = "c_18"></mn>
+                                <mn id = "d_18"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </p>
+            </div>
+        </section>
+
+        <section class = "answer">
+            <div class = "answer-box general-box">
+                <button type = "button" id = "repuesta18" onclick="Respuesta(18, 0)">Respuesta</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mo id = "signor1_18">&ZeroWidthSpace;</mo>
+                            <mo id = "intr1_18">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr1_18"></mn>
+                                <mn id = "dr1_18"></mn>
+                            </mfrac>
+                            <mo id = "signo_18">&ZeroWidthSpace;</mo>
+                            <mo id = "signor2_18">&ZeroWidthSpace;</mo>
+                            <mo id = "intr2_18">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr2_18"></mn>
+                                <mn id = "dr2_18"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>   
+                </p>
+            </div>
+        </section>
+    </section> <!--Termina el Ejercicio 18-->
+
+    <!--Ejercicio 19:
+    Comparación de racionales, uno positivo y otro negativo, con el signo mayor que-->
+    <section class = "problem">
+        <section class = "enunciado">
+            <h2>Ejercicio 19</h2>
+            <div class = "general-box instructions">
+                <h3>Instrucciones</h3>
+                <p>
+                    <strong>Comparación de racionales, uno positivo y otro negativo, con el signo mayor que</strong><br>
+                    Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+                    aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo mayor que.
+                    Cuando creas tener 
+                    la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+                    <br>
+                    <strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+                    sientas listo, pasa al siguiente Ejercicio.
+                </p>
+            </div>
+            <div class = "particular general-box">
+                <button type = "button" id = "ejercicio19" onclick = "Ejercicio(19, 0, 0, 1, 0)">Generar problema</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mfrac>
+                                <mn id = "a_19"></mn>
+                                <mn id = "b_19"></mn>
+                            </mfrac>
+                            <mspace width = "0.3em"></mspace>
+                            <mn id = "coma_19"></mn>
+                            <mspace width = "0.3em"></mspace>
+                            <mo id = "signo2_19">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "c_19"></mn>
+                                <mn id = "d_19"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </p>
+            </div>
+        </section>
+
+        <section class = "answer">
+            <div class = "answer-box general-box">
+                <button type = "button" id = "repuesta19" onclick="Respuesta(19, 0)">Respuesta</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mo id = "signor1_19">&ZeroWidthSpace;</mo>
+                            <mo id = "intr1_19">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr1_19"></mn>
+                                <mn id = "dr1_19"></mn>
+                            </mfrac>
+                            <mo id = "signo_19">&ZeroWidthSpace;</mo>
+                            <mo id = "signor2_19">&ZeroWidthSpace;</mo>
+                            <mo id = "intr2_19">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr2_19"></mn>
+                                <mn id = "dr2_19"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>   
+                </p>
+            </div>
+        </section>
+    </section> <!--Termina el Ejercicio 19-->
+
+    <!--Ejercicio 20:
+    Comparación de racionales negativos con el signo mayor que-->
+    <section class = "problem">
+        <section class = "enunciado">
+            <h2>Ejercicio 20</h2>
+            <div class = "general-box instructions">
+                <h3>Instrucciones</h3>
+                <p>
+                    <strong>Comparación de racionales negativos con el signo mayor que</strong><br>
+                    Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+                    aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo mayor que.
+                    Cuando creas tener 
+                    la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+                    <br>
+                    <strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+                    sientas listo, pasa al siguiente Ejercicio.
+                </p>
+            </div>
+            <div class = "particular general-box">
+                <button type = "button" id = "ejercicio20" onclick = "Ejercicio(20, 0, 1, 1, 0)">Generar problema</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mo id = "signo1_20">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "a_20"></mn>
+                                <mn id = "b_20"></mn>
+                            </mfrac>
+                            <mspace width = "0.3em"></mspace>
+                            <mn id = "coma_20"></mn>
+                            <mspace width = "0.3em"></mspace>
+                            <mo id = "signo2_20">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "c_20"></mn>
+                                <mn id = "d_20"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </p>
+            </div>
+        </section>
+
+        <section class = "answer">
+            <div class = "answer-box general-box">
+                <button type = "button" id = "repuesta20" onclick="Respuesta(20, 0)">Respuesta</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mo id = "signor1_20">&ZeroWidthSpace;</mo>
+                            <mo id = "intr1_20">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr1_20"></mn>
+                                <mn id = "dr1_20"></mn>
+                            </mfrac>
+                            <mo id = "signo_20">&ZeroWidthSpace;</mo>
+                            <mo id = "signor2_20">&ZeroWidthSpace;</mo>
+                            <mo id = "intr2_20">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr2_20"></mn>
+                                <mn id = "dr2_20"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>   
+                </p>
+            </div>
+        </section>
+    </section> <!--Termina el Ejercicio 20-->
+
+    <!--Ejercicio 21:
+    Comparación de un entero positivo con un racional positivo con el signo mayor que-->
+    <section class = "problem">
+        <section class = "enunciado">
+            <h2>Ejercicio 21</h2>
+            <div class = "general-box instructions">
+                <h3>Instrucciones</h3>
+                <p>
+                    <strong>Comparación de un entero positivo con un racional positivo con el signo mayor que</strong><br>
+                    Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+                    aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo mayor que.
+                    Cuando creas tener 
+                    la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+                    <br>
+                    <strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+                    sientas listo, pasa al siguiente Ejercicio.
+                </p>
+            </div>
+            <div class = "particular general-box">
+                <button type = "button" id = "ejercicio21" onclick = "Ejercicio(21, 0, 0, 0, 1)">Generar problema</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mn id = "ent1_21"></mn>
+                            <mspace width = "0.3em"></mspace>
+                            <mn id = "coma_21"></mn>
+                            <mspace width = "0.3em"></mspace>
+                            <mfrac>
+                                <mn id = "c_21"></mn>
+                                <mn id = "d_21"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </p>
+            </div>
+        </section>
+
+        <section class = "answer">
+            <div class = "answer-box general-box">
+                <button type = "button" id = "repuesta21" onclick="Respuesta(21, 0)">Respuesta</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mo id = "signor1_21">&ZeroWidthSpace;</mo>
+                            <mo id = "intr1_21">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr1_21"></mn>
+                                <mn id = "dr1_21"></mn>
+                            </mfrac>
+                            <mo id = "signo_21">&ZeroWidthSpace;</mo>
+                            <mo id = "signor2_21">&ZeroWidthSpace;</mo>
+                            <mo id = "intr2_21">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr2_21"></mn>
+                                <mn id = "dr2_21"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>   
+                </p>
+            </div>
+        </section>
+    </section> <!--Termina el Ejercicio 21-->
+
+    <!--Ejercicio 22:
+    Comparación de un entero negativo con un racional positivo con el signo mayor que-->
+    <section class = "problem">
+        <section class = "enunciado">
+            <h2>Ejercicio 22</h2>
+            <div class = "general-box instructions">
+                <h3>Instrucciones</h3>
+                <p>
+                    <strong>Comparación de un entero negativo con un racional positivo con el signo mayor que</strong><br>
+                    Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+                    aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo mayor que.
+                    Cuando creas tener 
+                    la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+                    <br>
+                    <strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+                    sientas listo, pasa al siguiente Ejercicio.
+                </p>
+            </div>
+            <div class = "particular general-box">
+                <button type = "button" id = "ejercicio22" onclick = "Ejercicio(22, 0, 1, 0, 1)">Generar problema</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mo id = "signo1_22">&ZeroWidthSpace;</mo>
+                            <mn id = "ent1_22"></mn>
+                            <mspace width = "0.3em"></mspace>
+                            <mn id = "coma_22"></mn>
+                            <mspace width = "0.3em"></mspace>
+                            <mfrac>
+                                <mn id = "c_22"></mn>
+                                <mn id = "d_22"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </p>
+            </div>
+        </section>
+
+        <section class = "answer">
+            <div class = "answer-box general-box">
+                <button type = "button" id = "repuesta22" onclick="Respuesta(22, 0)">Respuesta</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mo id = "signor1_22">&ZeroWidthSpace;</mo>
+                            <mo id = "intr1_22">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr1_22"></mn>
+                                <mn id = "dr1_22"></mn>
+                            </mfrac>
+                            <mo id = "signo_22">&ZeroWidthSpace;</mo>
+                            <mo id = "signor2_22">&ZeroWidthSpace;</mo>
+                            <mo id = "intr2_22">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr2_22"></mn>
+                                <mn id = "dr2_22"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>   
+                </p>
+            </div>
+        </section>
+    </section> <!--Termina el Ejercicio 22-->
+
+    <!--Ejercicio 23:
+    Comparación de un entero positivo con un racional negativo con el signo mayor que-->
+    <section class = "problem">
+        <section class = "enunciado">
+            <h2>Ejercicio 23</h2>
+            <div class = "general-box instructions">
+                <h3>Instrucciones</h3>
+                <p>
+                    <strong>Comparación de un entero positivo con un racional negativo con el signo mayor que</strong><br>
+                    Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+                    aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo mayor que.
+                    Cuando creas tener 
+                    la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+                    <br>
+                    <strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+                    sientas listo, pasa al siguiente Ejercicio.
+                </p>
+            </div>
+            <div class = "particular general-box">
+                <button type = "button" id = "ejercicio23" onclick = "Ejercicio(23, 0, 0, 1, 1)">Generar problema</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mn id = "ent1_23"></mn>
+                            <mspace width = "0.3em"></mspace>
+                            <mn id = "coma_23"></mn>
+                            <mspace width = "0.3em"></mspace>
+                            <mo id = "signo2_23">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "c_23"></mn>
+                                <mn id = "d_23"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </p>
+            </div>
+        </section>
+
+        <section class = "answer">
+            <div class = "answer-box general-box">
+                <button type = "button" id = "repuesta23" onclick="Respuesta(23, 0)">Respuesta</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mo id = "signor1_23">&ZeroWidthSpace;</mo>
+                            <mo id = "intr1_23">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr1_23"></mn>
+                                <mn id = "dr1_23"></mn>
+                            </mfrac>
+                            <mo id = "signo_23">&ZeroWidthSpace;</mo>
+                            <mo id = "signor2_23">&ZeroWidthSpace;</mo>
+                            <mo id = "intr2_23">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr2_23"></mn>
+                                <mn id = "dr2_23"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>   
+                </p>
+            </div>
+        </section>
+    </section> <!--Termina el Ejercicio 23-->
+
+    <!--Ejercicio 24:
+    Comparación de un entero negativo con un racional negativo con el signo mayor que-->
+    <section class = "problem">
+        <section class = "enunciado">
+            <h2>Ejercicio 24</h2>
+            <div class = "general-box instructions">
+                <h3>Instrucciones</h3>
+                <p>
+                    <strong>Comparación de un entero negativo con un racional negativo con el signo mayor que</strong><br>
+                    Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+                    aparecerán dos racionales. Tu trabajo es ordenarlos utilizando el signo mayor que.
+                    Cuando creas tener 
+                    la respuesta, haz click en "Respuesta" y podrás ver cuál era la comparación correcta.
+                    <br>
+                    <strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+                    sientas listo, pasa al siguiente Ejercicio.
+                </p>
+            </div>
+            <div class = "particular general-box">
+                <button type = "button" id = "ejercicio24" onclick = "Ejercicio(24, 0, 1, 1, 1)">Generar problema</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mo id = "signo1_24">&ZeroWidthSpace;</mo>
+                            <mn id = "ent1_24"></mn>
+                            <mspace width = "0.3em"></mspace>
+                            <mn id = "coma_24"></mn>
+                            <mspace width = "0.3em"></mspace>
+                            <mo id = "signo2_24">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "c_24"></mn>
+                                <mn id = "d_24"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </p>
+            </div>
+        </section>
+
+        <section class = "answer">
+            <div class = "answer-box general-box">
+                <button type = "button" id = "repuesta24" onclick="Respuesta(24, 0)">Respuesta</button>
+                <p>
+                    <math class = "fraction_part">
+                        <mrow class = "contenedor-signo">
+                            <mo id = "signor1_24">&ZeroWidthSpace;</mo>
+                            <mo id = "intr1_24">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr1_24"></mn>
+                                <mn id = "dr1_24"></mn>
+                            </mfrac>
+                            <mo id = "signo_24">&ZeroWidthSpace;</mo>
+                            <mo id = "signor2_24">&ZeroWidthSpace;</mo>
+                            <mo id = "intr2_24">&ZeroWidthSpace;</mo>
+                            <mfrac>
+                                <mn id = "nr2_24"></mn>
+                                <mn id = "dr2_24"></mn>
+                            </mfrac>
+                        </mrow>
+                    </math>   
+                </p>
+            </div>
+        </section>
+    </section> <!--Termina el Ejercicio 24-->
+
+	<section id = "congrats">
+		<h2>¡Felicidades!</h2>
+		<p>Has llegado al final de este tema. Ya puedes pasar al siguiente.</p>
+	</section>
+
+	<section id = "desplazar">
+		<a class = "desp izq no--decoration" href ="../02simp_frac/problems.html">
+			<i class="fa fa-arrow-left"></i>
+			<div class = "desp-text">
+				Simplificación <br>de fracciones
+			</div>
+		</a>
+		
+		<a class = "desp der no--decoration" href = "../04suma/problems.html">
+			<div class = "desp-text">
+				Suma
+			</div>
+			<i class="fa fa-arrow-right"></i>
+		</a>
+	</section>
+	
+	<section id = "website-end"> </section>
+	
+	
+	</body>
+	
+	
+</html>

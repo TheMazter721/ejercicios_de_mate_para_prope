@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Título del sitio de inicio -->
+		<title> Naturales - Divisibilidad </title>
+		
+		<!-- Para ligar con el archivo CSS -->
+		<link rel = "stylesheet" href = "styles.css">
+
+		<!-- Para el javascript-->
+		<script src = "code.js"></script>
+		
+		<!--Para la fuente "Molish"-->
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		
+		<!-- Para el favicon -->
+		<link rel = "icon" type = "image/x-icon" href = "../../../images/favicon.jpg">
+		
+		<!-- Para que se ajuste al dispositivo -->
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		
+		<!-- Para emojis y acentos (un poco como en LaTeX)-->
+		<meta charset = "UTF-8">
+		
+		<!-- Para íconos japo pro-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	</head>
+	
+	<!-- Empieza el cuerpo del sitio -->
+	<body>
+	
+	<!-- Empieza con el banner -->
+	<section id = "banner">
+		<img src = "../../../images/utm.jpg" class = "fadeInUp animacion--normal banner-img">
+		
+		<!-- Caja para el texto -->
+		<div class = "banner-text">
+			<!-- UTM, IFM y Jefatura de carrera -->
+			<h2 class = "fadeInUp animacion--normal">Universidad Tecnológica de la Mixteca</h2>
+			<h2 class = "fadeInUp animacion--normal">Instituto de Física y Matemáticas</h2>
+			<h2 class = "fadeInUp animacion--normal">Jefatura de Carrera de la Licenciatura en Matemáticas Aplicadas</h2>
+		</div>
+	
+	<!-- Termina el banner -->
+	</section>
+
+	<!-- Sección principal (naturales)-->
+	<div id = "tema-title">
+		<h3>Números naturales</h3>
+	</div>
+	
+	<!-- Empieza la lista de temas -->
+	<div class = "top-nav">
+		<a href = "../../../index.html" id = "home"><span></span>Volver al inicio</a>
+		
+		<nav>
+			<a href = "../01suma/problems.html"><span></span>Suma</a>
+			<a href = "../02orden/problems.html"><span></span>Comparación de acuerdo al orden</a>
+			<a href = "../03resta/problems.html"><span></span>Resta</a>
+			<a href = "../04mult/problems.html"><span></span>Multiplicación</a>
+			<a href = "../05divisibilidad/problems.html"><span></span>Criterios de divisibilidad</a>
+			<a href = "../06primos/problems.html"><span></span>Factorización</a>
+			<a href = "../07mcd/problems.html"><span></span>Máximo común divisor</a>
+			<a href = "../08mcm/problems.html"><span></span>Mínimo común múltiplo</a>
+		</nav>
+	</div>
+	<!-- Termina la lista de temas -->
+
+	<!-- Subtema en el que está-->
+	<section id = "subtema" >
+		<div id = "subtema-title">
+			<h2>Criterios de divisibilidad</h2>
+		</div>
+	</section>
+
+	<!--Ejercicio 1: Criterio de divisibilidad por 2-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 1</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Criterio de divisibilidad por 2.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá un número. Debes decidir si ese número es divisible por 2 o no. 
+					Una vez que creas tener la solución, haz click en "Respuesta", y aparecerá 
+					"Sí" o "No", dependiendo de si el número es divisible por 2 o no. 
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio1" onclick = "EjercicioDivisible(0)">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "num_0"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta1" onclick="RespuestaDivisible(0)">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_0"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!--Ejercicio 2: Criterio de divisibilidad por 3-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 2</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Criterio de divisibilidad por 3.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá un número. Debes decidir si ese número es divisible por 3 o no. 
+					Una vez que creas tener la solución, haz click en "Respuesta", y aparecerá 
+					"Sí" o "No", dependiendo de si el número es divisible por 3 o no. 
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio2" onclick = "EjercicioDivisible(1)">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "num_1"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta2" onclick="RespuestaDivisible(1)">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_1"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!--Ejercicio 3: Criterio de divisibilidad por 4-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 3</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Criterio de divisibilidad por 4.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá un número. Debes decidir si ese número es divisible por 4 o no. 
+					Una vez que creas tener la solución, haz click en "Respuesta", y aparecerá 
+					"Sí" o "No", dependiendo de si el número es divisible por 4 o no. 
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio3" onclick = "EjercicioDivisible(2)">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "num_2"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta3" onclick="RespuestaDivisible(2)">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_2"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!-- Ejercicio 4: Criterio de divisibilidad por 5 -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 4</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Criterio de divisibilidad por 5.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá un número. Debes decidir si ese número es divisible por 5 o no. 
+					Una vez que creas tener la solución, haz click en "Respuesta", y aparecerá 
+					"Sí" o "No", dependiendo de si el número es divisible por 5 o no. 
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio4" onclick = "EjercicioDivisible(3)">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "num_3"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta4" onclick="RespuestaDivisible(3)">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_3"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!-- Ejercicio 5: Criterio de divisibilidad por 6 -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 5</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Criterio de divisibilidad por 6.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá un número. Debes decidir si ese número es divisible por 6 o no. 
+					Una vez que creas tener la solución, haz click en "Respuesta", y aparecerá 
+					"Sí" o "No", dependiendo de si el número es divisible por 6 o no. 
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio5" onclick = "EjercicioDivisible(4)">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "num_4"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta5" onclick="RespuestaDivisible(4)">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_4"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!-- Ejercicio 6: Criterio de divisibilidad por 8-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 6</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Criterio de divisibilidad por 8.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá un número. Debes decidir si ese número es divisible por 8 o no. 
+					Una vez que creas tener la solución, haz click en "Respuesta", y aparecerá 
+					"Sí" o "No", dependiendo de si el número es divisible por 8 o no. 
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio6" onclick = "EjercicioDivisible(5)">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "num_5"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta6" onclick="RespuestaDivisible(5)">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_5"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!-- Ejercicio 7: Criterio de divisibilidad por 9-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 7</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Criterio de divisibilidad por 9.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá un número. Debes decidir si ese número es divisible por 9 o no. 
+					Una vez que creas tener la solución, haz click en "Respuesta", y aparecerá 
+					"Sí" o "No", dependiendo de si el número es divisible por 9 o no. 
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.	
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio7" onclick = "EjercicioDivisible(6)">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "num_6"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta7" onclick="RespuestaDivisible(6)">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_6"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!-- Ejercicio 8: Criterio de divisibilidad por 10-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 8</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Criterio de divisibilidad por 10.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá un número. Debes decidir si ese número es divisible por 10 o no. 
+					Una vez que creas tener la solución, haz click en "Respuesta", y aparecerá 
+					"Sí" o "No", dependiendo de si el número es divisible por 10 o no. 
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.	
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio8" onclick = "EjercicioDivisible(7)">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "num_7"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta8" onclick="RespuestaDivisible(7)">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_7"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!-- Ejercicio 9: Criterio de divisibilidad por 11-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 9</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Criterio de divisibilidad por 11.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá un número. Debes decidir si ese número es divisible por 11 o no. 
+					Una vez que creas tener la solución, haz click en "Respuesta", y aparecerá 
+					"Sí" o "No", dependiendo de si el número es divisible por 11 o no. 
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio9" onclick = "EjercicioDivisible(8)">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "num_8"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta9" onclick="RespuestaDivisible(8)">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_8"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+
+	<section id = "congrats">
+		<h2>¡Felicidades!</h2>
+		<p>Has llegado al final de este tema. Ya puedes pasar al siguiente.</p>
+	</section>
+
+	<section id = "desplazar">
+		<a class = "desp izq no--decoration" href = "../04mult/problems.html">
+			<i class="fa fa-arrow-left"></i>
+			<div class = "desp-text">
+				Multiplicación
+			</div>
+		</a>
+		
+		<a class = "desp der no--decoration" href = "../06primos/problems.html">
+			<div class = "desp-text">
+				Factorización
+			</div>
+			<i class="fa fa-arrow-right"></i>
+		</a>
+	</section>
+	
+	<section id = "website-end"> </section>
+	
+	</body>
+	
+	
+</html>

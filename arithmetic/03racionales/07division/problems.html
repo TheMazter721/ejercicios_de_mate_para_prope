@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Título del sitio de inicio -->
+		<title> Racionales - División de Fracciones </title>
+		
+		<!-- Para ligar con el archivo CSS -->
+		<link rel = "stylesheet" href = "styles.css">
+
+		<!-- Para el javascript-->
+		<script src = "code.js"></script>
+		
+		<!--Para la fuente "Mulish"-->
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		
+		<!-- Para el favicon -->
+		<link rel = "icon" type = "image/x-icon" href = "../../../images/favicon.jpg">
+		
+		<!-- Para que se ajuste al dispositivo -->
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		
+		<!-- Para emojis y acentos (un poco como en LaTeX)-->
+		<meta charset = "UTF-8">
+		
+		<!-- Para íconos japo pro-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	</head>
+	
+	<!-- Empieza el cuerpo del sitio -->
+	<body>
+	
+	<!-- Empieza con el banner -->
+	<section id = "banner">
+		<img src = "../../../images/utm.jpg" class = "fadeInUp animacion--normal banner-img">
+		
+		<!-- Caja para el texto -->
+		<div class = "banner-text">
+			<!-- UTM, IFM y Jefatura de carrera -->
+			<h2 class = "fadeInUp animacion--normal">Universidad Tecnológica de la Mixteca</h2>
+			<h2 class = "fadeInUp animacion--normal">Instituto de Física y Matemáticas</h2>
+			<h2 class = "fadeInUp animacion--normal">Jefatura de Carrera de la Licenciatura en Matemáticas Aplicadas</h2>
+		</div>
+	
+	<!-- Termina el banner -->
+	</section>
+
+	<!-- Sección principal (racionales)-->
+	<div id = "tema-title">
+		<h3>Números Racionales</h3>
+	</div>
+	
+	<!-- Empieza la lista de temas -->
+	<div class = "top-nav">
+		<a href = "../../../index.html" id = "home"><span></span>Volver al inicio</a>
+		
+		<nav>
+			<a href = "../01frac_equiv/problems.html"><span></span>Fracciones equivalentes</a>
+			<a href = "../02simp_frac/problems.html"><span></span>Simplificación de Fracciones</a>
+			<a href = "../03orden/problems.html"><span></span>Comparación de acuerdo al orden</a>
+			<a href = "../04suma/problems.html"><span></span>Suma</a>
+			<a href = "../05resta/problems.html"><span></span>Resta</a>
+			<a href = "../06multiplicacion/problems.html"><span></span>Multiplicación</a>
+			<a href = "../07division/problems.html"><span></span>División</a>
+			<!-- <a href = "../08operaciones_combinadas/problems.html"><span></span>Operaciones combinadas</a> -->
+		</nav>
+	</div>
+	<!-- Termina la lista de temas -->
+
+	<!-- Subtema en el que está-->
+	<section id = "subtema" >
+		<div id = "subtema-title">
+			<h2>División de Fracciones</h2>
+		</div>
+	</section>
+
+	<!--NOTA TÉCNICA:
+	La función Ejercicio que se manda a llamar en todos los ejercicios tiene los 
+	siguientes parámetros
+	
+	Ejercicio(n, same_den, cancel_type, neg1, neg2, ent1, ent2)
+	
+	n: Número de ejercicio. Sirve para construir las etiquetas correspondientes
+	same_den: Puede ser 1 o 0. Es 1 si se requiere que ambos denominadores sean iguales
+	same_num: Puede ser 1 o 0. Es 1 si se requiere que ambos numeradores sean iguales
+	neg1: Puede ser 1 o 0. Es 1 si y sólo si se requiere que la primera fracción sea negativa
+	neg2: Puede ser 1 o 0. Es 1 si y sólo si se requiere que la segunda fracción sea negativa
+	ent1: Puede ser 1 o 0. Es 1 si y sólo si se requiere que la primera fracción sea un entero
+	ent2: Puede ser 1 o 0. Es 1 si y sólo si se requiere que la segunda fracción sea un entero
+	-->
+
+	<!--Ejercicio 1:
+	Hacer la división de una fracción positiva por otra fracción positiva
+	El numerador y el denominador de la primera fracción se representan con a y b, mientras que
+	el numerador y el denominador de la segunda fracción se representan con c y d
+	En este caso, se busca que ambos denominadores sean iguales para que el alumno
+	entienda cómo funciona la cancelación en fracciones-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 1</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de dos fracciones positivas</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio1" onclick = "Ejercicio(1, 1, 0, 0, 0, 0, 0)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-1" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow>
+									<mfrac>
+										<mn id="a_1"></mn>
+										<mn id="b_1"></mn>
+									</mfrac>
+								</mrow>
+								<mrow>
+									<mfrac>
+										<mn id="c_1"></mn>
+										<mn id="d_1"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta1" onclick="Respuesta(1)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_1">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_1">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_1">&ZeroWidthSpace;</mn>
+								<mn id = "dr_1">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 1-->
+
+	<!--Ejercicio 2:
+	Es similar al Ejercicio 1, pero ahora se pide que la primera fracción
+	sea negativa-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 2</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de una fracción negativa y una fracción positiva</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio2" onclick = "Ejercicio(2, 1, 0, 1, 0, 0, 0)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-2" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow class = "contenedor-signo">
+									<!--Signo para la primera fracción-->
+									<mo id = "signo1_2"></mo>
+									<mfrac>
+										<mn id="a_2"></mn>
+										<mn id="b_2"></mn>
+									</mfrac>
+								</mrow>
+								<mrow>
+									<mfrac>
+										<mn id="c_2"></mn>
+										<mn id="d_2"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta2" onclick="Respuesta(2)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_2">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_2">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_2">&ZeroWidthSpace;</mn>
+								<mn id = "dr_2">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 2-->
+
+	<!--Ejercicio 3:
+	Es similar al Ejercicio 2, pero ahora la primera fracción es positiva
+	y la segunda fracción es negativa-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 3</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de una fracción positiva y una fracción negativa</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio3" onclick = "Ejercicio(3, 1, 0, 0, 1, 0, 0)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-3" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow>
+									<mfrac>
+										<mn id="a_3"></mn>
+										<mn id="b_3"></mn>
+									</mfrac>
+								</mrow>
+								<mrow class = "contenedor-signo">
+									<!--Signo para la segunda fracción-->
+									<mo id = "signo2_3"></mo>
+									<mfrac>
+										<mn id="c_3"></mn>
+										<mn id="d_3"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta3" onclick="Respuesta(3)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_3">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_3">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_3">&ZeroWidthSpace;</mn>
+								<mn id = "dr_3">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 3-->
+
+	<!--Ejercicio 4:
+	Es similar al Ejercicio 3, pero ahora ambas fracciones son negativas-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 4</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de dos fracciones negativas</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio4" onclick = "Ejercicio(4, 1, 0, 1, 1, 0, 0)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-4" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow class = "contenedor-signo">
+									<!--Signo para la primera fracción-->
+									<mo id = "signo1_4"></mo>
+									<mfrac>
+										<mn id="a_4"></mn>
+										<mn id="b_4"></mn>
+									</mfrac>
+								</mrow>
+								<mrow class = "contenedor-signo">
+									<!--Signo para la segunda fracción-->
+									<mo id = "signo2_4"></mo>
+									<mfrac>
+										<mn id="c_4"></mn>
+										<mn id="d_4"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta4" onclick="Respuesta(4)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_4">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_4">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_4">&ZeroWidthSpace;</mn>
+								<mn id = "dr_4">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 4-->
+
+	<!--Ejercicio 5:
+	Es similar al Ejercicio 1, pero ahora, en vez de tener el mismo denominador,
+	tienen el mismo numerador-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 5</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de dos fracciones positivas</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio5" onclick = "Ejercicio(5, 0, 1, 0, 0, 0, 0)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-5" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow>
+									<mfrac>
+										<mn id="a_5"></mn>
+										<mn id="b_5"></mn>
+									</mfrac>
+								</mrow>
+								<mrow>
+									<mfrac>
+										<mn id="c_5"></mn>
+										<mn id="d_5"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta5" onclick="Respuesta(5)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_5">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_5">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_5">&ZeroWidthSpace;</mn>
+								<mn id = "dr_5">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 5-->
+
+	<!--Ejercicio 6:
+	Es muy similar al Ejercicio 2, pero en esta ocasión, los 
+	numeradores son los que deben ser iguales-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 6</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de una fracción negativa con una fracción positiva</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio6" onclick = "Ejercicio(6, 0, 1, 1, 0, 0, 0)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-6" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow class = "contenedor-signo">
+									<!--Signo para la fracción negativa-->
+									<mo id = "signo1_6"></mo>
+									<mfrac>
+										<mn id="a_6"></mn>
+										<mn id="b_6"></mn>
+									</mfrac>
+								</mrow>
+								<mrow class = "contenedor-signo">
+									<mfrac>
+										<mn id="c_6"></mn>
+										<mn id="d_6"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta6" onclick="Respuesta(6)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_6">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_6">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_6">&ZeroWidthSpace;</mn>
+								<mn id = "dr_6">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 6-->
+
+	<!--Ejercicio 7:
+	Es muy similar al Ejercicio 3, en el sentido de que es una fracción positiva
+	entre una fracción negativa, pero en esta ocasión las fracciones tienen el 
+	mismo numerador en lugar del mismo denominador-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 7</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de una fracción positiva con una fracción negativa</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio7" onclick = "Ejercicio(7, 0, 1, 0, 1, 0, 0)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-7" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow class = "contenedor-signo">
+									<mfrac>
+										<mn id="a_7"></mn>
+										<mn id="b_7"></mn>
+									</mfrac>
+								</mrow>
+								<mrow class = "contenedor-signo">
+									<!--Signo para la fracción negativa-->
+									<mo id = "signo2_7"></mo>
+									<mfrac>
+										<mn id="c_7"></mn>
+										<mn id="d_7"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta7" onclick="Respuesta(7)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_7">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_7">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_7">&ZeroWidthSpace;</mn>
+								<mn id = "dr_7">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 7-->
+
+	<!--Ejercicio 8:
+	Es muy similar al Ejercicio 4, en el sentido de que se hace
+	la división de dos fracciones negativas. Sin embargo, en esta ocasión,
+	las fracciones tienen el mismo numerador en lugar del denominador-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 8</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de dos fracciones negativas</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio8" onclick = "Ejercicio(8, 0, 1, 1, 1, 0, 0)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-8" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow class = "contenedor-signo">
+									<!--Signo para la primera fracción-->
+									<mo id = "signo1_8"></mo>
+									<mfrac>
+										<mn id="a_8"></mn>
+										<mn id="b_8"></mn>
+									</mfrac>
+								</mrow>
+								<mrow class = "contenedor-signo">
+									<!--Signo para la segunda fracción-->
+									<mo id = "signo2_8"></mo>
+									<mfrac>
+										<mn id="c_8"></mn>
+										<mn id="d_8"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta8" onclick="Respuesta(8)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_8">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_8">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_8">&ZeroWidthSpace;</mn>
+								<mn id = "dr_8">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 8-->
+
+	<!--Ejercicio 9:
+	Es muy similar al Ejercicio 5, en el sentido de que se hace una 
+	división de fracciones positivas, pero en esta ocasión no hay 
+	restricciones con los denominadores ni los numeradores-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 9</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de dos fracciones positivas</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio9" onclick = "Ejercicio(9, 0, 0, 0, 0, 0, 0)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-9" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow>
+									<mfrac>
+										<mn id="a_9"></mn>
+										<mn id="b_9"></mn>
+									</mfrac>
+								</mrow>
+								<mrow>
+									<mfrac>
+										<mn id="c_9"></mn>
+										<mn id="d_9"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta9" onclick="Respuesta(9)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_9">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_9">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_9">&ZeroWidthSpace;</mn>
+								<mn id = "dr_9">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 9-->
+
+	<!--Ejercicio 10:
+	Es similar al Ejercicio 9, pero esta vez se hace
+	la división de una fracción negativa por una fracción positiva-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 10</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de una fracción negativa con una fracción positiva</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio10" onclick = "Ejercicio(10, 0, 0, 1, 0, 0, 0)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-10" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow class = "contenedor-signo">
+									<!--Signo para la fracción negativa-->
+									<mo id = "signo1_10"></mo>
+									<mfrac>
+										<mn id="a_10"></mn>
+										<mn id="b_10"></mn>
+									</mfrac>
+								</mrow>
+								<mrow class = "contenedor-signo">
+									<mfrac>
+										<mn id="c_10"></mn>
+										<mn id="d_10"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta10" onclick="Respuesta(10)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_10">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_10">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_10">&ZeroWidthSpace;</mn>
+								<mn id = "dr_10">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 10-->
+
+	<!--Ejercicio 11:
+	Es similar al Ejercicio 10, pero en esta ocasión se hace
+	la división de una fracción positiva con una fracción negativa-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 11</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de una fracción positiva con una fracción negativa</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio11" onclick = "Ejercicio(11, 0, 0, 0, 1, 0, 0)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-11" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow>
+									<mfrac>
+										<mn id="a_11"></mn>
+										<mn id="b_11"></mn>
+									</mfrac>
+								</mrow>
+								<mrow class = "contenedor-signo">
+									<!--Signo para la fracción negativa-->
+									<mo id = "signo2_11"></mo>
+									<mfrac>
+										<mn id="c_11"></mn>
+										<mn id="d_11"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta11" onclick="Respuesta(11)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_11">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_11">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_11">&ZeroWidthSpace;</mn>
+								<mn id = "dr_11">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 11-->
+
+	<!--Ejercicio 12:
+	Es similar al Ejercicio 11, pero esta vez se hace una divisón
+	de dos fracciones negativas-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 12</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de dos fracciones negativas</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio12" onclick = "Ejercicio(12, 0, 0, 1, 1, 0, 0)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-12" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow class = "contenedor-signo">
+									<!--Signo para la primera fracción-->
+									<mo id = "signo1_12"></mo>
+									<mfrac>
+										<mn id="a_12"></mn>
+										<mn id="b_12"></mn>
+									</mfrac>
+								</mrow>
+								<mrow class = "contenedor-signo">
+									<!--Signo para la segunda fracción-->
+									<mo id = "signo2_12"></mo>
+									<mfrac>
+										<mn id="c_12"></mn>
+										<mn id="d_12"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta12" onclick="Respuesta(12)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_12">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_12">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_12">&ZeroWidthSpace;</mn>
+								<mn id = "dr_12">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 12-->
+
+	<!--Ejercicio 13:
+	En esta ocasión, se hace la división de un entero positivo
+	entre una fracción positiva-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 13</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de un entero positivo con una fracción positiva</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio13" onclick = "Ejercicio(13, 0, 0, 0, 0, 1, 0)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-13" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow>
+									<mn id="ent1_13"></mn>
+								</mrow>
+								<mrow>
+									<mfrac>
+										<mn id="c_13"></mn>
+										<mn id="d_13"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta13" onclick="Respuesta(13)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_13">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_13">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_13">&ZeroWidthSpace;</mn>
+								<mn id = "dr_13">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 13-->
+
+	<!--Ejercicio 14:
+	Es similar al Ejercicio 13, pero ahora se hace la división
+	de un entero negativo con una fracción positiva-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 14</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de un entero negativo con una fracción positiva</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio14" onclick = "Ejercicio(14, 0, 0, 1, 0, 1, 0)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-14" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow class = "contenedor-signo">
+									<!--Signo para el entero negativo-->
+									<mo id = "signo1_14"></mo>
+									<mn id="ent1_14"></mn>
+								</mrow>
+								<mrow>
+									<mfrac>
+										<mn id="c_14"></mn>
+										<mn id="d_14"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta14" onclick="Respuesta(14)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_14">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_14">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_14">&ZeroWidthSpace;</mn>
+								<mn id = "dr_14">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 14-->
+
+	<!--Ejercicio 15:
+	Es similar al Ejercicio 14, pero esta vez se hace la división
+	de un entero positivo con una fracción negativa-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 15</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de un entero positivo con una fracción negativa</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio15" onclick = "Ejercicio(15, 0, 0, 0, 1, 1, 0)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-15" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow>
+									<mn id="ent1_15"></mn>
+								</mrow>
+								<mrow class = "contenedor-signo">
+									<!--Signo para la fracción negativa-->
+									<mo id = "signo2_15"></mo>
+									<mfrac>
+										<mn id="c_15"></mn>
+										<mn id="d_15"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta15" onclick="Respuesta(15)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_15">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_15">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_15">&ZeroWidthSpace;</mn>
+								<mn id = "dr_15">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 15-->
+
+	<!--Ejercicio 16:
+	Es similar al Ejercicio 15, pero en esta ocasión se hace
+	la división de un entero negativo con una fracción negativa-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 16</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de un entero negativo con una fracción negativa</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio16" onclick = "Ejercicio(16, 0, 0, 1, 1, 1, 0)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-16" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow class = "contenedor-signo">
+									<!--Signo para el entero negativo-->
+									<mo id = "signo1_16"></mo>
+									<mn id="ent1_16"></mn>
+								</mrow>
+								<mrow class = "contenedor-signo">
+									<!--Signo para la fracción negativa-->
+									<mo id = "signo2_16"></mo>
+									<mfrac>
+										<mn id="c_16"></mn>
+										<mn id="d_16"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta16" onclick="Respuesta(16)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_16">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_16">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_16">&ZeroWidthSpace;</mn>
+								<mn id = "dr_16">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 16-->
+
+	<!--Ejercicio 17:
+	Es similar al Ejercicio 13, pero en esta ocasión se hace la división
+	de una fracción positiva con un entero positivo-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 17</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de una fracción positiva con un entero positivo</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio17" onclick = "Ejercicio(17, 0, 0, 0, 0, 0, 1)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-17" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow>
+									<mfrac>
+										<mn id="a_17"></mn>
+										<mn id="b_17"></mn>
+									</mfrac>
+								</mrow>
+								<mrow>
+									<mn id="ent2_17"></mn>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta17" onclick="Respuesta(17)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_17">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_17">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_17">&ZeroWidthSpace;</mn>
+								<mn id = "dr_17">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 17-->
+
+	<!--Ejercicio 18:
+	Es similar al Ejercicio 17, pero en esta ocasión se hace la división
+	de una fracción negativa con un entero positivo-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 18</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de una fracción negativa con un entero positivo</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio18" onclick = "Ejercicio(18, 0, 0, 1, 0, 0, 1)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-18" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow class = "contenedor-signo">
+									<!--Signo para la fracción negativa-->
+									<mo id = "signo1_18"></mo>
+									<mfrac>
+										<mn id="a_18"></mn>
+										<mn id="b_18"></mn>
+									</mfrac>
+								</mrow>
+								<mrow>
+									<mn id="ent2_18"></mn>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta18" onclick="Respuesta(18)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_18">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_18">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_18">&ZeroWidthSpace;</mn>
+								<mn id = "dr_18">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 18-->
+
+	<!--Ejercicio 19:
+	Es similar al Ejercicio 18, pero en esta ocasión se hace la división
+	de una fracción positiva con un entero negativo-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 19</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de una fracción positiva con un entero negativo</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio19" onclick = "Ejercicio(19, 0, 0, 0, 1, 0, 1)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-19" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow>
+									<mfrac>
+										<mn id="a_19"></mn>
+										<mn id="b_19"></mn>
+									</mfrac>
+								</mrow>
+								<mrow class = "contenedor-signo">
+									<!--Signo para el entero negativo-->
+									<mo id = "signo2_19"></mo>
+									<mn id="ent2_19"></mn>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta19" onclick="Respuesta(19)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_19">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_19">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_19">&ZeroWidthSpace;</mn>
+								<mn id = "dr_19">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 19-->
+
+	<!--Ejercicio 20:
+	Es similar al Ejercicio 19, pero en esta ocasión se hace la división
+	de una fracción negativa entre un entero negativo-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 20</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>División de una fracción negativa con un entero negativo</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división de fracciones. Tu trabajo es resolver esa división. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio20" onclick = "Ejercicio(20, 0, 0, 1, 1, 0, 1)">Generar problema</button>
+				<!-- Envolvemos en un div para poder ocultar/mostrar fácilmente el bloque matemático completo -->
+				<div id="contenedor-ejercicio-20" style="display: none;">
+					<math class="fraction_part" display="block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal" linethickness="2px">
+								<mrow class = "contenedor-signo">
+									<!--Signo para la fracción negativa-->
+									<mo id = "signo1_20"></mo>
+									<mfrac>
+										<mn id="a_20"></mn>
+										<mn id="b_20"></mn>
+									</mfrac>
+								</mrow>
+								<mrow class = "contenedor-signo">
+									<!--Signo para el entero negativo-->
+									<mo id = "signo2_20"></mo>
+									<mn id="ent2_20"></mn>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</div>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta20" onclick="Respuesta(20)">Respuesta</button>
+				<p>
+					<!--Esta es la estructura general para las respuestas, pues maneja bien
+					los signos, los enteros y las fracciones-->
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_20">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_20">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_20">&ZeroWidthSpace;</mn>
+								<mn id = "dr_20">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 20-->
+	
+
+
+	<section id = "congrats">
+		<h2>¡Felicidades!</h2>
+		<p>Has llegado al final de este tema. Ya puedes pasar al siguiente.</p>
+	</section>
+
+	<section id = "desplazar">
+		<a class = "desp izq no--decoration" href = "../06multiplicacion/problems.html">
+			<i class="fa fa-arrow-left"></i>
+			<div class = "desp-text">
+				Multiplicación
+			</div>
+		</a>
+		
+		<a class = "desp der no--decoration" href = "../../../algebra/01exponentes_radicales/01exp_ent_pos/problems.html">
+			<div class = "desp-text">
+				Exponentes <br>enteros <br> positivos
+			</div>
+			<i class="fa fa-arrow-right"></i>
+		</a>
+	</section>
+	
+	<section id = "website-end"> </section>
+	
+	
+	</body>
+	
+	
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Título del sitio de inicio -->
+		<title> Racionales - Fracciones Equivalentes </title>
+		
+		<!-- Para ligar con el archivo CSS -->
+		<link rel = "stylesheet" href = "styles.css">
+
+		<!-- Para el javascript-->
+		<script src = "code.js"></script>
+		
+		<!--Para la fuente "Mulish"-->
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		
+		<!-- Para el favicon -->
+		<link rel = "icon" type = "image/x-icon" href = "../../../images/favicon.jpg">
+		
+		<!-- Para que se ajuste al dispositivo -->
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		
+		<!-- Para emojis y acentos (un poco como en LaTeX)-->
+		<meta charset = "UTF-8">
+		
+		<!-- Para íconos japo pro-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	</head>
+	
+	<!-- Empieza el cuerpo del sitio -->
+	<body>
+	
+	<!-- Empieza con el banner -->
+	<section id = "banner">
+		<img src = "../../../images/utm.jpg" class = "fadeInUp animacion--normal banner-img">
+		
+		<!-- Caja para el texto -->
+		<div class = "banner-text">
+			<!-- UTM, IFM y Jefatura de carrera -->
+			<h2 class = "fadeInUp animacion--normal">Universidad Tecnológica de la Mixteca</h2>
+			<h2 class = "fadeInUp animacion--normal">Instituto de Física y Matemáticas</h2>
+			<h2 class = "fadeInUp animacion--normal">Jefatura de Carrera de la Licenciatura en Matemáticas Aplicadas</h2>
+		</div>
+	
+	<!-- Termina el banner -->
+	</section>
+
+	<!-- Sección principal (racionales)-->
+	<div id = "tema-title">
+		<h3>Números Racionales</h3>
+	</div>
+	
+	<!-- Empieza la lista de temas -->
+	<div class = "top-nav">
+		<a href = "../../../index.html" id = "home"><span></span>Volver al inicio</a>
+		
+		<nav>
+			<a href = "../01frac_equiv/problems.html"><span></span>Fracciones equivalentes</a>
+			<a href = "../02simp_frac/problems.html"><span></span>Simplificación de Fracciones</a>
+			<a href = "../03orden/problems.html"><span></span>Comparación de acuerdo al orden</a>
+			<a href = "../04suma/problems.html"><span></span>Suma</a>
+			<a href = "../05resta/problems.html"><span></span>Resta</a>
+			<a href = "../06multiplicacion/problems.html"><span></span>Multiplicación</a>
+			<a href = "../07division/problems.html"><span></span>División</a>
+			<!-- <a href = "../08operaciones_combinadas/problems.html"><span></span>Operaciones combinadas</a> -->
+		</nav>
+	</div>
+	<!-- Termina la lista de temas -->
+
+	<!-- Subtema en el que está-->
+	<section id = "subtema" >
+		<div id = "subtema-title">
+			<h2>Fracciones equivalentes</h2>
+		</div>
+	</section>
+
+	<!--Ejercicio 1:
+	Se dan dos fracciones. Una completa, y otra equivalente en la que no está
+	el denominador. El alumno debe encontrar el denominador faltante.
+	-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 1</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Determinar el denominador faltante</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos fracciones que son iguales,
+					pero a una le falta el denominador. Tu trabajo es determinar el denominador faltante de la fracción equivalente. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el denominador faltante.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio1" onclick = "Ejercicio1()">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<!--Se utilizan dos fracciones equivalentes-->
+						<mrow>
+							<mfrac>
+								<mrow>
+									<mn id = "n1_1">&ZeroWidthSpace;</mn>
+								</mrow>
+								<mrow>
+									<mn id = "d1_1">&ZeroWidthSpace;</mn>
+								</mrow>
+							</mfrac>
+
+							<!--Símbolo =-->
+							<mo id = "op_1"></mo>
+
+							<mfrac>
+								<mrow>
+									<mn id = "n2_1">&ZeroWidthSpace;</mn>
+								</mrow>
+								<mrow>
+									<mn id = "d2_1">&ZeroWidthSpace;</mn>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta1" onclick="Respuesta1()">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción-->
+						<mrow>
+							<mfrac>
+								<mrow>
+									<mn id = "nr_1">&ZeroWidthSpace;</mn>
+								</mrow>
+								<mrow>
+									<mn id = "dr_1">&ZeroWidthSpace;</mn>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 1-->
+
+	<!--Ejercicio 2:
+	Es idéntico al Ejercicio 1. Solo hace falta cambiar los IDs y las funciones correspondientes-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 2</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Determinar el denominador faltante</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos fracciones que son iguales,
+					pero a una le falta el denominador. Tu trabajo es determinar el denominador faltante de la fracción equivalente. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el denominador faltante.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio2" onclick = "Ejercicio2()">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<!--Se utilizan dos fracciones equivalentes-->
+						<mrow>
+							<mfrac>
+								<mrow>
+									<mn id = "n1_2">&ZeroWidthSpace;</mn>
+								</mrow>
+								<mrow>
+									<mn id = "d1_2">&ZeroWidthSpace;</mn>
+								</mrow>
+							</mfrac>
+
+							<!--Símbolo =-->
+							<mo id = "op_2"></mo>
+
+							<mfrac>
+								<mrow>
+									<mn id = "n2_2">&ZeroWidthSpace;</mn>
+								</mrow>
+								<mrow>
+									<mn id = "d2_2">&ZeroWidthSpace;</mn>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta2" onclick="Respuesta2()">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción-->
+						<mrow>
+							<mfrac>
+								<mrow>
+									<mn id = "nr_2">&ZeroWidthSpace;</mn>
+								</mrow>
+								<mrow>
+									<mn id = "dr_2">&ZeroWidthSpace;</mn>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 2-->
+
+
+	<!--Ejercicio 3:
+	Es similar al Ejercicio 1. Solo hace falta cambiar los IDs y las funciones correspondientes. Además,
+	en esta ocasión, hay que hallar el numerador en lugar del denominador-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 3</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Determinar el numerador faltante</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos fracciones que son iguales,
+					pero a una le falta el numerador. Tu trabajo es determinar el numerador faltante de la fracción equivalente. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el numerador faltante.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio3" onclick = "Ejercicio3()">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<!--Se utilizan dos fracciones equivalentes-->
+						<mrow>
+							<mfrac>
+								<mrow>
+									<mn id = "n1_3">&ZeroWidthSpace;</mn>
+								</mrow>
+								<mrow>
+									<mn id = "d1_3">&ZeroWidthSpace;</mn>
+								</mrow>
+							</mfrac>
+
+							<!--Símbolo =-->
+							<mo id = "op_3"></mo>
+
+							<mfrac>
+								<mrow>
+									<mn id = "n2_3">&ZeroWidthSpace;</mn>
+								</mrow>
+								<mrow>
+									<mn id = "d2_3">&ZeroWidthSpace;</mn>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta3" onclick="Respuesta3()">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción-->
+						<mrow>
+							<mfrac>
+								<mrow>
+									<mn id = "nr_3">&ZeroWidthSpace;</mn>
+								</mrow>
+								<mrow>
+									<mn id = "dr_3">&ZeroWidthSpace;</mn>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 3-->
+
+	<!--Ejercicio 4:
+	Es idéntico al Ejercicio 3, solo cambia el ID y las funciones correspondientes-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 4</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Determinar el numerador faltante</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos fracciones que son iguales,
+					pero a una le falta el numerador. Tu trabajo es determinar el numerador faltante de la fracción equivalente. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el numerador faltante.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio4" onclick = "Ejercicio4()">Generar problema</button>
+				<p>
+					<math class = "fraction_part">
+						<!--Se utilizan dos fracciones equivalentes-->
+						<mrow>
+							<mfrac>
+								<mrow>
+									<mn id = "n1_4">&ZeroWidthSpace;</mn>
+								</mrow>
+								<mrow>
+									<mn id = "d1_4">&ZeroWidthSpace;</mn>
+								</mrow>
+							</mfrac>
+
+							<!--Símbolo =-->
+							<mo id = "op_4"></mo>
+
+							<mfrac>
+								<mrow>
+									<mn id = "n2_4">&ZeroWidthSpace;</mn>
+								</mrow>
+								<mrow>
+									<mn id = "d2_4">&ZeroWidthSpace;</mn>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta4" onclick="Respuesta4()">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción-->
+						<mrow>
+							<mfrac>
+								<mrow>
+									<mn id = "nr_4">&ZeroWidthSpace;</mn>
+								</mrow>
+								<mrow>
+									<mn id = "dr_4">&ZeroWidthSpace;</mn>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 4-->
+
+
+	<section id = "congrats">
+		<h2>¡Felicidades!</h2>
+		<p>Has llegado al final de este tema. Ya puedes pasar al siguiente.</p>
+	</section>
+
+	<section id = "desplazar">
+		<a class = "desp izq no--decoration" href = "../../02enteros/08op_comb/problems.html">
+			<i class="fa fa-arrow-left"></i>
+			<div class = "desp-text">
+				Operaciones <br>combinadas
+			</div>
+		</a>
+		
+		<a class = "desp der no--decoration" href = "../02simp_frac/problems.html">
+			<div class = "desp-text">
+				Simplificación <br>de fracciones
+			</div>
+			<i class="fa fa-arrow-right"></i>
+		</a>
+	</section>
+	
+	<section id = "website-end"> </section>
+	
+	
+	</body>
+	
+	
+</html>

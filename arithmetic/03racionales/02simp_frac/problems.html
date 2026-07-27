@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Título del sitio de inicio -->
+		<title> Racionales - Simplificación de Fracciones </title>
+		
+		<!-- Para ligar con el archivo CSS -->
+		<link rel = "stylesheet" href = "styles.css">
+
+		<!-- Para el javascript-->
+		<script src = "code.js"></script>
+		
+		<!--Para la fuente "Mulish"-->
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		
+		<!-- Para el favicon -->
+		<link rel = "icon" type = "image/x-icon" href = "../../../images/favicon.jpg">
+		
+		<!-- Para que se ajuste al dispositivo -->
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		
+		<!-- Para emojis y acentos (un poco como en LaTeX)-->
+		<meta charset = "UTF-8">
+		
+		<!-- Para íconos japo pro-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	</head>
+	
+	<!-- Empieza el cuerpo del sitio -->
+	<body>
+	
+	<!-- Empieza con el banner -->
+	<section id = "banner">
+		<img src = "../../../images/utm.jpg" class = "fadeInUp animacion--normal banner-img">
+		
+		<!-- Caja para el texto -->
+		<div class = "banner-text">
+			<!-- UTM, IFM y Jefatura de carrera -->
+			<h2 class = "fadeInUp animacion--normal">Universidad Tecnológica de la Mixteca</h2>
+			<h2 class = "fadeInUp animacion--normal">Instituto de Física y Matemáticas</h2>
+			<h2 class = "fadeInUp animacion--normal">Jefatura de Carrera de la Licenciatura en Matemáticas Aplicadas</h2>
+		</div>
+	
+	<!-- Termina el banner -->
+	</section>
+
+	<!-- Sección principal (racionales)-->
+	<div id = "tema-title">
+		<h3>Números Racionales</h3>
+	</div>
+	
+	<!-- Empieza la lista de temas -->
+	<div class = "top-nav">
+		<a href = "../../../index.html" id = "home"><span></span>Volver al inicio</a>
+		
+		<nav>
+			<a href = "../01frac_equiv/problems.html"><span></span>Fracciones equivalentes</a>
+			<a href = "../02simp_frac/problems.html"><span></span>Simplificación de Fracciones</a>
+			<a href = "../03orden/problems.html"><span></span>Comparación de acuerdo al orden</a>
+			<a href = "../04suma/problems.html"><span></span>Suma</a>
+			<a href = "../05resta/problems.html"><span></span>Resta</a>
+			<a href = "../06multiplicacion/problems.html"><span></span>Multiplicación</a>
+			<a href = "../07division/problems.html"><span></span>División</a>
+			<!-- <a href = "../08operaciones_combinadas/problems.html"><span></span>Operaciones combinadas</a> -->
+		</nav>
+	</div>
+	<!-- Termina la lista de temas -->
+
+	<!-- Subtema en el que está-->
+	<section id = "subtema" >
+		<div id = "subtema-title">
+			<h2>Simplificación de Fracciones</h2>
+		</div>
+	</section>
+
+	<!--Ejercicio 1: Determinar si un número entero es positivo, negativo
+	o cero cuando el número siempre es positivo-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 1</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la fracción</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una fracción. Tu trabajo es simplificar esa fracción tanto como sea posible. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la fracción simplificada.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio1" onclick = "Ejercicio01()">Generar problema</button>
+				<p>
+					<math class = "fraction_part" display = "block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal contenedor-signo" linethickness="2px">
+								<mrow>
+									<mfrac>
+										<mn id="n1_1"></mn>
+										<mn id="n2_1"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta1" onclick="Respuesta(1)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_1">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_1">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_1">&ZeroWidthSpace;</mn>
+								<mn id = "dr_1">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 1-->
+
+	<!--Ejercicio 2:
+	Es muy similar al Ejercicio 1. Solo hace falta cambiar los subíndices correspondientes
+	y las funciones que son llamadas-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 2</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la fracción</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una fracción. Tu trabajo es simplificar esa fracción tanto como sea posible. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la fracción simplificada.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio2" onclick = "Ejercicio02()">Generar problema</button>
+				<p>
+					<math class = "fraction_part" display = "block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal contenedor-signo" linethickness="2px">
+								<mrow>
+									<mfrac>
+										<mn id="n1_2"></mn>
+										<mn id="n2_2"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta2" onclick="Respuesta(2)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_2">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_2">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_2">&ZeroWidthSpace;</mn>
+								<mn id = "dr_2">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 2-->
+
+	<!--Ejercicio 3:
+	Es muy similar al Ejercicio 2. Solo hace falta cambiar los subíndices correspondientes
+	y las funciones que son llamadas-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 3</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la fracción</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una fracción. Tu trabajo es simplificar esa fracción tanto como sea posible. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la fracción simplificada.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio3" onclick = "Ejercicio03()">Generar problema</button>
+				<p>
+					<math class = "fraction_part" display = "block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal contenedor-signo" linethickness="2px">
+								<mrow>
+									<mfrac>
+										<mn id="n1_3"></mn>
+										<mn id="n2_3"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta3" onclick="Respuesta(3)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_3">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_3">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_3">&ZeroWidthSpace;</mn>
+								<mn id = "dr_3">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 3-->
+
+	<!--Ejercicio 4:
+	Es muy similar al Ejercicio 3. Solo hace falta cambiar los subíndices
+	y las funciones correspondientes-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 4</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la fracción</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una fracción. Tu trabajo es simplificar esa fracción tanto como sea posible. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la fracción simplificada.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio4" onclick = "Ejercicio04()">Generar problema</button>
+				<p>
+					<math class = "fraction_part" display = "block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal contenedor-signo" linethickness="2px">
+								<mrow>
+									<mfrac>
+										<mn id="n1_4"></mn>
+										<mn id="n2_4"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta4" onclick="Respuesta(4)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_4">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_4">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_4">&ZeroWidthSpace;</mn>
+								<mn id = "dr_4">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 4-->
+
+	<!--Ejercicio 5:
+	Es similar al Ejercicio 4. Solo hace falta cambiar los subíndices
+	y las funciones correspondientes-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 5</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la fracción</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una fracción. Tu trabajo es simplificar esa fracción tanto como sea posible. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la fracción simplificada.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio5" onclick = "Ejercicio05()">Generar problema</button>
+				<p>
+					<math class = "fraction_part" display = "block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal contenedor-signo" linethickness="2px">
+								<mrow>
+									<mfrac>
+										<mn id="n1_5"></mn>
+										<mn id="n2_5"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta5" onclick="Respuesta(5)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_5">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_5">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_5">&ZeroWidthSpace;</mn>
+								<mn id = "dr_5">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 5-->
+
+	<!--Ejercicio 6:
+	Es similar al Ejercicio 5. Solo hace falta cambiar los subíndices
+	y las funciones correspondientes-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 6</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la fracción</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una fracción. Tu trabajo es simplificar esa fracción tanto como sea posible. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la fracción simplificada.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio6" onclick = "Ejercicio06()">Generar problema</button>
+				<p>
+					<math class = "fraction_part" display = "block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal contenedor-signo" linethickness="2px">
+								<mrow>
+									<mfrac>
+										<mn id="n1_6"></mn>
+										<mn id="n2_6"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta6" onclick="Respuesta(6)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_6">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_6">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_6">&ZeroWidthSpace;</mn>
+								<mn id = "dr_6">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 6-->
+
+	<!--Ejercicio 7:
+	Es similar al Ejercicio 6. Solo hace falta cambiar los subíndices
+	y las funciones correspondientes-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 7</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la fracción</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una fracción. Tu trabajo es simplificar esa fracción tanto como sea posible. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la fracción simplificada.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio7" onclick = "Ejercicio07()">Generar problema</button>
+				<p>
+					<math class = "fraction_part" display = "block">
+						<mrow>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac class="fraccion_principal contenedor-signo" linethickness="2px">
+								<mrow>
+									<mfrac>
+										<mn id="n1_7"></mn>
+										<mn id="n2_7"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta7" onclick="Respuesta(7)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_7">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_7">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_7">&ZeroWidthSpace;</mn>
+								<mn id = "dr_7">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 7-->
+
+	<!--Ejercicio 8:
+	Esta vez es muy similar al Ejercicio 1. Hace falta cambiar los subíndices
+	y las funciones correspondientes y agregar un espacio para el signo menos,
+	pues los siguientes ejercicios serán con fracciones negativas-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 8</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la fracción</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una fracción. Tu trabajo es simplificar esa fracción tanto como sea posible. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la fracción simplificada.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio8" onclick = "Ejercicio08()">Generar problema</button>
+				<p>
+					<math class = "fraction_part" display = "block">
+						<mrow class = "contenedor-signo">
+							<!--Para el signo menos-->
+							<mo id = "signo1_8">&ZeroWidthSpace;</mo>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac>
+								<mrow>
+									<mfrac>
+										<mn id="n1_8"></mn>
+										<mn id="n2_8"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta8" onclick="Respuesta(8)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_8">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_8">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_8">&ZeroWidthSpace;</mn>
+								<mn id = "dr_8">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 8-->
+
+	<!--Ejercicio 9:
+	Es muy similar al Ejercicio 8. Solo hace falta cambiar los subíndices
+	y las funciones correspondientes. -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 9</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la fracción</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una fracción. Tu trabajo es simplificar esa fracción tanto como sea posible. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la fracción simplificada.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio9" onclick = "Ejercicio09()">Generar problema</button>
+				<p>
+					<math class = "fraction_part" display = "block">
+						<mrow class = "contenedor-signo">
+							<!--Para el signo menos-->
+							<mo id = "signo1_9">&ZeroWidthSpace;</mo>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac>
+								<mrow>
+									<mfrac>
+										<mn id="n1_9"></mn>
+										<mn id="n2_9"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta9" onclick="Respuesta(9)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_9">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_9">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_9">&ZeroWidthSpace;</mn>
+								<mn id = "dr_9">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 9-->
+
+	<!--Ejercicio 10:
+	Es similar al Ejercicio 9. Solo hace falta cambiar los subíndices
+	y las funciones correspondientes-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 10</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la fracción</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una fracción. Tu trabajo es simplificar esa fracción tanto como sea posible. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la fracción simplificada.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio10" onclick = "Ejercicio10()">Generar problema</button>
+				<p>
+					<math class = "fraction_part" display = "block">
+						<mrow class = "contenedor-signo">
+							<!--Para el signo menos-->
+							<mo id = "signo1_10">&ZeroWidthSpace;</mo>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac>
+								<mrow>
+									<mfrac>
+										<mn id="n1_10"></mn>
+										<mn id="n2_10"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta10" onclick="Respuesta(10)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_10">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_10">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_10">&ZeroWidthSpace;</mn>
+								<mn id = "dr_10">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 10-->
+
+	<!--Ejercicio 11:
+	Es similar al Ejercicio 10. Solo hace falta modificar los subíndices de los elementos HTML y las funciones correspondientes-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 11</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la fracción</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una fracción. Tu trabajo es simplificar esa fracción tanto como sea posible. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la fracción simplificada.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio11" onclick = "Ejercicio11()">Generar problema</button>
+				<p>
+					<math class = "fraction_part" display = "block">
+						<mrow class = "contenedor-signo">
+							<!--Para el signo menos-->
+							<mo id = "signo1_11">&ZeroWidthSpace;</mo>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac>
+								<mrow>
+									<mfrac>
+										<mn id="n1_11"></mn>
+										<mn id="n2_11"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta11" onclick="Respuesta(11)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_11">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_11">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_11">&ZeroWidthSpace;</mn>
+								<mn id = "dr_11">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 11-->
+
+	<!--Ejercicio 12:
+	Es similar al Ejercicio 11. Solo hace falta cambiar los subíndices
+	y las funciones correspondientes-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 12</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la fracción</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una fracción. Tu trabajo es simplificar esa fracción tanto como sea posible. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la fracción simplificada.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio12" onclick = "Ejercicio12()">Generar problema</button>
+				<p>
+					<math class = "fraction_part" display = "block">
+						<mrow class = "contenedor-signo">
+							<!--Para el signo menos-->
+							<mo id = "signo1_12">&ZeroWidthSpace;</mo>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac>
+								<mrow>
+									<mfrac>
+										<mn id="n1_12"></mn>
+										<mn id="n2_12"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta12" onclick="Respuesta(12)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_12">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_12">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_12">&ZeroWidthSpace;</mn>
+								<mn id = "dr_12">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 12-->
+
+	<!--Ejercicio 13:
+	Es similar al Ejercicio 12. Solo hace falta cambiar los subíndices y las funciones correspondientes-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 13</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la fracción</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una fracción. Tu trabajo es simplificar esa fracción tanto como sea posible. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la fracción simplificada.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio13" onclick = "Ejercicio13()">Generar problema</button>
+				<p>
+					<math class = "fraction_part" display = "block">
+						<mrow class = "contenedor-signo">
+							<!--Para el signo menos-->
+							<mo id = "signo1_13">&ZeroWidthSpace;</mo>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac>
+								<mrow>
+									<mfrac>
+										<mn id="n1_13"></mn>
+										<mn id="n2_13"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta13" onclick="Respuesta(13)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_13">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_13">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_13">&ZeroWidthSpace;</mn>
+								<mn id = "dr_13">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 13-->
+
+	<!--Ejercicio 14:
+	Es similar al Ejercicio 13. Solo hace falta cambiar los subíndices y las funciones correspondientes-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 14</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la fracción</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una fracción. Tu trabajo es simplificar esa fracción tanto como sea posible. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era la fracción simplificada.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio14" onclick = "Ejercicio14()">Generar problema</button>
+				<p>
+					<math class = "fraction_part" display = "block">
+						<mrow class = "contenedor-signo">
+							<!--Para el signo menos-->
+							<mo id = "signo1_14">&ZeroWidthSpace;</mo>
+							<!-- Añadimos un id a la fracción principal -->
+							<mfrac>
+								<mrow>
+									<mfrac>
+										<mn id="n1_14"></mn>
+										<mn id="n2_14"></mn>
+									</mfrac>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta14" onclick="Respuesta(14)">Respuesta</button>
+				<p>
+					<math class = "fraction_part">
+						<!--La respuesta es una fracción (o un entero)-->
+						<mrow>
+							<!--Puede que la fracción sea negativa-->
+							<mo id = "signor_14">&ZeroWidthSpace;</mo>
+							<!--Puede que la fracción sea un entero-->
+							<mn id = "intr_14">&ZeroWidthSpace;</mn>
+							<!--Puede que la fracción sea una fracción-->
+							<mfrac>
+								<mn id = "nr_14">&ZeroWidthSpace;</mn>
+								<mn id = "dr_14">&ZeroWidthSpace;</mn>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 14-->
+	
+
+
+	<section id = "congrats">
+		<h2>¡Felicidades!</h2>
+		<p>Has llegado al final de este tema. Ya puedes pasar al siguiente.</p>
+	</section>
+
+	<section id = "desplazar">
+		<a class = "desp izq no--decoration" href = "../01frac_equiv/problems.html">
+			<i class="fa fa-arrow-left"></i>
+			<div class = "desp-text">
+				Fracciones <br>equivalentes
+			</div>
+		</a>
+		
+		<a class = "desp der no--decoration" href = "../03orden/problems.html">
+			<div class = "desp-text">
+				Comparación <br>por orden
+			</div>
+			<i class="fa fa-arrow-right"></i>
+		</a>
+	</section>
+	
+	<section id = "website-end"> </section>
+	
+	
+	</body>
+	
+	
+</html>

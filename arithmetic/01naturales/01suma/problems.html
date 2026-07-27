@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Título del sitio de inicio -->
+		<title> Naturales - Suma </title>
+		
+		<!-- Para ligar con el archivo CSS -->
+		<link rel = "stylesheet" href = "styles.css">
+
+		<!-- Para el javascript-->
+		<script src = "code.js"></script>
+		
+		<!--Para la fuente "Molish"-->
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		
+		<!-- Para el favicon -->
+		<link rel = "icon" type = "image/x-icon" href = "../../../images/favicon.jpg">
+		
+		<!-- Para que se ajuste al dispositivo -->
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		
+		<!-- Para emojis y acentos (un poco como en LaTeX)-->
+		<meta charset = "UTF-8">
+		
+		<!-- Para íconos japo pro-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	</head>
+	
+	<!-- Empieza el cuerpo del sitio -->
+	<body>
+	
+	<!-- Empieza con el banner -->
+	<section id = "banner">
+		<img src = "../../../images/utm.jpg" class = "fadeInUp animacion--normal banner-img">
+		
+		<!-- Caja para el texto -->
+		<div class = "banner-text">
+			<!-- UTM, IFM y Jefatura de carrera -->
+			<h2 class = "fadeInUp animacion--normal">Universidad Tecnológica de la Mixteca</h2>
+			<h2 class = "fadeInUp animacion--normal">Instituto de Física y Matemáticas</h2>
+			<h2 class = "fadeInUp animacion--normal">Jefatura de Carrera de la Licenciatura en Matemáticas Aplicadas</h2>
+		</div>
+	
+	<!-- Termina el banner -->
+	</section>
+
+	<!-- Sección principal (naturales)-->
+	<div id = "tema-title">
+		<h3>Números naturales</h3>
+	</div>
+	
+	<!-- Empieza la lista de temas -->
+	<div class = "top-nav">
+		<a href = "../../../index.html" id = "home"><span></span>Volver al inicio</a>
+		
+		<nav>
+			<a href = "../01suma/problems.html"><span></span>Suma</a>
+			<a href = "../02orden/problems.html"><span></span>Comparación de acuerdo al orden</a>
+			<a href = "../03resta/problems.html"><span></span>Resta</a>
+			<a href = "../04mult/problems.html"><span></span>Multiplicación</a>
+			<a href = "../05divisibilidad/problems.html"><span></span>Criterios de divisibilidad</a>
+			<a href = "../06primos/problems.html"><span></span>Factorización</a>
+			<a href = "../07mcd/problems.html"><span></span>Máximo común divisor</a>
+			<a href = "../08mcm/problems.html"><span></span>Mínimo común múltiplo</a>
+		</nav>
+	</div>
+	<!-- Termina la lista de temas -->
+
+	<!-- Subtema en el que está-->
+	<section id = "subtema" >
+		<div id = "subtema-title">
+			<h2>Suma</h2>
+		</div>
+	</section>
+
+	<!--Ejercicio 1: Tabla del 0-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 1</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Ejercicios de la tabla del cero.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma que debes hacer. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta".
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio1" onclick = "EjercicioTabla(0)">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "s1_0"></mn>
+							<mo id = "op_0"></mo>
+							<mn id = "s2_0"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta1" onclick="RespuestaTabla(0)">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_0"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!--Ejercicio 2: Tabla del 1-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 2</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Ejercicios de la tabla del uno.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma que debes hacer. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta".
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio2" onclick = "EjercicioTabla(1)">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "s1_1"></mn>
+							<mo id = "op_1"></mo>
+							<mn id = "s2_1"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta2" onclick="RespuestaTabla(1)">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_1"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!--Ejercicio 3: Tabla del 2-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 3</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Ejercicios de la tabla del dos.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma que debes hacer. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta".
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio3" onclick = "EjercicioTabla(2)">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "s1_2"></mn>
+							<mo id = "op_2"></mo>
+							<mn id = "s2_2"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta3" onclick="RespuestaTabla(2)">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_2"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!--Ejercicio 4: Tabla del 3-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 4</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Ejercicios de la tabla del tres.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma que debes hacer. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta".
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio4" onclick = "EjercicioTabla(3)">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "s1_3"></mn>
+							<mo id = "op_3"></mo>
+							<mn id = "s2_3"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta4" onclick="RespuestaTabla(3)">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_3"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!--Ejercicio 5: Tabla del 4-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 5</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Ejercicios de la tabla del cuatro.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma que debes hacer. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta".
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio5" onclick = "EjercicioTabla(4)">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "s1_4"></mn>
+							<mo id = "op_4"></mo>
+							<mn id = "s2_4"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta5" onclick="RespuestaTabla(4)">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_4"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!--Ejercicio 6: Tabla del 5-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 6</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Ejercicios de la tabla del cinco.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma que debes hacer. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta".
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio6" onclick = "EjercicioTabla(5)">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "s1_5"></mn>
+							<mo id = "op_5"></mo>
+							<mn id = "s2_5"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta6" onclick="RespuestaTabla(5)">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_5"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!--Ejercicio 7: Tabla del 6-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 7</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Ejercicios de la tabla del seis.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma que debes hacer. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta".
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio7" onclick = "EjercicioTabla(6)">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "s1_6"></mn>
+							<mo id = "op_6"></mo>
+							<mn id = "s2_6"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta7" onclick="RespuestaTabla(6)">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_6"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!--Ejercicio 8: Tabla del 7-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 8</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Ejercicios de la tabla del siete.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma que debes hacer. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta".
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio8" onclick = "EjercicioTabla(7)">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "s1_7"></mn>
+							<mo id = "op_7"></mo>
+							<mn id = "s2_7"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta8" onclick="RespuestaTabla(7)">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_7"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!--Ejercicio 9: Tabla del 8-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 9</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Ejercicios de la tabla del ocho.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma que debes hacer. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta".
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio9" onclick = "EjercicioTabla(8)">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "s1_8"></mn>
+							<mo id = "op_8"></mo>
+							<mn id = "s2_8"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta9" onclick="RespuestaTabla(8)">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_8"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!--Ejercicio 10: Tabla del 9-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 10</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Ejercicios de la tabla del nueve.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma que debes hacer. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta".
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio10" onclick = "EjercicioTabla(9)">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "s1_9"></mn>
+							<mo id = "op_9"></mo>
+							<mn id = "s2_9"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta10" onclick="RespuestaTabla(9)">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_9"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!--Ejercicio 11: Suma general 1-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 11</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Sumas generales de dos números.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma que debes hacer. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta".
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio11" onclick = "Ejercicio10()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "s1_10"></mn>
+							<mo id = "op_10"></mo>
+							<mn id = "s2_10"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta11" onclick="Respuesta10()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_10"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!--Ejercicio 12: Suma general 2-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 12</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Sumas generales de dos números.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma que debes hacer. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta".
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio12" onclick = "Ejercicio11()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "s1_11"></mn>
+							<mo id = "op_11"></mo>
+							<mn id = "s2_11"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta12" onclick="Respuesta11()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_11"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+	<!--Ejercicio 13: Suma general 3-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 13</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Sumas generales de tres números.</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma que debes hacer. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta".
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio13" onclick = "Ejercicio12()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "s1_12"></mn>
+							<mo id = "op1_12"></mo>
+							<mn id = "s2_12"></mn>
+							<mo id = "op2_12"></mo>
+							<mn id = "s3_12"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta13" onclick="Respuesta12()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r_12"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+
+
+	<section id = "congrats">
+		<h2>¡Felicidades!</h2>
+		<p>Has llegado al final de este tema. Ya puedes pasar al siguiente.</p>
+	</section>
+
+	<section id = "desplazar">
+		<a class = "desp izq no--decoration" href = "../../../index.html">
+			<i class="fa fa-arrow-left"></i>
+			<div class = "desp-text">
+				Inicio
+			</div>
+		</a>
+		
+		<a class = "desp der no--decoration" href = "../02orden/problems.html">
+			<div class = "desp-text">
+				Comparación <br>por orden
+			</div>
+			<i class="fa fa-arrow-right"></i>
+		</a>
+	</section>
+	
+	<section id = "website-end"> </section>
+	
+	</body>
+	
+	
+</html>

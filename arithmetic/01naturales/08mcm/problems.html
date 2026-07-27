@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Título del sitio de inicio -->
+		<title> Naturales - mcm </title>
+		
+		<!-- Para ligar con el archivo CSS -->
+		<link rel = "stylesheet" href = "styles.css">
+
+		<!-- Para el javascript-->
+		<script src = "code.js"></script>
+		
+		<!--Para la fuente "Mulish"-->
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		
+		<!-- Para el favicon -->
+		<link rel = "icon" type = "image/x-icon" href = "../../../images/favicon.jpg">
+		
+		<!-- Para que se ajuste al dispositivo -->
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		
+		<!-- Para emojis y acentos (un poco como en LaTeX)-->
+		<meta charset = "UTF-8">
+		
+		<!-- Para íconos elegantes-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	</head>
+	
+	<!-- Empieza el cuerpo del sitio -->
+	<body>
+	
+	<!-- Empieza con el banner -->
+	<section id = "banner">
+		<img src = "../../../images/utm.jpg" class = "fadeInUp animacion--normal banner-img">
+		
+		<!-- Caja para el texto -->
+		<div class = "banner-text">
+			<!-- UTM, IFM y Jefatura de carrera -->
+			<h2 class = "fadeInUp animacion--normal">Universidad Tecnológica de la Mixteca</h2>
+			<h2 class = "fadeInUp animacion--normal">Instituto de Física y Matemáticas</h2>
+			<h2 class = "fadeInUp animacion--normal">Jefatura de Carrera de la Licenciatura en Matemáticas Aplicadas</h2>
+		</div>
+	
+	<!-- Termina el banner -->
+	</section>
+
+	<!-- Sección principal (naturales)-->
+	<div id = "tema-title">
+		<h3>Números naturales</h3>
+	</div>
+	
+	<!-- Empieza la lista de temas -->
+	<div class = "top-nav">
+		<a href = "../../../index.html" id = "home"><span></span>Volver al inicio</a>
+		
+		<nav>
+			<a href = "../01suma/problems.html"><span></span>Suma</a>
+			<a href = "../02orden/problems.html"><span></span>Comparación de acuerdo al orden</a>
+			<a href = "../03resta/problems.html"><span></span>Resta</a>
+			<a href = "../04mult/problems.html"><span></span>Multiplicación</a>
+			<a href = "../05divisibilidad/problems.html"><span></span>Criterios de divisibilidad</a>
+			<a href = "../06primos/problems.html"><span></span>Factorización</a>
+			<a href = "../07mcd/problems.html"><span></span>Máximo común divisor</a>
+			<a href = "../08mcm/problems.html"><span></span>Mínimo común múltiplo</a>
+		</nav>
+	</div>
+	<!-- Termina la lista de temas -->
+
+	<!-- Subtema en el que está-->
+	<section id = "subtema" >
+		<div id = "subtema-title">
+			<h2>Mínimo Común Múltiplo</h2>
+		</div>
+	</section>
+
+	<!-- Aquí van los ejercicios -->
+
+	<!--Ejercicio 1: Hallar los primeros 6 múltiplos de un número-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 1</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Hallar múltiplos</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá un número. Tu trabajo es encontrar sus primeros 6 múltiplos. Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuáles eran esos múltiplos.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio1" onclick = "Ejercicio01()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "n_1"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta1" onclick="Respuesta01()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "m1_1"></mn>
+							<mspace width = "0.5em"></mspace>
+						</mrow>
+					</math>	
+				</p>
+				<p id="r_1", style = "font-family: 'Times New Roman', Times, serif;">
+					<br>
+				</p>
+			</div>
+		</section>
+	</section>
+	<!--Termina el Ejercicio 1-->
+
+	<!--Ejercicio 2: Generar dos números y hallar los primeros 6 múltiplos y el primer múltiplo común-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 2</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Hallar múltiplos</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos números. Tu trabajo es encontrar sus primeros 6 múltiplos, así como 
+					su primer múltiplo común. Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuáles eran esos múltiplos, y cuál era su primer múltiplo común.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio2" onclick = "Ejercicio02()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "n1_2"></mn>
+							<mo id = "comma_2"></mo>
+							<mspace width = "0.5em"></mspace>
+							<mn id = "n2_2"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta2" onclick="Respuesta02()">Respuesta</button>
+				<p style = "font-family: 'Times New Roman', Times, serif;"><span id="m1_2"></span>&ZeroWidthSpace;<span id="r1_2"></span></p>
+				<p style = "font-family: 'Times New Roman', Times, serif;"><span id="m2_2"></span>&ZeroWidthSpace;<span id="r2_2"></span></p>
+				<p style = "font-family: 'Times New Roman', Times, serif;"><span id="m3_2"></span>&ZeroWidthSpace;<span id="r3_2"></span></p>
+			</div>
+		</section>
+	</section>
+	<!--Termina el Ejercicio 2-->
+
+	<!--Ejercicio 3: Identificar el mcm de dos números factorizados 2^n1·3^n2 y 2^n3·3^n4-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 3</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Hallar el mcm</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos números factorizados. Tu trabajo es encontrar su mínimo común 
+					múltiplo (mcm). Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era su mcm.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio3" onclick = "Ejercicio03()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<msup>
+								<mn id = "c1n1_3"></mn><mn id = "e1n1_3"></mn>
+							</msup>
+							<mo id = "operator1_3"></mo>
+							<msup>
+								<mn id = "c2n1_3"></mn><mn id = "e2n1_3"></mn>
+							</msup>
+							<mo id = "comma_3"></mo>
+							<mspace width = "0.5em"></mspace>
+							<msup>
+								<mn id = "c1n2_3"></mn><mn id = "e1n2_3"></mn>
+							</msup>
+							<mo id = "operator2_3"></mo>
+							<msup>
+								<mn id = "c2n2_3"></mn><mn id = "e2n2_3"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta3" onclick="Respuesta03()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mtext id="m1_3"></mtext>
+							<mspace width = "0.5em"></mspace>
+							<mn id="r_3"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section>
+	<!--Termina el Ejercicio 3-->
+
+	<!--Ejercicio 4: Encontrar el mcm en forma factorizada de dos números con dos factores comunes y uno no común-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 4</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Hallar el mcm</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos números factorizados. Tu trabajo es encontrar su mínimo común 
+					múltiplo (mcm) en forma factorizada, no hace falta que hagas los cálculos. Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era su mcm en forma factorizada.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio4" onclick = "Ejercicio04()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<msup>
+								<mi id = "f1n1_4"></mi><mn id = "e1n1_4"></mn>
+							</msup>
+							<mo id = "op1n1_4"></mo>
+							<msup>
+								<mi id = "f2n1_4"></mi><mn id = "e2n1_4"></mn>
+							</msup>
+							<mo id = "op2n1_4"></mo>
+							<msup>
+								<mi id = "f3n1_4"></mi><mn id = "e3n1_4"></mn>
+							</msup>
+							<mo id = "comma_4"></mo>
+							<msup>
+								<mi id = "f1n2_4"></mi><mn id = "e1n2_4"></mn>
+							</msup>
+							<mo id = "op1n2_4"></mo>
+							<msup>
+								<mi id = "f2n2_4"></mi><mn id = "e2n2_4"></mn>
+							</msup>
+							<mo id = "op2n2_4"></mo>
+							<msup>
+								<mi id = "f3n2_4"></mi><mn id = "e3n2_4"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta4" onclick="Respuesta04()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mtext id = "m1_4">&ZeroWidthSpace;</mtext>
+						</mrow>
+					</math>
+				</p>
+				<p>
+					<math>
+						<mrow>
+							<mtext>&ZeroWidthSpace;</mtext>
+							<msup>
+								<mn id = "f1r_4"></mn><mn id = "e1r_4"></mn>
+							</msup>
+							<mo id = "op1r_4"></mo>
+							<msup>
+								<mn id = "f2r_4"></mn><mn id = "e2r_4"></mn>
+							</msup>
+							<mo id = "op2r_4"></mo>
+							<msup>
+								<mn id = "f3r_4"></mn><mn id = "e3r_4"></mn>
+							</msup>
+							<mo id = "op3r_4"></mo>
+							<msup>
+								<mn id = "f4r_4"></mn><mn id = "e4r_4"></mn>
+							</msup>
+						</mrow>
+					</math>
+			</p>
+			</div>
+		</section>
+	</section>
+	<!--Termina el Ejercicio 4-->
+
+	<!--Ejercicio 5: Calcular el mcm de dos números no factorizados-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 5</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Hallar el mcm</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos números, pero esta vez sin factorizar. Tu trabajo es encontrar su mínimo común 
+					múltiplo (mcm). Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era su mcm.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio5" onclick = "Ejercicio05()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "n1_5"></mn>
+							<mo id = "comma_5"></mo>
+							<mspace width = "0.5em"></mspace>
+							<mn id = "n2_5"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta5" onclick="Respuesta05()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mtext id = "m1_5">&ZeroWidthSpace;</mtext>
+							<mspace width = "0.5em"></mspace>
+							<mn id = "r_5"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section>
+	<!--Termina el Ejercicio 5-->
+
+	<!--Ejercicio 6: Calcular MCD y mcm de dos números no factorizados-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 6</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Hallar el mcm</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos números sin factorizar. Tu trabajo es encontrar su 
+					Máximo Común Divisor y su mínimo común 
+					múltiplo (mcm). Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuáles eran su MCD y su mcm.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio6" onclick = "Ejercicio06()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "n1_6"></mn>
+							<mo id = "comma_6"></mo>
+							<mn id = "n2_6"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta6" onclick="Respuesta06()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id="m1_6"></mn>
+							<mspace width = "0.5em"></mspace>
+							<mn id="r_6"></mn>
+						</mrow>
+					</math>
+				</p>
+
+				<p>
+					<math>
+						<mrow>
+							<mn id="m2_6"></mn>
+							<mspace width = "0.5em"></mspace>
+							<mn id="r2_6"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section>
+	<!--Termina el Ejercicio 6-->
+
+	<section id = "congrats">
+		<h2>¡Felicidades!</h2>
+		<p>Has llegado al final de este tema. Ya puedes pasar al siguiente.</p>
+	</section>
+
+	<section id = "desplazar">
+		<a class = "desp izq no--decoration" href = "../07mcd/problems.html">
+			<i class="fa fa-arrow-left"></i>
+			<div class = "desp-text">
+				MCD
+			</div>
+		</a>
+		
+		<a class = "desp der no--decoration" href = "../../02enteros/01pos_and_neg/problems.html">
+			<div class = "desp-text">
+				Positivos y <br>negativos
+			</div>
+			<i class="fa fa-arrow-right"></i>
+		</a>
+	</section>
+	
+	<section id = "website-end"> </section>
+	
+	</body>
+	
+	
+</html>

@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Título del sitio de inicio -->
+		<title> Enteros - Operaciones Combinadas </title>
+		
+		<!-- Para ligar con el archivo CSS -->
+		<link rel = "stylesheet" href = "styles.css">
+
+		<!-- Para el javascript-->
+		<script src = "code.js"></script>
+		
+		<!--Para la fuente "Molish"-->
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		
+		<!-- Para el favicon -->
+		<link rel = "icon" type = "image/x-icon" href = "../../../images/favicon.jpg">
+		
+		<!-- Para que se ajuste al dispositivo -->
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		
+		<!-- Para emojis y acentos (un poco como en LaTeX)-->
+		<meta charset = "UTF-8">
+		
+		<!-- Para íconos japo pro-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	</head>
+	
+	<!-- Empieza el cuerpo del sitio -->
+	<body>
+	
+	<!-- Empieza con el banner -->
+	<section id = "banner">
+		<img src = "../../../images/utm.jpg" class = "fadeInUp animacion--normal banner-img">
+		
+		<!-- Caja para el texto -->
+		<div class = "banner-text">
+			<!-- UTM, IFM y Jefatura de carrera -->
+			<h2 class = "fadeInUp animacion--normal">Universidad Tecnológica de la Mixteca</h2>
+			<h2 class = "fadeInUp animacion--normal">Instituto de Física y Matemáticas</h2>
+			<h2 class = "fadeInUp animacion--normal">Jefatura de Carrera de la Licenciatura en Matemáticas Aplicadas</h2>
+		</div>
+	
+	<!-- Termina el banner -->
+	</section>
+
+	<!-- Sección principal (enteros)-->
+	<div id = "tema-title">
+		<h3>Números enteros</h3>
+	</div>
+	
+	<!-- Empieza la lista de temas -->
+	<div class = "top-nav">
+		<a href = "../../../index.html" id = "home"><span></span>Volver al inicio</a>
+		
+		<nav>
+			<a href = "../01pos_and_neg/problems.html"><span></span>Enteros positivos y negativos</a>
+			<a href = "../02orden/problems.html"><span></span>Comparación de acuerdo al orden</a>
+			<a href = "../03abs/problems.html"><span></span>Valor absoluto</a>
+			<a href = "../04suma/problems.html"><span></span>Suma</a>
+			<a href = "../05resta/problems.html"><span></span>Resta</a>
+			<a href = "../06suma_resta_comb/problems.html"><span></span>Suma y Resta combinadas</a>
+			<a href = "../07mult/problems.html"><span></span>Multiplicación</a>
+			<a href = "../08op_comb/problems.html"><span></span>Operaciones combinadas</a>
+		</nav>
+	</div>
+	<!-- Termina la lista de temas -->
+
+	<!-- Subtema en el que está-->
+	<section id = "subtema" >
+		<div id = "subtema-title">
+			<h2>Operaciones Combinadas</h2>
+		</div>
+	</section>
+
+	<!--Ejercicio 1-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 1</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Sumas con tres números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio1" onclick = "Ejercicio01()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+						<mi id="a1"></mi>
+						<mo id="op1_1"></mo>
+						<mrow>
+							<mo id="par1_1"></mo>
+							<mi id="b1"></mi>
+							<mo id="op2_1"></mo>
+							<mi id="c1"></mi>
+							<mo id="par2_1"></mo>
+						</mrow>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta1" onclick="Respuesta01()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r1"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 1-->
+
+
+	<!--Ejercicio 2:
+	Es exactamente igual al Ejercicio. Solo hace falta cambiar los IDs y las funciones correspondientes.-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 2</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Sumas con tres números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una suma que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio2" onclick = "Ejercicio02()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mo id="par1_2"></mo>
+							<mn id="a2"></mn> 
+							<mo id="op1_2"></mo> 
+							<mn id="b2"></mn>
+							<mo id="par2_2"></mo>
+							<mo id="op2_2"></mo>
+							<mn id="c2"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta2" onclick="Respuesta02()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r2"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 2-->
+
+	<!--Ejercicio 3-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 3</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Suma y resta con tres números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio3" onclick = "Ejercicio03()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mi id="a3"></mi>
+							<mo id="op1_3"></mo>
+							<mrow>
+								<mo id="par1_3"></mo>
+								<mi id="b3"></mi>
+								<mo id="op2_3"></mo>
+								<mi id="c3"></mi>
+								<mo id="par2_3"></mo>
+							</mrow>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta3" onclick="Respuesta03()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r3"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 3-->
+
+	<!--Ejercicio 4-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 4</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Suma y resta con tres números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio4" onclick = "Ejercicio04()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mi id="a4"></mi>
+							<mo id="op1_4"></mo>
+							<mrow>
+								<mo id="par1_4"></mo>
+								<mi id="b4"></mi>
+								<mo id="op2_4"></mo>
+								<mi id="c4"></mi>
+								<mo id="par2_4"></mo>
+							</mrow>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta4" onclick="Respuesta04()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r4"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 4-->
+
+	<!--Ejercicio 5-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 5</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Suma y resta con tres números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio5" onclick = "Ejercicio05()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+						<mi id="a5"></mi>
+						<mo id="op1_5"></mo>
+						<mrow>
+							<mo id="par1_5"></mo>
+							<mi id="b5"></mi>
+							<mo id="op2_5"></mo>
+							<mi id="c5"></mi>
+							<mo id="par2_5"></mo>
+						</mrow>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta5" onclick="Respuesta05()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r5"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 5-->
+
+	<!--Ejercicio 6-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 6</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Suma y resta con tres números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio6" onclick = "Ejercicio06()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mo id="op1_6"></mo>
+							<mo id="par1_6"></mo>
+							<mn id="a6"></mn> 
+							<mo id="op2_6"></mo> 
+							<mn id="b6"></mn>
+							<mo id="par2_6"></mo>
+							<mo id="op3_6"></mo>
+							<mn id="c6"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta6" onclick="Respuesta06()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r6"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 6-->
+
+	<!--Ejercicio 7-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 7</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Suma y resta con tres números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio7" onclick = "Ejercicio07()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mo id="op1_7"></mo>
+							<mo id="par1_7"></mo>
+							<mn id="a7"></mn> 
+							<mo id="op2_7"></mo> 
+							<mn id="b7"></mn>
+							<mo id="par2_7"></mo>
+							<mo id="op3_7"></mo>
+							<mn id="c7"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta7" onclick="Respuesta07()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r7"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 7-->
+
+	<!--Ejercicio 8-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 8</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Suma y resta con tres números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio8" onclick = "Ejercicio08()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+						<mo id="op1_8"></mo>
+						<mi id="a8"></mi>
+						<mo id="op2_8"></mo>
+						<mrow>
+							<mo id="par1_8"></mo>
+							<mi id="b8"></mi>
+							<mo id="op3_8"></mo>
+							<mi id="c8"></mi>
+							<mo id="par2_8"></mo>
+						</mrow>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta8" onclick="Respuesta08()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r8"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 8-->
+
+	<!--Ejercicio 9-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 9</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Suma y resta con tres números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio9" onclick = "Ejercicio09()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mo id="op1_9"></mo>
+							<mo id="par1_9"></mo>
+							<mn id="a9"></mn> 
+							<mo id="op2_9"></mo> 
+							<mn id="b9"></mn>
+							<mo id="par2_9"></mo>
+							<mo id="op3_9"></mo>
+							<mn id="c9"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta9" onclick="Respuesta09()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r9"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 9-->
+
+	<!--Ejercicio 10-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 10</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con tres números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio10" onclick = "Ejercicio10()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>								
+							<mn id="a10"></mn> 
+							<mo id="op1_10"></mo> 
+							<mn id="b10"></mn>
+							<mo id="op2_10"></mo>
+							<mn id="c10"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta10" onclick="Respuesta10()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r10"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 10-->
+
+	<!--Ejercicio 11-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 11</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con tres números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio11" onclick = "Ejercicio11()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>								
+							<mn id="a11"></mn> 
+							<mo id="op1_11"></mo> 
+							<mo id="par1_11"></mo>
+							<mn id="b11"></mn>
+							<mo id="op2_11"></mo>
+							<mn id="c11"></mn>
+							<mo id="par2_11"></mo>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta11" onclick="Respuesta11()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r11"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 11-->
+
+	<!--Ejercicio 12-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 12</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con tres números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio12" onclick = "Ejercicio12()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>								
+							<mn id="a12"></mn> 
+							<mo id="op1_12"></mo> 
+							<mn id="b12"></mn>
+							<mo id="op2_12"></mo>
+							<mn id="c12"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta12" onclick="Respuesta12()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r12"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 12-->
+
+	<!--Ejercicio 13-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 13</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con tres números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio13" onclick = "Ejercicio13()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>								
+							<mn id="a13"></mn> 
+							<mo id="op1_13"></mo> 
+							<mo id="par1_13"></mo>
+							<mn id="b13"></mn>
+							<mo id="op2_13"></mo>
+							<mn id="c13"></mn>
+							<mo id="par2_13"></mo>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta13" onclick="Respuesta13()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r13"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 13-->
+
+	<!--Ejercicio 14-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 14</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>SOperaciones con cuatro números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio14" onclick = "Ejercicio14()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id="a14"></mn> 
+							<mo id="op1_14"></mo> 
+							<mn id="b14"></mn>
+							<mo id="op2_14"></mo>
+							<mn id="c14"></mn>
+							<mo id="op3_14"></mo>
+							<mn id="d14"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta14" onclick="Respuesta14()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r14"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 14-->
+
+	<!--Ejercicio 15-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 15</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con cuatro números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio15" onclick = "Ejercicio15()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id="a15"></mn>
+							<mo id="op1_15"></mo>
+							<mn id="b15"></mn> 
+							<mo id="op2_15"></mo> 
+							<mo id="par1_15"></mo>
+							<mn id="c15"></mn>
+							<mo id="op3_15"></mo>
+							<mn id="d15"></mn>
+							<mo id="par2_15"></mo>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta15" onclick="Respuesta15()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r15"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 15-->
+
+	<!--Ejercicio 16-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 16</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con cuatro números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio16" onclick = "Ejercicio16()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mo id="par1_16"></mo>
+							<mn id="a16"></mn> 
+							<mo id="op1_16"></mo> 
+							<mn id="b16"></mn>
+							<mo id="par2_16"></mo>
+							<mo id="op2_16"></mo>
+							<mo id="par3_16"></mo>
+							<mn id="c16"></mn>
+							<mo id="op3_16"></mo>
+							<mn id="d16"></mn>
+							<mo id="par4_16"></mo>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta16" onclick="Respuesta16()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r16"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 16-->
+
+	<!--Ejercicio 17-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 17</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con cuatro números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio17" onclick = "Ejercicio17()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id="a17"></mn> 
+							<mo id="op1_17"></mo> 
+							<mn id="b17"></mn>
+							<mo id="op2_17"></mo>
+							<mn id="c17"></mn>
+							<mo id="op3_17"></mo>
+							<mn id="d17"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta17" onclick="Respuesta17()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r17"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 17-->
+
+	<!--Ejercicio 18-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 18</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con cuatro números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio18" onclick = "Ejercicio18()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id="a18"></mn>
+							<mo id="op1_18"></mo>
+							<mn id="b18"></mn> 
+							<mo id="op2_18"></mo> 
+							<mo id="par1_18"></mo>
+							<mn id="c18"></mn>
+							<mo id="op3_18"></mo>
+							<mn id="d18"></mn>
+							<mo id="par2_18"></mo>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta18" onclick="Respuesta18()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r18"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 18-->
+
+	<!--Ejercicio 19-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 19</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con cuatro números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio19" onclick = "Ejercicio19()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mo id="par1_19"></mo>
+							<mn id="a19"></mn> 
+							<mo id="op1_19"></mo> 
+							<mn id="b19"></mn>
+							<mo id="par2_19"></mo>
+							<mo id="op2_19"></mo>
+							<mo id="par3_19"></mo>
+							<mn id="c19"></mn>
+							<mo id="op3_19"></mo>
+							<mn id="d19"></mn>
+							<mo id="par4_19"></mo>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta19" onclick="Respuesta19()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r19"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 19-->
+
+	<!--Ejercicio 20-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 20</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con cuatro números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio20" onclick = "Ejercicio20()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id="a20"></mn> 
+							<mo id="op1_20"></mo> 
+							<mn id="b20"></mn>
+							<mo id="op2_20"></mo>
+							<mn id="c20"></mn>
+							<mo id="op3_20"></mo>
+							<mn id="d20"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta20" onclick="Respuesta20()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r20"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 20-->
+
+	<!--Ejercicio 21-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 21</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con cuatro números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio21" onclick = "Ejercicio21()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id="a21"></mn>
+							<mo id="op1_21"></mo>
+							<mn id="b21"></mn> 
+							<mo id="op2_21"></mo> 
+							<mo id="par1_21"></mo>
+							<mn id="c21"></mn>
+							<mo id="op3_21"></mo>
+							<mn id="d21"></mn>
+							<mo id="par2_21"></mo>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta21" onclick="Respuesta21()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r21"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 21-->
+
+	<!--Ejercicio 22-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 22</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con cuatro números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio22" onclick = "Ejercicio22()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mo id="par1_22"></mo>
+							<mn id="a22"></mn> 
+							<mo id="op1_22"></mo> 
+							<mn id="b22"></mn>
+							<mo id="par2_22"></mo>
+							<mo id="op2_22"></mo>
+							<mo id="par3_22"></mo>
+							<mn id="c22"></mn>
+							<mo id="op3_22"></mo>
+							<mn id="d22"></mn>
+							<mo id="par4_22"></mo>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta22" onclick="Respuesta22()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r22"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 22-->
+
+	<!--Ejercicio 23-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 23</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con cuatro números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio23" onclick = "Ejercicio23()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>								
+							<mn id="a23"></mn> 
+							<mo id="op1_23"></mo> 
+							<mn id="b23"></mn>
+							<mo id="op2_23"></mo>
+							<mn id="c23"></mn>
+							<mo id="op3_23"></mo>
+							<mn id="d23"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta23" onclick="Respuesta23()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r23"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 23-->
+
+	<!--Ejercicio 24-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 24</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con cuatro números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio24" onclick = "Ejercicio24()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>								
+							<mn id="a24"></mn> 
+							<mo id="op1_24"></mo> 
+							<mo id="par1_24"></mo>
+							<mn id="b24"></mn>
+							<mo id="op2_24"></mo>
+							<mn id="c24"></mn>
+							<mo id="par2_24"></mo>
+							<mo id="op3_24"></mo>
+							<mn id="d24"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta24" onclick="Respuesta24()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r24"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 24-->
+
+	<!--Ejercicio 25-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 25</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con cuatro números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio25" onclick = "Ejercicio25()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id="a25"></mn>
+							<mo id="op1_25"></mo>
+							<mn id="b25"></mn> 
+							<mo id="op2_25"></mo> 
+							<mo id="par1_25"></mo>
+							<mn id="c25"></mn>
+							<mo id="op3_25"></mo>
+							<mn id="d25"></mn>
+							<mo id="par2_25"></mo>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta25" onclick="Respuesta25()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r25"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 25-->
+
+	<!--Ejercicio 26-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 26</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con cuatro números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio26" onclick = "Ejercicio26()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+						<mn id="a26"></mn>
+						<mo id="op1_26"></mo>
+						<mo id="par1_26"></mo>
+						<mn id="b26"></mn>
+						<mo id="op2_26"></mo>
+						<mo id="par2_26"></mo>
+						<mi id="c26"></mi>
+						<mo id="op3_26"></mo>
+						<mn id="d26"></mn>
+						<mo id="par3_26"></mo>
+						<mo id="par4_26"></mo>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta26" onclick="Respuesta26()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r26"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 26-->
+
+	<!--Ejercicio 27-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 27</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con cuatro números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio27" onclick = "Ejercicio27()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>								
+							<mo id="op1_27"></mo>
+							<mn id="a27"></mn> 
+							<mo id="op2_27"></mo> 
+							<mn id="b27"></mn>
+							<mo id="op3_27"></mo>
+							<mn id="c27"></mn>
+							<mo id="op4_27"></mo>
+							<mn id="d27"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta27" onclick="Respuesta27()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r27"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 27-->
+
+	<!--Ejercicio 28-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 28</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con cuatro números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio28" onclick = "Ejercicio28()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>								
+							<mo id="op1_28"></mo> 
+							<mn id="a28"></mn> 
+							<mo id="op2_28"></mo> 
+							<mo id="par1_28"></mo>
+							<mn id="b28"></mn>
+							<mo id="op3_28"></mo>
+							<mn id="c28"></mn>
+							<mo id="par2_28"></mo>
+							<mo id="op4_28"></mo>
+							<mn id="d28"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta28" onclick="Respuesta28()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r28"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 28-->
+
+	<!--Ejercicio 29-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 29</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con cuatro números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio29" onclick = "Ejercicio29()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>								
+							<mo id="op1_29"></mo> 
+							<mn id="a29"></mn> 
+							<mo id="op2_29"></mo> 
+							<mn id="b29"></mn>
+							<mo id="op3_29"></mo>
+							<mo id="par1_29"></mo>
+							<mn id="c29"></mn>								
+							<mo id="op4_29"></mo>
+							<mn id="d29"></mn>
+							<mo id="par2_29"></mo>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta29" onclick="Respuesta29()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r29"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 29-->
+
+	<!--Ejercicio 30-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 30</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Operaciones con cuatro números</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una operación que debes resolver. Si crees tener la respuesta, verifícala
+					haciendo click en "Respuesta". <br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio30" onclick = "Ejercicio30()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+						<mo id="op1_30"></mo>
+						<mn id="a30"></mn>
+						<mo id="op2_30"></mo>
+						<mo id="par1_30"></mo>
+						<mn id="b30"></mn>
+						<mo id="op3_30"></mo>
+						<mo id="par2_30"></mo>
+						<mn id="c30"></mn>
+						<mo id="op4_30"></mo>
+						<mn id="d30"></mn>
+						<mo id="par3_30"></mo>
+						<mo id="par4_30"></mo>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta30" onclick="Respuesta30()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "r30"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 30-->
+
+
+
+	
+
+	<section id = "congrats">
+		<h2>¡Felicidades!</h2>
+		<p>Has llegado al final de este tema. Ya puedes pasar al siguiente.</p>
+	</section>
+
+	<section id = "desplazar">
+		<a class = "desp izq no--decoration" href = "../07mult/problems.html">
+			<i class="fa fa-arrow-left"></i>
+			<div class = "desp-text">
+				Multiplicación
+			</div>
+		</a>
+		
+		<a class = "desp der no--decoration" href = "../../03racionales/01frac_equiv/problems.html">
+			<div class = "desp-text">
+				Fracciones <br>equivalentes
+			</div>
+			<i class="fa fa-arrow-right"></i>
+		</a>
+	</section>
+	
+	<section id = "website-end"> </section>
+	
+	</body>
+	
+	
+</html>

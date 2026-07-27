@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Título del sitio de inicio -->
+		<title> Naturales - MCD </title>
+		
+		<!-- Para ligar con el archivo CSS -->
+		<link rel = "stylesheet" href = "styles.css">
+
+		<!-- Para el javascript-->
+		<script src = "code.js"></script>
+		
+		<!--Para la fuente "Mulish"-->
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		
+		<!-- Para el favicon -->
+		<link rel = "icon" type = "image/x-icon" href = "../../../images/favicon.jpg">
+		
+		<!-- Para que se ajuste al dispositivo -->
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		
+		<!-- Para emojis y acentos (un poco como en LaTeX)-->
+		<meta charset = "UTF-8">
+		
+		<!-- Para íconos elegantes-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	</head>
+	
+	<!-- Empieza el cuerpo del sitio -->
+	<body>
+	
+	<!-- Empieza con el banner -->
+	<section id = "banner">
+		<img src = "../../../images/utm.jpg" class = "fadeInUp animacion--normal banner-img">
+		
+		<!-- Caja para el texto -->
+		<div class = "banner-text">
+			<!-- UTM, IFM y Jefatura de carrera -->
+			<h2 class = "fadeInUp animacion--normal">Universidad Tecnológica de la Mixteca</h2>
+			<h2 class = "fadeInUp animacion--normal">Instituto de Física y Matemáticas</h2>
+			<h2 class = "fadeInUp animacion--normal">Jefatura de Carrera de la Licenciatura en Matemáticas Aplicadas</h2>
+		</div>
+	
+	<!-- Termina el banner -->
+	</section>
+
+	<!-- Sección principal (naturales)-->
+	<div id = "tema-title">
+		<h3>Números naturales</h3>
+	</div>
+	
+	<!-- Empieza la lista de temas -->
+	<div class = "top-nav">
+		<a href = "../../../index.html" id = "home"><span></span>Volver al inicio</a>
+		
+		<nav>
+			<a href = "../01suma/problems.html"><span></span>Suma</a>
+			<a href = "../02orden/problems.html"><span></span>Comparación de acuerdo al orden</a>
+			<a href = "../03resta/problems.html"><span></span>Resta</a>
+			<a href = "../04mult/problems.html"><span></span>Multiplicación</a>
+			<a href = "../05divisibilidad/problems.html"><span></span>Criterios de divisibilidad</a>
+			<a href = "../06primos/problems.html"><span></span>Factorización</a>
+			<a href = "../07mcd/problems.html"><span></span>Máximo común divisor</a>
+			<a href = "../08mcm/problems.html"><span></span>Mínimo común múltiplo</a>
+		</nav>
+	</div>
+	<!-- Termina la lista de temas -->
+
+	<!-- Subtema en el que está-->
+	<section id = "subtema" >
+		<div id = "subtema-title">
+			<h2>Máximo Común Divisor</h2>
+		</div>
+	</section>
+
+	<!--Ejercicio 1: Identificar el factor común-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 1</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Identificar el factor común</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos números factorizados. Tu trabajo es identificar el número 
+					primo que ambos comparten en su factorización. Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el factor común.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio1" onclick = "Ejercicio01()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<msup>
+								<mn id = "f1n1_1"></mn>
+								<mn id = "e1n1_1"></mn>
+							</msup>
+							<mo id = "op1n1_1"></mo>
+							<msup>
+								<mn id = "f2n1_1"></mn>
+								<mn id = "e2n1_1"></mn>
+							</msup>
+							<mo id = "op2n1_1"></mo>
+							<msup>
+								<mn id = "f3n1_1"></mn>
+								<mn id = "e3n1_1"></mn>
+							</msup>
+							<mo id = "c1_1"></mo> <!--Para la coma-->
+							<mspace width = "1em"/> 
+
+							<msup>
+								<mn id = "f1n2_1"></mn>
+								<mn id = "e1n2_1"></mn>
+							</msup>
+							<mo id = "op1n2_1"></mo>
+							<msup>
+								<mn id = "f2n2_1"></mn>
+								<mn id = "e2n2_1"></mn>
+							</msup>
+							<mo id = "op2n2_1"></mo>
+							<msup>
+								<mn id = "f3n2_1"></mn>
+								<mn id = "e3n2_1"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta1" onclick="Respuesta01()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mtext id = "m1_1"></mtext>
+							<mspace width = "0.5em"/>
+							<mn id = "r_1"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+	<!--Termina el Ejercicio 1-->
+
+
+	<!--Ejercicio 2: Identificar los dos factores comunes-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 2</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Identificar los factores comunes</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos números factorizados. Tu trabajo es identificar los dos números
+					primos que ambos comparten en su factorización. Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuáles eran esos factores comunes.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio2" onclick = "Ejercicio02()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<msup>
+								<mn id = "f1n1_2"></mn>
+								<mn id = "e1n1_2"></mn>
+							</msup>
+							<mo id = "op1n1_2"></mo>
+							<msup>
+								<mn id = "f2n1_2"></mn>
+								<mn id = "e2n1_2"></mn>
+							</msup>
+							<mo id = "op2n1_2"></mo>
+							<msup>
+								<mn id = "f3n1_2"></mn>
+								<mn id = "e3n1_2"></mn>
+							</msup>
+							<mo id = "c1_2"></mo> <!--Para la coma-->
+							<mspace width = "1em"/> 
+
+							<msup>
+								<mn id = "f1n2_2"></mn>
+								<mn id = "e1n2_2"></mn>
+							</msup>
+							<mo id = "op1n2_2"></mo>
+							<msup>
+								<mn id = "f2n2_2"></mn>
+								<mn id = "e2n2_2"></mn>
+							</msup>
+							<mo id = "op2n2_2"></mo>
+							<msup>
+								<mn id = "f3n2_2"></mn>
+								<mn id = "e3n2_2"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta2" onclick="Respuesta02()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mtext id = "m1_2"></mtext> <!--Los factores comunes son-->
+
+							<mspace width = "0.5em"/> 
+
+							<mn id = "r1_2"></mn>
+							<mo id = "rc1_2"></mo> <!--La coma-->
+							<mspace width = "0.5em"/> 
+							<mn id = "r2_2"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+	<!--Termina el Ejercicio 2-->
+
+
+	<!--Ejercicio 3: Dados dos números que sean productos de potencias 
+	de los mismos dos primos, indicar cuáles son las menores potencias-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 3</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Identificar las menores potencias</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos números factorizados que son productos 
+					de los mismos dos números primos. Tu trabajo es identificar las potencias 
+					más pequeñas que aparecen en cada factor. Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuáles eran esos factores comunes.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio3" onclick = "Ejercicio03()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<msup>
+								<mn id = "f1n1_3"></mn>
+								<mn id = "e1n1_3"></mn>
+							</msup>
+							<mo id = "op1n1_3"></mo>
+							<msup>
+								<mn id = "f2n1_3"></mn>
+								<mn id = "e2n1_3"></mn>
+							</msup>
+
+							<mo id = "c1_3"></mo> <!--Para la coma-->
+							<mspace width = "1em"/> 
+
+							<msup>
+								<mn id = "f1n2_3"></mn>
+								<mn id = "e1n2_3"></mn>
+							</msup>
+							<mo id = "op1n2_3"></mo>
+							<msup>
+								<mn id = "f2n2_3"></mn>
+								<mn id = "e2n2_3"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta3" onclick="Respuesta03()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mtext id = "m1_3"></mtext> <!--La potencia mínima de -->
+							<mspace width = "0.5em"/> 
+							<mn id = "p1r_3"></mn>
+							<mspace width = "0.5em"/> 
+							<mtext id = "m2_3"></mtext>
+							<mspace width = "0.5em"/> 
+							<mn id = "e1r_3"></mn>
+						</mrow>
+					</math>	
+				</p>
+				<p>
+					<math>
+						<mrow>
+							<mtext id = "m3_3"></mtext> <!--La potencia mínima de -->
+							<mspace width = "0.5em"/> 
+							<mn id = "p2r_3"></mn>
+							<mspace width = "0.5em"/> 
+							<mtext id = "m4_3"></mtext>
+							<mspace width = "0.5em"/> 
+							<mn id = "e2r_3"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+	<!--Termina el Ejercicio 3-->
+
+
+	<!--Ejercicio 4: Obtener el MCD de dos números pequeños, A y B, donde el 
+	mcd es un número m entre 2 y 5, y A=mn1, B=mn2, donde 
+	n1=2,4; n2=3,5-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 4</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Hallar el MCD</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos números. Tu trabajo es encontrar su 
+					Máximo Común Divisor (MCD). Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuáles eran esos factores comunes.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio4" onclick = "Ejercicio04()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "n1_4"></mn>
+
+							<mo id = "c1_4"></mo> <!--Para la coma-->
+							<mspace width = "0.5em"/> 
+
+							<mn id = "n2_4"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta4" onclick="Respuesta04()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mtext id = "m1_4"></mtext> <!--El MCD es-->
+							<mspace width = "0.5em"/> 
+							<mn id = "r_4"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+	<!--Termina el Ejercicio 4-->
+
+
+	<!--Ejercicio 5: Hallar el MCD de dos números tal que el primero divide al segundo-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 5</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Hallar el MCD</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos números. Tu trabajo es encontrar su 
+					Máximo Común Divisor (MCD). Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuáles eran esos factores comunes.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio5" onclick = "Ejercicio05()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "n1_5"></mn>
+							
+							<mo id = "c1_5"></mo> <!--Para la coma-->
+							<mspace width = "0.5em"/> 
+
+							<mn id = "n2_5"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta5" onclick="Respuesta05()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mtext id = "m1_5"></mtext>
+							<mspace width = "0.5em"/> 
+							<mn id = "r_5"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section>
+	<!--Termina el Ejercicio 5 -->
+
+	<!--Ejercicio 6: Dados dos números que sean producto de potencias de los
+	mismos dos primos, hallar su MCD. Este ejercicio tendrá la 
+	misma estructura que el Ejercicio 5-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 6</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Hallar el MCD</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos números factorizados que son productos 
+					de los mismos dos números primos. Tu trabajo es encontrar su 
+					Máximo Común Divisor (MCD). Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era
+					el Máximo Común Divisor.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio6" onclick = "Ejercicio06()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<!--En esta ocasión, no se muestra la factorización,
+							sino únicamente los números n1_6 y n2_6 separados
+							por una coma, cuyo ID es c1_6-->
+							<mn id = "n1_6"></mn>
+							<mo id = "c1_6"></mo> <!--Para la coma-->
+							<mspace width = "0.5em"/>
+							<mn id = "n2_6"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta6" onclick="Respuesta06()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mtext id = "m1_6"></mtext> <!--El MCD es-->
+							<mspace width = "0.5em"/> 
+							<mn id = "r_6"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+	<!--Termina el Ejercicio 6-->
+
+	<!--Ejercicio 7: El mcd, m1_7, es un número entre 1 y 20. Los números 
+	son simplemente n1_7 y n2_7 separados por una coma. La estructura 
+	es similar a la del Ejercicio 6-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 7</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Hallar el MCD</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos números separados por una coma. Tu trabajo es encontrar su 
+					Máximo Común Divisor (MCD). Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el MCD.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio7" onclick = "Ejercicio07()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "n1_7"></mn>
+
+							<mo id = "c1_7"></mo> <!--Para la coma-->
+							<mspace width = "0.5em"/> 
+
+							<mn id = "n2_7"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta7" onclick="Respuesta07()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mtext id = "m1_7"></mtext> <!--El MCD es-->
+							<mspace width = "0.5em"/> 
+							<mn id = "r_7"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+	<!--Termina el Ejercicio 7-->
+
+	<!--El mcd, m_8, es nuevamente un número entre 1 y 20. Los otros dos números, n1_8 y 
+	n2_8, son múltiplos de m_8, y lo tienen como MCD. La estructura es la misma 
+	que la del Ejercicio 7-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 8</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Hallar el MCD</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos números separados por una coma. Tu trabajo es encontrar su 
+					Máximo Común Divisor (MCD). Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el MCD.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio8" onclick = "Ejercicio08()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "n1_8"></mn>
+
+							<mo id = "c1_8"></mo> <!--Para la coma-->
+							<mspace width = "0.5em"/> 
+
+							<mn id = "n2_8"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta8" onclick="Respuesta08()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mtext id = "m1_8"></mtext> <!--El MCD es-->
+							<mspace width = "0.5em"/> 
+							<mn id = "r_8"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+	<!--Termina el Ejercicio 8-->
+
+	<!--Ejercicio 9: Tiene la misma estructura que el Ejercicio 8. Solamente 
+	se cambian los sufijos en los IDs-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 9</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Hallar el MCD</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos números separados por una coma. Tu trabajo es encontrar su 
+					Máximo Común Divisor (MCD). Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el MCD.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio9" onclick = "Ejercicio09()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "n1_9"></mn>
+
+							<mo id = "c1_9"></mo> <!--Para la coma-->
+							<mspace width = "0.5em"/> 
+
+							<mn id = "n2_9"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta9" onclick="Respuesta09()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mtext id = "m1_9"></mtext> <!--El MCD es-->
+							<mspace width = "0.5em"/> 
+							<mn id = "r_9"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+	<!--Termina el Ejercicio 9-->
+
+	<!--Ejercicio 10: Tiene la misma estructura que el Ejercicio 9. Solamente 
+	se cambian los sufijos en los IDs-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 10</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Hallar el MCD</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerán dos números separados por una coma. Tu trabajo es encontrar su 
+					Máximo Común Divisor (MCD). Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el MCD.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio10" onclick = "Ejercicio10()">Generar problema</button>
+				<p>
+					<math>
+						<mrow>
+							<mn id = "n1_10"></mn>
+
+							<mo id = "c1_10"></mo> <!--Para la coma-->
+							<mspace width = "0.5em"/> 
+
+							<mn id = "n2_10"></mn>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta10" onclick="Respuesta10()">Respuesta</button>
+				<p>
+					<math>
+						<mrow>
+							<mtext id = "m1_10"></mtext> <!--El MCD es-->
+							<mspace width = "0.5em"/> 
+							<mn id = "r_10"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section>
+	<!--Termina el Ejercicio 10-->
+	<!--Terminan todos los ejercicios-->
+
+
+
+	<section id = "congrats">
+		<h2>¡Felicidades!</h2>
+		<p>Has llegado al final de este tema. Ya puedes pasar al siguiente.</p>
+	</section>
+
+	<section id = "desplazar">
+		<a class = "desp izq no--decoration" href = "../06primos/problems.html">
+			<i class="fa fa-arrow-left"></i>
+			<div class = "desp-text">
+				Factorización
+			</div>
+		</a>
+		
+		<a class = "desp der no--decoration" href = "../08mcm/problems.html">
+			<div class = "desp-text">
+				mcm
+			</div>
+			<i class="fa fa-arrow-right"></i>
+		</a>
+	</section>
+	
+	<section id = "website-end"> </section>
+	
+	</body>
+	
+	
+</html>

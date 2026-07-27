@@ -1,0 +1,456 @@
+/* El * indica que abarca todo */
+/* Es buena práctica de programación que inicialices todo en 0  */
+*{
+	margin: 0;
+	padding: 0;}
+	
+/* Animaciones aprendidas en Geolympics    */
+
+
+/* Animaciones*/
+@keyframes fadeInUp{
+	from{
+		transform: translateY(50%);
+		opacity: 0;
+	}
+	to{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+/*Para que los botones tengan manita*/
+button{
+	cursor: pointer;
+}
+
+/*Para que no haya decoraciones*/
+.no--decoration{
+	text-decoration: none;
+}
+
+.fadeInUp{
+	animation: fadeInUp;
+}
+
+.animacion--normal{
+	animation-duration: 0.8s;
+}
+
+.animacion--rapida{
+	animation-duration: 0.5s;
+}
+
+.animacion--lenta{
+	animation-duration: 2s;
+}
+
+
+.retrasar--normal{
+	animation-delay: 1s;
+}
+
+.retrasar--rapida{
+	animation-delay: 0.5s;
+}
+
+.retrasar--lenta{
+	animation-delay: 3s;
+}
+
+.centered{
+	text-align: center !important;
+}
+
+.bigger{
+	font-size: 1.5rem !important;
+}
+
+.spaced{
+	line-height: 2;
+}
+
+/* Elementos del sitio web */
+
+#banner{
+	background: #fff;
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	
+	/*¿Se puede hacer flex?*/
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.banner-text{
+	text-align: center;
+	/*padding-top: 300px;*/
+	font-family: "Mulish";
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.banner-text h2{
+	color: #000;
+	font-size: 1.7rem;
+	text-align: center;
+	padding: 45px 5px;
+}
+
+.banner-img{
+	max-width: 40%;
+	min-width: 30%;
+	padding: 0px 10px;
+}
+
+
+
+
+
+
+
+
+
+.top-nav{
+	text-align: center;
+	font-family: "Mulish";
+	background-color: #4a1110;
+	width: 100%;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#home{
+	color: #fff;
+	padding: 10px 0px;
+	font-size: 1.3rem;
+	text-decoration: none;
+	font-weight: bold;
+	position: relative;
+	z-index: 1; /*Tiene mayor prioridad*/
+	transition: color 1s; /* El color tarde 0.5 segundosen cambiar */
+	width: 100%
+}
+
+#home span{
+	width: 0; /*Al principio no se ve*/
+	height: 100%;
+	position: absolute;
+	top: 0; /* Pegado arriba */
+	left: 0; /* Pegado a la izquierda */
+	background: #fff; /* Barra completamente blanca */
+	z-index: -1; /* Al principio tiene menos prioridad */
+	transition: width 1s; /* El ancho tarde 0.5 segundos en cambiar */
+}
+
+/* Cuando le pongan el mouse, el texto cambia a guinda */
+#home:hover{
+	color: #4a1110;
+}
+
+/* Cuando le pongan el mouse, la barra se vuelve blanca */
+#home:hover span{
+	width: 100%;
+}
+
+nav{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 20px 5px;
+	flex-wrap: wrap;
+	gap: 40px;
+}
+
+nav a{
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+	font-size: 1.1rem;
+	position: relative;
+	z-index: 1; /*Tiene mayor prioridad*/
+	transition: color 0.5s; /* El color tarde 0.5 segundosen cambiar */
+	padding: 5px 0px;
+}
+
+nav a span{
+	width: 0; /*Al principio no se ve*/
+	height: 100%;
+	position: absolute;
+	top: 0; /* Pegado arriba */
+	left: 0; /* Pegado a la izquierda */
+	background: #fff; /* Barra completamente blanca */
+	z-index: -1; /* Al principio tiene menos prioridad */
+	transition: width 0.5s; /* El ancho tarde 0.5 segundos en cambiar */
+}
+
+/* Cuando le pongan el mouse, el texto cambia a guinda */
+nav a:hover{
+	color: #4a1110;
+}
+
+/* Cuando le pongan el mouse, la barra se vuelve blanca */
+nav a:hover span{
+	width: 100%;
+}
+
+#tema-title{
+	width: 100%;
+	text-align: center;
+	margin: 30px 0px;
+	font-family: "Mulish";
+}
+
+#tema-title h3{
+	font-size: 3rem;
+}
+
+
+#subtema{
+	width: 100%;
+	min-height: 5rem;
+	font-family: "Mulish";
+	position: relative;
+	
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 3rem;
+	padding-bottom: 10px;
+}
+
+#subtema-title{
+	font-family: "Mulish";
+}
+
+#subtema-title h2{
+	font-size: 2.5rem;
+}
+
+.problem{
+	width: 100;
+	min-height: 10rem;
+	font-family: "Mulish";
+	position: relative;
+	margin: 3rem 0;
+
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 3rem;
+	padding-bottom: 10px;
+}
+
+.enunciado{
+	width: 40%;
+	padding: 0 10px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.enunciado h2{
+	font-size: 2rem
+}
+
+.general-box{
+	border: 2px solid;
+	border-radius: 25px;
+	padding: 3% 5%;
+	min-height: 6.5rem;
+
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: center;
+	justify-content: start;
+}
+
+.general-box button, h3{
+	font-size: 1.7rem;
+	font-family: "Mulish";
+	font-weight: bold;
+}
+
+.general-box button{
+	padding: 0.5px 5%;
+	border-radius: 25px;
+}
+
+.instructions{
+	border-color: blue;
+	background-color: rgba(0, 0, 255, 0.2);
+}
+
+.particular{
+	border-color: purple;
+	background-color: rgba(128, 0, 128, 0.2);
+}
+
+.particular button{
+	background-color: rgba(128, 0, 128, 0.1);
+	transition: color 0.5s;
+}
+
+.particular button:hover{
+	color: purple;
+}
+
+.answer-box{
+	border-color: rgb(8, 122, 8);
+	background-color: rgba(8, 122, 8, 0.2);
+}
+
+.answer-box button{
+	background-color: rgba(8, 122, 8, 0.1);
+	transition: color 0.5s;
+}
+
+.answer-box button:hover{
+	color: rgb(8, 122, 8);
+}
+
+.general-box p{
+	font-size: 1.2rem;
+}
+
+.answer{
+	width: 40%;
+	padding: 0 10px;
+}
+
+#website-end{
+	background: #4a1110;
+	width: 100%;
+	height: 70px;
+}
+
+#inner-change{
+	transition: innerHTML 2s;
+}
+
+
+/*Tan tan*/
+#congrats{
+	width: 100%;
+	margin: 20px 0;
+	min-height: 6rem;
+	font-family: "Mulish";
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+#congrats h2{
+	font-size: 1.7rem;
+}
+
+#congrats p{
+	font-size: 1.2rem;
+}
+
+#desplazar{
+	width: 100%;
+	height: 7rem;
+	margin: 2rem 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	position: relative;
+}
+
+.desp{
+	position: absolute;
+	height: 6rem;
+	width: 15rem;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0.2rem;
+	border: 0.2rem solid black;
+	color: black;
+	align-items: center;
+	gap: 3rem;
+	font-family: "Mulish";
+	padding: 0 2rem;
+	justify-content: center;
+	z-index: 2;
+}
+
+.desp .fa{
+	font-size: 4rem;
+	z-index: 3;
+	transition: 0.5s;
+}
+
+.desp-text{
+	font-size: 1.3rem;
+	flex-shrink: 1;
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	z-index: 3;
+	transition: 0.5s;
+}
+
+.izq{
+	left: 4rem;
+}
+
+.der{
+	right: 4rem;
+}
+
+.izq::before{
+	position: absolute;
+	content: "";
+	width: 0%;
+	height: 100%;
+	background-color: black;
+	transition: 0.5s;
+	z-index: 1;
+	right: 0;
+}
+
+.izq:hover::before{
+	width: 100%;
+}
+
+.der::before{
+	position: absolute;
+	content: "";
+	width: 0%;
+	height: 100%;
+	background-color: black;
+	transition: 0.5s;
+	z-index: 1;
+	left: 0;
+}
+
+.der:hover::before{
+	width: 100%;
+}
+
+.desp:hover .fa{
+	color: white;
+}
+
+.desp:hover .desp-text{
+	color: white;
+}
+
+.fraction_part{
+	font-size: 2rem;
+}
