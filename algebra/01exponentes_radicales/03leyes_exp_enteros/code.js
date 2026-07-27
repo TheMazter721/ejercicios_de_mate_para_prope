@@ -1,5 +1,17 @@
 var letras=["a","b","c","d","e","p","q","r","s","t","u","v","w","x","y","z"];
 
+// La siguiente función permite generar n letras distintas de forma aleatoria. Para ello, primero genera 
+// un arreglo con todas las letras del alfabeto, y luego lo permuta de forma aleatoria. Finalmente, regresa las primeras n letras del arreglo permutado.
+function nLetrasDistintas(n){
+    var perm = permutarArreglo(letras);
+    var resultado = [];
+    for(var i = 0; i < n; i++)
+        resultado[i] = perm[i];
+    return resultado;
+}
+
+
+
 var l1,e11,e12;
 var l2,e2;
 var l3,e3;

@@ -1,6 +1,22 @@
 // Variables globales para los ejercicios de mcm
 var primos = [2, 3, 5, 7, 11];
 
+var letras = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
+              "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y",
+              "z"];
+
+// La siguiente función permite generar n letras distintas de forma aleatoria. Para ello, primero genera 
+// un arreglo con todas las letras del alfabeto, y luego lo permuta de forma aleatoria. Finalmente, regresa las primeras n letras del arreglo permutado.
+function nLetrasDistintas(n){
+    var perm = permutarArreglo(letras);
+    var resultado = [];
+    for(var i = 0; i < n; i++)
+        resultado[i] = perm[i];
+    return resultado;
+}
+
+
+
 
 
 // Para generar números enteros aleatorios
