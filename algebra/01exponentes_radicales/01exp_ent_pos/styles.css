@@ -473,3 +473,59 @@ nav a:hover span{
 .fraction-power-box{
 	min-height: 8rem;
 }
+/* Letra ligeramente más grande */
+.visible-part{
+    font-size: 1.7rem;
+}
+
+/* Para que la fuente en las fracciones sea un poco más grande */
+.fraction-part{
+    font-size: 2rem;
+}
+
+/* Para que las cajas con potencias de fracciones sean más grandes */
+.fraction-power-box{
+    min-height: 8rem;
+}
+
+/* El nombre fraction-power-box es demasiado extenso.
+Se crea una clase más corta pero de la misma longitud, llamada big-box */
+.big-box{
+    min-height: 8rem;
+}
+
+/* Clase para las cajas más grandes, con fracciones y potencias */
+.large-box{
+    min-height: 10rem;
+}
+
+/* Para que las cajas con raíces sean ligeramente más grandes */
+.raiz-custom-box {
+    min-height: 7rem;
+}
+
+.contenedor-signo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+/* Añade un pequeño margen interno al contenido que está dentro de la raíz */
+.raiz-custom {
+    padding-top: 0.15em;
+    padding-left: 0.1em;
+    padding-right: 0.15em;
+}
+
+/* Para que los exponentes no se vean tan pegados a las literales */
+.fraction-custom{
+    padding-right: 0.2em;
+}
+
+/* Obliga a los términos de la división principal a tener espacio horizontal */
+.fraccion_principal > mrow {
+    padding: 0 20px;
+    display: block; /* Ayuda a que el navegador calcule mejor el ancho */
+}
