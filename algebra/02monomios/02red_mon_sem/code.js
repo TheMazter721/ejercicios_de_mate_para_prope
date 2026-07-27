@@ -1,16 +1,6 @@
 // Variables globales para los ejercicios de mcm
 var primos = [2, 3, 5, 7, 11];
 
-var n_1;
-var n1_2, n2_2, common_2;
-var n1_3, n2_3, n3_3, n4_3, m_3;
-var p1_4, p2_4, p3_4, p4_4;
-var pow14_4, pow24_4, pow34_4, pow44_4, pow54_4, pow64_4;
-var p1_5, p2_5, p3_5, p4_5;
-var n1_5, n2_5, n3_5, n4_5, n5_5, n6_5, n7_5, n8_5, m_5;
-var p1_6, p2_6, p3_6, p4_6;
-var n1_6, n2_6, n3_6, n4_6, n5_6, n6_6, n7_6, n8_6, m_6, l_6;
-
 // Para generar números enteros aleatorios
 function enteroAleatorio(a,b){ // Genera números aleatorios entre a y b
 	var x = a + Math.floor((b-a+1)*Math.random());
@@ -86,6 +76,52 @@ function limpiarRespuestas(ids){
         var elem = document.getElementById(ids[i]);
         if(elem)
             elem.innerHTML = "&ZeroWidthSpace;";
+    }
+}
+
+// La siguiente función es similar a limpiarRespuestas, pero esta vez,
+// en lugar de modificar el innerHTML, modifica su atributo display para que el elemento no se vea. Esto es útil para los signos de los números
+function ocultarElementos(ids){
+    for(var i = 0; i < ids.length; i++){
+        var elem = document.getElementById(ids[i]);
+        if(elem)
+            elem.style.display = "none";
+    }
+}
+
+// La siguiente función hace lo opuesto a ocultarElemtos, es decir, hace que los elementos se vean. Esto es útil para los signos de los números
+function mostrarElementos(ids){
+    for(var i = 0; i < ids.length; i++){
+        var elem = document.getElementById(ids[i]);
+        if(elem)
+            elem.style.display = "inline";
+    }
+}
+
+// La siguiente función es similar a mostrarElementos, pero esta vez regresa el display a block en lugar de inline
+function mostrarElementosBlock(ids){
+    for(var i = 0; i < ids.length; i++){
+        var elem = document.getElementById(ids[i]);
+        if(elem)
+            elem.style.display = "block";
+    }
+}
+
+// Una tercera función que lo cambia el display a inline-block, para que se vea bien en los ejercicios de potenciación
+function mostrarElementosInlineBlock(ids){
+    for(var i = 0; i < ids.length; i++){
+        var elem = document.getElementById(ids[i]);
+        if(elem)
+            elem.style.display = "inline-block";
+    }
+}
+
+// Una cuarta función que cambia el display a math, para regresar elementos como mrow a como eran antes
+function mostrarElementosMath(ids){
+    for(var i = 0; i < ids.length; i++){
+        var elem = document.getElementById(ids[i]);
+        if(elem)
+            elem.style.display = "math";
     }
 }
 

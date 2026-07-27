@@ -370,3 +370,31 @@ function Respuesta5(){
     // Muestra el resultado en la consola para fines de depuración
     console.log("Respuesta 5: resultado = " + resultado5);
 }
+
+// La siguiente función es similar a mostrarElementos, pero esta vez regresa el display a block en lugar de inline
+function mostrarElementosBlock(ids){
+    for(var i = 0; i < ids.length; i++){
+        var elem = document.getElementById(ids[i]);
+        if(elem)
+            elem.style.display = "block";
+    }
+}
+
+// Una tercera función que lo cambia el display a inline-block, para que se vea bien en los ejercicios de potenciación
+function mostrarElementosInlineBlock(ids){
+    for(var i = 0; i < ids.length; i++){
+        var elem = document.getElementById(ids[i]);
+        if(elem)
+            elem.style.display = "inline-block";
+    }
+}
+
+// Una cuarta función que cambia el display a math, para regresar elementos como mrow a como eran antes
+function mostrarElementosMath(ids){
+    for(var i = 0; i < ids.length; i++){
+        var elem = document.getElementById(ids[i]);
+        if(elem)
+            elem.style.display = "math";
+    }
+}
+

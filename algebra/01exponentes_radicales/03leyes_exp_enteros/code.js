@@ -353,3 +353,49 @@ var activated = [];
 		document.getElementById("lr102").innerHTML = l102;
 		document.getElementById("er102").innerHTML = e10;
 	}
+
+// La siguiente función es similar a limpiarRespuestas, pero esta vez,
+// en lugar de modificar el innerHTML, modifica su atributo display para que el elemento no se vea. Esto es útil para los signos de los números
+function ocultarElementos(ids){
+    for(var i = 0; i < ids.length; i++){
+        var elem = document.getElementById(ids[i]);
+        if(elem)
+            elem.style.display = "none";
+    }
+}
+
+// La siguiente función hace lo opuesto a ocultarElemtos, es decir, hace que los elementos se vean. Esto es útil para los signos de los números
+function mostrarElementos(ids){
+    for(var i = 0; i < ids.length; i++){
+        var elem = document.getElementById(ids[i]);
+        if(elem)
+            elem.style.display = "inline";
+    }
+}
+
+// La siguiente función es similar a mostrarElementos, pero esta vez regresa el display a block en lugar de inline
+function mostrarElementosBlock(ids){
+    for(var i = 0; i < ids.length; i++){
+        var elem = document.getElementById(ids[i]);
+        if(elem)
+            elem.style.display = "block";
+    }
+}
+
+// Una tercera función que lo cambia el display a inline-block, para que se vea bien en los ejercicios de potenciación
+function mostrarElementosInlineBlock(ids){
+    for(var i = 0; i < ids.length; i++){
+        var elem = document.getElementById(ids[i]);
+        if(elem)
+            elem.style.display = "inline-block";
+    }
+}
+
+// Una cuarta función que cambia el display a math, para regresar elementos como mrow a como eran antes
+function mostrarElementosMath(ids){
+    for(var i = 0; i < ids.length; i++){
+        var elem = document.getElementById(ids[i]);
+        if(elem)
+            elem.style.display = "math";
+    }
+}
