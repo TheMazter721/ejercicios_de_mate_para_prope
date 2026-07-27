@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Título del sitio de inicio -->
+		<title> Exponentes y Radicales - Radicales </title>
+		
+		<!-- Para ligar con el archivo CSS -->
+		<link rel = "stylesheet" href = "styles.css">
+
+		<!-- Para el javascript-->
+		<script src = "code.js"></script>
+		
+		<!--Para la fuente "Mulish"-->
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		
+		<!-- Para el favicon -->
+		<link rel = "icon" type = "image/x-icon" href = "../../../images/favicon.jpg">
+		
+		<!-- Para que se ajuste al dispositivo -->
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		
+		<!-- Para emojis y acentos (un poco como en LaTeX)-->
+		<meta charset = "UTF-8">
+		
+		<!-- Para íconos japo pro-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	</head>
+	
+	<!-- Empieza el cuerpo del sitio -->
+	<body>
+	
+	<!-- Empieza con el banner -->
+	<section id = "banner">
+		<img src = "../../../images/utm.jpg" class = "fadeInUp animacion--normal banner-img">
+		
+		<!-- Caja para el texto -->
+		<div class = "banner-text">
+			<!-- UTM, IFM y Jefatura de carrera -->
+			<h2 class = "fadeInUp animacion--normal">Universidad Tecnológica de la Mixteca</h2>
+			<h2 class = "fadeInUp animacion--normal">Instituto de Física y Matemáticas</h2>
+			<h2 class = "fadeInUp animacion--normal">Jefatura de Carrera de la Licenciatura en Matemáticas Aplicadas</h2>
+		</div>
+	
+	<!-- Termina el banner -->
+	</section>
+
+	<!-- Sección principal (exponentes y radicales)-->
+	<div id = "tema-title">
+		<h3>Exponentes y Radicales</h3>
+	</div>
+	
+	<!-- Empieza la lista de temas -->
+	<div class = "top-nav">
+		<a href = "../../../index.html" id = "home"><span></span>Volver al inicio</a>
+		
+		<nav>
+			<a href = "../01exp_ent_pos/problems.html"><span></span>Exponentes Enteros Positivos</a>
+			<a href = "../02exp_ent_neg/problems.html"><span></span>Exponentes Enteros Negativos</a>
+			<a href = "../03leyes_exp_enteros/problems.html"><span></span>Leyes de los Exponentes (Enteros)</a>
+			<a href = "../04radicales/problems.html"><span></span>Radicales</a>
+			<a href = "../05exp_frac/problems.html"><span></span>Exponentes Fraccionarios</a>
+			<a href = "../06leyes_exp_frac/problems.html"><span></span>Leyes de los Exponentes (Fraccionarios)</a>
+			<a href = "../07racionalizacion/problems.html"><span></span>Racionalización</a>
+		</nav>
+	</div>
+	<!-- Termina la lista de temas -->
+
+	<!-- Subtema en el que está-->
+	<section id = "subtema" >
+		<div id = "subtema-title">
+			<h2>Radicales</h2>
+		</div>
+	</section>
+
+	<!-- Ejercicio 1: 
+	Obtener la raíz cuadrada de un número entero, de tal manera que el resultado
+	siempre es un entero, o un número imaginario, en cuyo caso se indica
+	que el resultado no es un número real. Se utiliza un mtext para el texto de 
+	'El resultado no es un número real', poniendo por defecto un display de none
+	para que dicho texto no aparezca. El código de javascript se encargará de cambiarlo
+	a inline en caso de ser necesario-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 1</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Obtener la raíz cuadrada</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una raíz cuadrada que debes resolver. Tu trabajo es resolver la raíz cuadrada, o bien,
+					indicar que el número tiene una raíz cuadrada real. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio1" onclick = "Ejercicio01()">Generar problema</button>
+				<p>
+					<math class = "visible-part">
+						<mrow id = "raiz_1" style="display:none;">
+							<!-- Se utiliza msqrt para la raíz cuadrada. De entrada, su display es none -->
+							<msqrt>
+								<mn id = "c_1" class = "raiz-custom"></mn>
+							</msqrt>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta1" onclick="Respuesta01()">Respuesta</button>
+				<p>
+					<math class = "visible-part">
+						<mrow>
+							<!-- Por si el resultado sí es un número real -->
+							<mn id = "r_1"></mn>
+
+							<!-- Se utiliza mtext para el texto en caso de ser necesario -->
+							<mtext id = "t_1" style="display:none;">El resultado no es un número real.</mtext>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 1 -->
+
+	<!-- Ejercicio 2:
+	Es similar al Ejercicio 1, pero ahora se trata de una raíz cúbica. Por tal razón,
+	ya no hace falta usar al mtext, pues esta raíz siempre es un número real. -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 2</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Obtener la raíz cúbica</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una raíz cúbica que debes resolver. Tu trabajo es resolver la raíz cúbica. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio2" onclick = "Ejercicio02()">Generar problema</button>
+				<p>
+					<math class = "visible-part">
+						<mrow id = "raiz_2" style="display:none;">
+							<!-- Se utiliza mroot para la raíz cúbica. De entrada, su display es none -->
+							<mroot>
+								<mn id = "c_2" class = "raiz-custom"></mn>
+								<mn>3</mn>
+							</mroot>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta2" onclick="Respuesta02()">Respuesta</button>
+				<p>
+					<math class = "visible-part">
+						<mrow>
+							<!-- Por si el resultado sí es un número real -->
+							<mn id = "r_2"></mn>
+
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 2 -->
+
+	<!-- Ejercicio 3:
+	Es similar al Ejercicio 1, pero ahora, en vez de obtenerse la raíz cuadrada de un entero,
+	se obtiene la raíz cuadrada de un número racional. Por tal razón, se utiliza <mfrac> para representar las fracciones.
+	Además, se utiliza un signo que de entrada no es visible, esto es, su display por defecto es none -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 3</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Obtener la raíz cuadrada de un número racional</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una raíz cuadrada que debes resolver. Tu trabajo es resolver la raíz cuadrada, o bien,
+					indicar que el número tiene una raíz cuadrada real. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box fraction-power-box">
+				<button type = "button" id = "ejercicio3" onclick = "Ejercicio03()">Generar problema</button>
+				<p>
+					<math class = "fraction-part">
+						<mrow id = "raiz_3" style="display:none;">
+							<!-- Se utiliza msqrt para la raíz cuadrada. De entrada, su display es none -->
+							<msqrt>
+								<mrow class = "contenedor-signo">
+									<!-- En caso de que haya un signo -->
+									<mo id = "signo_3" style="display:none;">- </mo>
+									<mfrac>
+										<mn id = "c_3_num" class = "raiz-custom"></mn>
+										<mn id = "c_3_den" class = "raiz-custom"></mn>
+									</mfrac>
+								</mrow>
+							</msqrt>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box fraction-power-box">
+				<button type = "button" id = "respuesta3" onclick="Respuesta03()">Respuesta</button>
+				<p>
+					<math class = "fraction-part">
+						<mrow>
+							<mrow id = "r_3" style="display:none;">
+								<!-- Por si el resultado sí es un número real -->
+								<mfrac>
+									<mn id = "r_3_num"></mn>
+									<mn id = "r_3_den"></mn>
+								</mfrac>
+							</mrow>
+
+							<!-- Texto por si el resultado no es un número real -->
+							<mtext id = "t_3" style="display:none;"></mtext>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section> 
+	</section> <!-- Termina el Ejercicio 3 -->
+
+	<!-- Ejercicio 4:
+	Es muy similar al Ejercicio 3, pero esta vez se obtiene la raíz cúbica
+	en vez de la raíz cuadrada. -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 4</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Obtener la raíz cúbica de un número racional</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una raíz cúbica que debes resolver. Tu trabajo es resolver la raíz cúbica. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box fraction-power-box">
+				<button type = "button" id = "ejercicio4" onclick = "Ejercicio04()">Generar problema</button>
+				<p>
+					<math class = "fraction-part">
+						<mrow id = "raiz_4" style="display:none;">
+							<!-- Se utiliza mroot para la raíz cúbica. De entrada, su display es none -->
+							<mroot>
+								<mrow class = "contenedor-signo">
+									<!-- En caso de que haya un signo -->
+									<mo id = "signo_4" style="display:none;">- </mo>
+									<mfrac>
+										<mn id = "c_4_num" class = "raiz-custom"></mn>
+										<mn id = "c_4_den" class = "raiz-custom"></mn>
+									</mfrac>
+								</mrow>
+								<mn>3</mn>
+							</mroot>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box fraction-power-box">
+				<button type = "button" id = "respuesta4" onclick="Respuesta04()">Respuesta</button>
+				<p>
+					<math class = "fraction-part">
+						<mrow>
+							<mrow class = "contenedor-signo">
+								<!-- Signo para la respuesta -->
+								<mo id = "signo_r_4" style="display:none;">- </mo>
+								<mfrac>
+									<mn id = "r_4_num"></mn>
+									<mn id = "r_4_den"></mn>
+								</mfrac>
+							</mrow>
+
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 4 -->
+	
+
+
+
+	<section id = "congrats">
+		<h2>¡Felicidades!</h2>
+		<p>Has llegado al final de este tema. Ya puedes pasar al siguiente.</p>
+	</section>
+
+	<section id = "desplazar">
+		<a class = "desp izq no--decoration" href = "../03leyes_exp_enteros/problems.html">
+			<i class="fa fa-arrow-left"></i>
+			<div class = "desp-text">
+				Exponentes <br>Enteros
+			</div>
+		</a>
+		
+		<a class = "desp der no--decoration" href = "../05exp_frac/problems.html">
+			<div class = "desp-text">
+				Exponentes <br>Fraccionarios
+			</div>
+			<i class="fa fa-arrow-right"></i>
+		</a>
+	</section>
+	
+	<section id = "website-end"> </section>
+	
+	
+	</body>
+	
+	
+</html>

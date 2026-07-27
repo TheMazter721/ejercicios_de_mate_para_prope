@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Título del sitio de inicio -->
+		<title> Exponentes y Radicales - Leyes de los Exponentes (Fraccionarios) </title>
+		
+		<!-- Para ligar con el archivo CSS -->
+		<link rel = "stylesheet" href = "styles.css">
+
+		<!-- Para el javascript-->
+		<script src = "code.js"></script>
+		
+		<!--Para la fuente "Mulish"-->
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		
+		<!-- Para el favicon -->
+		<link rel = "icon" type = "image/x-icon" href = "../../../images/favicon.jpg">
+		
+		<!-- Para que se ajuste al dispositivo -->
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		
+		<!-- Para emojis y acentos (un poco como en LaTeX)-->
+		<meta charset = "UTF-8">
+		
+		<!-- Para íconos japo pro-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	</head>
+	
+	<!-- Empieza el cuerpo del sitio -->
+	<body>
+	
+	<!-- Empieza con el banner -->
+	<section id = "banner">
+		<img src = "../../../images/utm.jpg" class = "fadeInUp animacion--normal banner-img">
+		
+		<!-- Caja para el texto -->
+		<div class = "banner-text">
+			<!-- UTM, IFM y Jefatura de carrera -->
+			<h2 class = "fadeInUp animacion--normal">Universidad Tecnológica de la Mixteca</h2>
+			<h2 class = "fadeInUp animacion--normal">Instituto de Física y Matemáticas</h2>
+			<h2 class = "fadeInUp animacion--normal">Jefatura de Carrera de la Licenciatura en Matemáticas Aplicadas</h2>
+		</div>
+	
+	<!-- Termina el banner -->
+	</section>
+
+	<!-- Sección principal (exponentes y radicales)-->
+	<div id = "tema-title">
+		<h3>Exponentes y Radicales</h3>
+	</div>
+	
+	<!-- Empieza la lista de temas -->
+	<div class = "top-nav">
+		<a href = "../../../index.html" id = "home"><span></span>Volver al inicio</a>
+		
+		<nav>
+			<a href = "../01exp_ent_pos/problems.html"><span></span>Exponentes Enteros Positivos</a>
+			<a href = "../02exp_ent_neg/problems.html"><span></span>Exponentes Enteros Negativos</a>
+			<a href = "../03leyes_exp_enteros/problems.html"><span></span>Leyes de los Exponentes (Enteros)</a>
+			<a href = "../04radicales/problems.html"><span></span>Radicales</a>
+			<a href = "../05exp_frac/problems.html"><span></span>Exponentes Fraccionarios</a>
+			<a href = "../06leyes_exp_frac/problems.html"><span></span>Leyes de los Exponentes (Fraccionarios)</a>
+			<a href = "../07racionalizacion/problems.html"><span></span>Racionalización</a>
+		</nav>
+	</div>
+	<!-- Termina la lista de temas -->
+
+	<!-- Subtema en el que está-->
+	<section id = "subtema" >
+		<div id = "subtema-title">
+			<h2>Leyes de los Exponentes (Fraccionarios)</h2>
+		</div>
+	</section>
+
+	<!-- 
+	El propósito de los ejercicios que se crearán a continuación es preparar al alumno 
+	para simplificar, principalmente, productos y divisiones de expresiones
+	que tengan una misma literal con dos exponentes distintos, donde los exponentes,
+	en esta ocasión, son números racionales en general. Para ello, los primeros 7 ejercicios tencdrán
+	la misma estructura:
+
+	Una primera expresión de la forma literal^(signo * número racional positivo),
+	multiplicada por una segunda expresión de la misma forma, usando la misma literal, y dando
+	como resultado una expresión de la misma forma.
+
+	Ya que todos los ejercicios siguen la misma estructura, se diseñará una función que generalice estos primeros 7 
+	ejercicios. La función tendrá la siguiente estructura:
+
+	Ejercicio(n, suma, segundo, producto)
+
+	Los inputs son los siguientes:
+
+	n: Es el número de ejercicio. Se utiliza para obtener todos los ID's necesarios.
+
+	suma: Indica cuánto se requiere que sea la suma de los exponentes. Puede ser 1 (si se requiere que la suma de los exponentes sea 1),
+	0 (si se requiere que la suma de los exponentes sea 0) o -1 SI SE REQUIERE QUE LA SUMA DE LOS EXPONENTES SEA UN RACIONAL DISTINTO DE UNO Y DE 0.
+
+	segundo: Indica si el segundo exponente debe ser 1 forzosamente. Puede ser 1 (si sí se requiere que el segundo exponente sea 1) 
+	o 0 (si no se requiere que el segundo exponente sea 1).
+
+	producto: Indica si el ejercicio es un producto o una división. Puede ser 1 (si es un producto) o 0 (si es una división).
+
+	Lo primero que debe hacer la función es obtener todas las posibles etiquetas que puede utilizar para 
+	el ejercicio, las cuales tendrán esta forma:
+
+	int1_n, signo1_n, n1_n, d1_n, literal1_n, int2_n, signo2_n, n2_n, d2_n, literal2_n, intr_n, signor_n, nr_n, dr_n
+
+	donde n es el número de ejercicio. Por ejemplo, para el ejercicio 1, las etiquetas serían:
+
+	int1_1, signo1_1, n1_1, d1_1, int2_1, signo2_1, n2_1, d2_1, intr_1, signor_1, nr_1, dr_1
+
+	El ejercicio consiste en que el alumno simplifique, por ejemplo,
+	x^rat1 * x^rat2 = x^(rat1 + rat2), donde rat1 y rat2 son números racionales aleatorios, y el resultado es la suma de los exponentes,
+
+	o bien, que simplifique
+	x^rat1 / x^rat2 = x^(rat1 - rat2), donde rat1 y rat2 son números racionales aleatorios, y el resultado es la resta de los exponentes.
+	-->
+
+	<!-- Ejercicio 1: 
+	Simplificar una multiplicación utilizando las leyes de los exponentes -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 1</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la multiplicación</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una multiplicación. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box fraction-power-box">
+				<button type = "button" id = "ejercicio1" onclick = "Ejercicio(1, -1, 0, 1)">Generar problema</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<mrow>
+							<msup>
+								<mi id="literal1_1" class = "fraction-custom"></mi>
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signo1_1"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "int1_1"></mn>
+									<mfrac>
+										<mn id="n1_1"></mn>
+										<mn id="d1_1"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+							<msup>
+								<mi id="literal2_1" class = "fraction-custom"></mi>
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signo2_1"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "int2_1"></mn>
+									<mfrac>
+										<mn id="n2_1"></mn>
+										<mn id="d2_1"></mn>
+									</mfrac>
+								</mrow>
+							</msup>		
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box fraction-power-box">
+				<button type = "button" id = "respuesta1" onclick="Respuesta(1)">Respuesta</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<mrow>
+							<msup>
+								<mi id="literalr_1" class = "fraction-custom"></mi>
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signor_1"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "intr_1"></mn>
+									<mfrac>
+										<mn id="nr_1"></mn>
+										<mn id="dr_1"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 1-->
+
+	<!-- Ejercicio 2:
+	Es muy similar al Ejercicio 1, pero ahora se requiere que los exponentes sumen 1. Por tal razón,
+	es necesario llamar a la función como Ejercicio(2, 1, 0, 1), pues es el Ejercicio 2,
+	se requiere que los exponentes sumen 1, no se requiere que el segundo exponente sea 1, y 
+	sí es un ejercicio de producto -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 2</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la multiplicación</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una multiplicación. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box fraction-power-box">
+				<button type = "button" id = "ejercicio2" onclick = "Ejercicio(2, 1, 0, 1)">Generar problema</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<mrow>
+							<msup>
+								<mi id="literal1_2" class = "fraction-custom"></mi>
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signo1_2"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "int1_2"></mn>
+									<mfrac>
+										<mn id="n1_2"></mn>
+										<mn id="d1_2"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+							<msup>
+								<mi id="literal2_2" class = "fraction-custom"></mi>
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signo2_2"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "int2_2"></mn>
+									<mfrac>
+										<mn id="n2_2"></mn>
+										<mn id="d2_2"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box fraction-power-box">
+				<button type = "button" id = "respuesta2" onclick="Respuesta(2)">Respuesta</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<mrow>
+							<msup>
+								<mi id="literalr_2" class = "fraction-custom"></mi>
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signor_2"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "intr_2"></mn>
+									<mfrac>
+										<mn id="nr_2"></mn>
+										<mn id="dr_2"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 2-->
+
+	<!-- Ejercicio 3:
+	Es similar al Ejercicio 2, pero ahora, en vez de que los exponentes sumen 1,
+	se busca que los exponentes sumen 0, para que el alumno entienda que elevar a 
+	la 0 da 1. Para ello, se ajustan los exponentes de los números racionales de manera que su suma sea 0.
+	Por tal razón, es necesario llamar a la función como Ejercicio(3, 0, 0, 1), pues es el Ejercicio 3,
+	se requiere que los exponentes sumen 0, no se requiere que el segundo exponente sea 1, y 
+	sí es un ejercicio de producto -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 3</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la multiplicación</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una multiplicación. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box fraction-power-box">
+				<button type = "button" id = "ejercicio3" onclick = "Ejercicio(3, 0, 0, 1)">Generar problema</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<mrow>
+							<msup>
+								<mi id="literal1_3" class = "fraction-custom"></mi>
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signo1_3"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "int1_3"></mn>
+									<mfrac>
+										<mn id="n1_3"></mn>
+										<mn id="d1_3"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+							<msup>
+								<mi id="literal2_3" class = "fraction-custom"></mi>
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signo2_3"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "int2_3"></mn>
+									<mfrac>
+										<mn id="n2_3"></mn>
+										<mn id="d2_3"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box fraction-power-box">
+				<button type = "button" id = "respuesta3" onclick="Respuesta(3)">Respuesta</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<mrow>
+							<msup>
+								<mi id="literalr_3" class = "fraction-custom"></mi>
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signor_3"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "intr_3"></mn>
+									<mfrac>
+										<mn id="nr_3"></mn>
+										<mn id="dr_3"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 3 -->
+
+	<!-- Ejercicio 4:
+	Este ejercicio es más similar al Ejercicio 1, pues se requiere que la suma de 
+	los exponentes no sea ni 1 ni 0. Sin embargo, en esta ocasión, se busca
+	que la segunda literal tenga exponente 1, para que el alumno practique lo que 
+	ocurre cuando la literal no tiene el exponente de forma explícita. Por tal razón,
+	se manda a llamar la función Ejercicio(4, -1, 1, 1) -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 4</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la multiplicación</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una multiplicación. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box fraction-power-box">
+				<button type = "button" id = "ejercicio4" onclick = "Ejercicio(4, -1, 1, 1)">Generar problema</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<mrow>
+							<msup>
+								<mi id="literal1_4" class = "fraction-custom"></mi>
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signo1_4"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "int1_4"></mn>
+									<mfrac>
+										<mn id="n1_4"></mn>
+										<mn id="d1_4"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+							<msup>
+								<mi id="literal2_4" class = "fraction-custom"></mi>
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signo2_4"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "int2_4"></mn>
+									<mfrac>
+										<mn id="n2_4"></mn>
+										<mn id="d2_4"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box fraction-power-box">
+				<button type = "button" id = "respuesta4" onclick="Respuesta(4)">Respuesta</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<mrow>
+							<msup>
+								<mi id="literalr_4" class = "fraction-custom"></mi>
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signor_4"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "intr_4"></mn>
+									<mfrac>
+										<mn id="nr_4"></mn>
+										<mn id="dr_4"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 4 -->
+
+	<!-- Ejercicio 5:
+	Es similar al Ejercicio 1, pero en esta ocasión serán ejercicios de división
+	en vez de ejercicios de multiplicación, por lo cual se deben hacer varios ajustes.
+	Primero, la función se llamará como Ejercicio(5, -1, 0, 0), indicando con el cuarto
+	parámetro que es un ejercicio de división.
+	Segundo, esta vez habrá otro <mfrac> conteniendo las dos literales, que tendrá
+	la clase class = "fraccion_principal" para contener las otras literales de forma 
+	apropiada. -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 5</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la división</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box large-box">
+				<button type = "button" id = "ejercicio5" onclick = "Ejercicio(5, -1, 0, 0)">Generar problema</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<!-- El ejercicio, de entrada, no aparece -->
+						<mrow style = "display: none" id = "ejercicio_division_5">
+							<mfrac class = "fraccion_principal">
+								<mrow>
+									<msup>
+										<mi id="literal1_5" class = "fraction-custom"></mi>
+										<mrow class = "contenedor-signo">
+											<!-- Por si hay un signo -->
+											<mo id = "signo1_5"></mo>
+											<!-- Por si hay un entero -->
+											<mn id = "int1_5"></mn>
+											<mfrac>
+												<mn id="n1_5"></mn>
+												<mn id="d1_5"></mn>
+											</mfrac>
+										</mrow>
+									</msup>
+								</mrow>
+
+								<mrow>
+									<msup>
+										<mi id="literal2_5" class = "fraction-custom"></mi>
+										<mrow class = "contenedor-signo">
+											<!-- Por si hay un signo -->
+											<mo id = "signo2_5"></mo>
+											<!-- Por si hay un entero -->
+											<mn id = "int2_5"></mn>
+											<mfrac>
+												<mn id="n2_5"></mn>
+												<mn id="d2_5"></mn>
+											</mfrac>
+										</mrow>
+									</msup>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box fraction-power-box">
+				<button type = "button" id = "respuesta5" onclick="Respuesta(5)">Respuesta</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<mrow>
+							<msup>
+								<mi id="literalr_5" class = "fraction-custom"></mi>
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signor_5"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "intr_5"></mn>
+									<mfrac>
+										<mn id="nr_5"></mn>
+										<mn id="dr_5"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 5 -->
+
+	<!-- Ejercicio 6: 
+	Es similar al Ejercicio 5, pero en esta ocasión se busca que 
+	el exponente en el resultado sea 1. Por tal razón, se manda a llamar la función
+	Ejercicio(6, 1, 0, 0) -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 6</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la división</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box large-box">
+				<button type = "button" id = "ejercicio6" onclick = "Ejercicio(6, 1, 0, 0)">Generar problema</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<!-- El ejercicio, de entrada, no aparece -->
+						<mrow style = "display: none" id = "ejercicio_division_6">
+							<mfrac class = "fraccion_principal">
+								<mrow>
+									<msup>
+										<mi id="literal1_6" class = "fraction-custom"></mi>
+										<mrow class = "contenedor-signo">
+											<!-- Por si hay un signo -->
+											<mo id = "signo1_6"></mo>
+											<!-- Por si hay un entero -->
+											<mn id = "int1_6"></mn>
+											<mfrac>
+												<mn id="n1_6"></mn>
+												<mn id="d1_6"></mn>
+											</mfrac>
+										</mrow>
+									</msup>
+								</mrow>
+
+								<mrow>
+									<msup>
+										<mi id="literal2_6" class = "fraction-custom"></mi>
+										<mrow class = "contenedor-signo">
+											<!-- Por si hay un signo -->
+											<mo id = "signo2_6"></mo>
+											<!-- Por si hay un entero -->
+											<mn id = "int2_6"></mn>
+											<mfrac>
+												<mn id="n2_6"></mn>
+												<mn id="d2_6"></mn>
+											</mfrac>
+										</mrow>
+									</msup>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box fraction-power-box">
+				<button type = "button" id = "respuesta6" onclick="Respuesta(6)">Respuesta</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<mrow>
+							<msup>
+								<mi id="literalr_6" class = "fraction-custom"></mi>
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signor_6"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "intr_6"></mn>
+									<mfrac>
+										<mn id="nr_6"></mn>
+										<mn id="dr_6"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 6 -->
+
+	<!-- Ejercicio 7:
+	Es similar al Ejercicio 6, pero en esta ocasión se busca que 
+	el exponente en el resultado sea 0. Por tal razón, se llama a la función
+	Ejercicio(7, 0, 0, 0) -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 7</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la división</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box large-box">
+				<button type = "button" id = "ejercicio7" onclick = "Ejercicio(7, 0, 0, 0)">Generar problema</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<!-- El ejercicio, de entrada, no aparece -->
+						<mrow style = "display: none" id = "ejercicio_division_7">
+							<mfrac class = "fraccion_principal">
+								<mrow>
+									<msup>
+										<mi id="literal1_7" class = "fraction-custom"></mi>
+										<mrow class = "contenedor-signo">
+											<!-- Por si hay un signo -->
+											<mo id = "signo1_7"></mo>
+											<!-- Por si hay un entero -->
+											<mn id = "int1_7"></mn>
+											<mfrac>
+												<mn id="n1_7"></mn>
+												<mn id="d1_7"></mn>
+											</mfrac>
+										</mrow>
+									</msup>
+								</mrow>
+
+								<mrow>
+									<msup>
+										<mi id="literal2_7" class = "fraction-custom"></mi>
+										<mrow class = "contenedor-signo">
+											<!-- Por si hay un signo -->
+											<mo id = "signo2_7"></mo>
+											<!-- Por si hay un entero -->
+											<mn id = "int2_7"></mn>
+											<mfrac>
+												<mn id="n2_7"></mn>
+												<mn id="d2_7"></mn>
+											</mfrac>
+										</mrow>
+									</msup>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box fraction-power-box">
+				<button type = "button" id = "respuesta7" onclick="Respuesta(7)">Respuesta</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<mrow>
+							<msup>
+								<mi id="literalr_7" class = "fraction-custom"></mi>
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signor_7"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "intr_7"></mn>
+									<mfrac>
+										<mn id="nr_7"></mn>
+										<mn id="dr_7"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 7 -->
+
+	<!-- Ejercicio 8:
+	Este ejercicio es más similar al Ejercicio 5, pues no se requiere que 
+	el exponente en el resultado sea 1 ni 0. No obstante, sí se requiere que el
+	segundo exponente sea 1. Por tal razón, se llama 
+	Ejercicio(8, -1, 1, 0) -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 8</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la división</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box large-box">
+				<button type = "button" id = "ejercicio8" onclick = "Ejercicio(8, -1, 1, 0)">Generar problema</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<!-- El ejercicio, de entrada, no aparece -->
+						<mrow style = "display: none" id = "ejercicio_division_8">
+							<mfrac class = "fraccion_principal">
+								<mrow>
+									<msup>
+										<mi id="literal1_8" class = "fraction-custom"></mi>
+										<mrow class = "contenedor-signo">
+											<!-- Por si hay un signo -->
+											<mo id = "signo1_8"></mo>
+											<!-- Por si hay un entero -->
+											<mn id = "int1_8"></mn>
+											<mfrac>
+												<mn id="n1_8"></mn>
+												<mn id="d1_8"></mn>
+											</mfrac>
+										</mrow>
+									</msup>
+								</mrow>
+
+								<mrow>
+									<msup>
+										<mi id="literal2_8" class = "fraction-custom"></mi>
+										<mrow class = "contenedor-signo">
+											<!-- Por si hay un signo -->
+											<mo id = "signo2_8"></mo>
+											<!-- Por si hay un entero -->
+											<mn id = "int2_8"></mn>
+											<mfrac>
+												<mn id="n2_8"></mn>
+												<mn id="d2_8"></mn>
+											</mfrac>
+										</mrow>
+									</msup>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box fraction-power-box">
+				<button type = "button" id = "respuesta8" onclick="Respuesta(8)">Respuesta</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<mrow>
+							<msup>
+								<mi id="literalr_8" class = "fraction-custom"></mi>
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signor_8"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "intr_8"></mn>
+									<mfrac>
+										<mn id="nr_8"></mn>
+										<mn id="dr_8"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 8 -->
+
+	<!-- Los ejercicios anteriores (del 1 al 8) pudieron usar 
+	una función general para Ejercicio y una función general para la Respuesta.
+	Sin embargo, los siguientes tres ejercicios siguen estructuras diferentes, 
+	por lo cual tendrán funciones individuales, esto es, el ejercicio 9
+	usará las funciones Ejercicio09 y Respuesta09, el ejercicio 10
+	usará las funciones Ejercicio10 y Respuesta10, y el ejercicio 11 usará las funciones Ejercicio11 y Respuesta11. 
+	
+	Los siguientes tres ejercicios son sobre simplificar la potenciación. -->
+
+	<!-- Ejercicio 9:
+	En este ejercicio, el alumno debe simplificar una expresión de la forma 
+	(literal^n)^m, donde n y m son números racionales. Ya que literal^n es una expresión
+	algo grande, se requiere de <mfenced open = "(" close = ")">...</mfenced> para abarcar la 
+	expresión. Por todo lo anterior, el formato del código HTML para representar el 
+	problema cambia. No obstante, el formato para representar la respuesta es el mismo,
+	pues seguirá siendo de la forma literal^k, donde k es otro racional. -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 9</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la potenciación</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una potenciación. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box large-box">
+				<button type = "button" id = "ejercicio9" onclick = "Ejercicio09()">Generar problema</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<mrow id = "ejercicio_potenciacion_9" style = "display: none">
+							<msup>
+								<mrow>
+									<!-- Para el paréntesis izquierdo (de entrada su display es none) -->
+									<mo id = "parenizq_9" stretchy="true">(</mo>
+									<msup>
+										<mi id="literal1_9" class = "fraction-custom"></mi>
+										<mrow class = "contenedor-signo">
+											<!-- Por si hay un signo -->
+											<mo id = "signo1_9"></mo>
+											<!-- Por si hay un entero -->
+											<mn id = "int1_9"></mn>
+											<mfrac>
+												<mn id="n1_9"></mn>
+												<mn id="d1_9"></mn>
+											</mfrac>
+										</mrow>
+									</msup>
+									<!-- Para el paréntesis derecho -->
+									<mo id = "parender_9" stretchy="true">)</mo>
+								</mrow>
+
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signo2_9"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "int2_9"></mn>
+									<mfrac>
+										<mn id="n2_9"></mn>
+										<mn id="d2_9"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>	
+
+		<section class = "answer">
+			<div class = "answer-box general-box fraction-power-box">
+				<button type = "button" id = "respuesta9" onclick="Respuesta09()">Respuesta</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<mrow>
+							<msup>
+								<mi id="literalr_9" class = "fraction-custom"></mi>
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signor_9"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "intr_9"></mn>
+									<mfrac>
+										<mn id="nr_9"></mn>
+										<mn id="dr_9"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 9 -->
+
+	<!-- Ejercicio 10:
+	El propósito de este ejercicio es que el alumno vuelva a practicar ejercicios de la forma
+	(literal1literal2)^r, donde r es un número racional. Con este ejercicio, el alumno
+	se dará cuenta de que el exponente r se distribuye sobre las dos literales
+	independientemente de si es un entero o un racional. -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 10</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la potenciación</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una potenciación. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box big-box">
+				<button type = "button" id = "ejercicio10" onclick = "Ejercicio10()">Generar problema</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<mrow id = "ejercicio_potenciacion_10" style = "display: none">
+							<msup>
+								<mrow>
+									<!-- Para el paréntesis izquierdo (de entrada su display es none) -->
+									<mo id = "parenizq_10" stretchy="true">(</mo>
+									<mi id="literal1_10"></mi>
+									<mi id="literal2_10"></mi>
+									<!-- Para el paréntesis derecho -->
+									<mo id = "parender_10" stretchy="true">)</mo>
+								</mrow>
+
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signo1_10"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "int1_10"></mn>
+									<mfrac>
+										<mn id="n1_10"></mn>
+										<mn id="d1_10"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box fraction-power-box">
+				<button type = "button" id = "respuesta10" onclick="Respuesta10()">Respuesta</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<mrow>
+							<msup>
+								<!-- En esta ocasión, hay dos literales con exponentes -->
+								<mi id="literalr1_10"></mi>
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signor1_10"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "intr1_10"></mn>
+									<mfrac>
+										<mn id="nr1_10"></mn>
+										<mn id="dr1_10"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+
+							<msup>
+								<mi id ="literalr2_10"></mi>
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signor2_10"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "intr2_10"></mn>
+									<mfrac>
+										<mn id="nr2_10"></mn>
+										<mn id="dr2_10"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 10 -->
+
+	<!-- Ejercicio 11:
+	Este ejercicio es similar al Ejercicio 10. Sin embargo, en esta ocasión,
+	en vez de darle al estudiante una expresión de la forma (literal1literal2)^r,
+	se le dará una expresión de la forma (literal1/literal2)^r. Para ello, 
+	se utilizará <mfrac> para representar la fracción, tanto en el problema como
+	en la respuesta. La respuesta tendrá la forma 
+	literal1^r/literal2^r. -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 11</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la potenciación</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una potenciación. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box large-box">
+				<button type = "button" id = "ejercicio11" onclick = "Ejercicio11()">Generar problema</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<mrow id = "ejercicio_potenciacion_11" style = "display: none">
+							<msup>
+								<mrow>
+									<!-- Paréntesis izquierdo para la fracción -->
+									<mo id = "parenizq_11" stretchy="true">(</mo>
+										<mfrac>
+											<mrow>
+												<mi id="literal1_11"></mi>
+											</mrow>
+
+											<mrow>
+												<mi id="literal2_11"></mi>
+											</mrow>
+										</mfrac>
+									<!-- Paréntesis derecho para la fracción -->
+									<mo id = "parender_11" stretchy="true">)</mo>
+								</mrow>
+
+								<mrow class = "contenedor-signo">
+									<!-- Por si hay un signo -->
+									<mo id = "signo1_11"></mo>
+									<!-- Por si hay un entero -->
+									<mn id = "int1_11"></mn>
+									<mfrac>
+										<mn id="n1_11"></mn>
+										<mn id="d1_11"></mn>
+									</mfrac>
+								</mrow>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box large-box">
+				<button type = "button" id = "respuesta11" onclick="Respuesta11()">Respuesta</button>
+				<p>
+					<math class = "fraction-part contenedor-signo">
+						<mrow id = "respuesta_potenciacion_11" style = "display: none">
+							<mfrac>
+								<mrow>
+									<msup>
+										<mi id="literalr1_11"></mi>
+										<mrow class = "contenedor-signo">
+											<!-- Por si hay un signo -->
+											<mo id = "signor1_11"></mo>
+											<!-- Por si hay un entero -->
+											<mn id = "intr1_11"></mn>
+											<mfrac>
+												<mn id="nr1_11"></mn>
+												<mn id="dr1_11"></mn>
+											</mfrac>
+										</mrow>
+									</msup>
+								</mrow>
+
+								<mrow>
+									<msup>
+										<mi id ="literalr2_11"></mi>
+										<mrow class = "contenedor-signo">
+											<!-- Por si hay un signo -->
+											<mo id = "signor2_11"></mo>
+											<!-- Por si hay un entero -->
+											<mn id = "intr2_11"></mn>
+											<mfrac>
+												<mn id="nr2_11"></mn>
+												<mn id="dr2_11"></mn>
+											</mfrac>
+										</mrow>
+									</msup>
+								</mrow>
+							</mfrac>	
+						</mrow>	
+					</math>	
+				</p>	
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 11 -->
+	
+	
+
+
+
+	<section id = "congrats">
+		<h2>¡Felicidades!</h2>
+		<p>Has llegado al final de este tema. Ya puedes pasar al siguiente.</p>
+	</section>
+
+	<section id = "desplazar">
+		<a class = "desp izq no--decoration" href = "../05exp_frac/problems.html">
+			<i class="fa fa-arrow-left"></i>
+			<div class = "desp-text">
+				Exponentes <br>Fraccionarios
+			</div>
+		</a>
+		
+		<a class = "desp der no--decoration" href = "../07racionalizacion/problems.html">
+			<div class = "desp-text">
+				Racionalización
+			</div>
+			<i class="fa fa-arrow-right"></i>
+		</a>
+	</section>
+	
+	<section id = "website-end"> </section>
+	
+	
+	</body>
+	
+	
+</html>

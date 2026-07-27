@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Título del sitio de inicio -->
+		<title> Exponentes y Radicales - Racionalización </title>
+		
+		<!-- Para ligar con el archivo CSS -->
+		<link rel = "stylesheet" href = "styles.css">
+
+		<!-- Para el javascript-->
+		<script src = "code.js"></script>
+		
+		<!--Para la fuente "Mulish"-->
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		
+		<!-- Para el favicon -->
+		<link rel = "icon" type = "image/x-icon" href = "../../../images/favicon.jpg">
+		
+		<!-- Para que se ajuste al dispositivo -->
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		
+		<!-- Para emojis y acentos (un poco como en LaTeX)-->
+		<meta charset = "UTF-8">
+		
+		<!-- Para íconos japo pro-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	</head>
+	
+	<!-- Empieza el cuerpo del sitio -->
+	<body>
+	
+	<!-- Empieza con el banner -->
+	<section id = "banner">
+		<img src = "../../../images/utm.jpg" class = "fadeInUp animacion--normal banner-img">
+		
+		<!-- Caja para el texto -->
+		<div class = "banner-text">
+			<!-- UTM, IFM y Jefatura de carrera -->
+			<h2 class = "fadeInUp animacion--normal">Universidad Tecnológica de la Mixteca</h2>
+			<h2 class = "fadeInUp animacion--normal">Instituto de Física y Matemáticas</h2>
+			<h2 class = "fadeInUp animacion--normal">Jefatura de Carrera de la Licenciatura en Matemáticas Aplicadas</h2>
+		</div>
+	
+	<!-- Termina el banner -->
+	</section>
+
+	<!-- Sección principal (exponentes y radicales)-->
+	<div id = "tema-title">
+		<h3>Exponentes y Radicales</h3>
+	</div>
+	
+	<!-- Empieza la lista de temas -->
+	<div class = "top-nav">
+		<a href = "../../../index.html" id = "home"><span></span>Volver al inicio</a>
+		
+		<nav>
+			<a href = "../01exp_ent_pos/problems.html"><span></span>Exponentes Enteros Positivos</a>
+			<a href = "../02exp_ent_neg/problems.html"><span></span>Exponentes Enteros Negativos</a>
+			<a href = "../03leyes_exp_enteros/problems.html"><span></span>Leyes de los Exponentes (Enteros)</a>
+			<a href = "../04radicales/problems.html"><span></span>Radicales</a>
+			<a href = "../05exp_frac/problems.html"><span></span>Exponentes Fraccionarios</a>
+			<a href = "../06leyes_exp_frac/problems.html"><span></span>Leyes de los Exponentes (Fraccionarios)</a>
+			<a href = "../07racionalizacion/problems.html"><span></span>Racionalización</a>
+		</nav>
+	</div>
+	<!-- Termina la lista de temas -->
+
+	<!-- Subtema en el que está-->
+	<section id = "subtema" >
+		<div id = "subtema-title">
+			<h2>Racionalización</h2>
+		</div>
+	</section>
+
+	<!-- Los ejercicios de esta página se especializan en la racionalización de radicales.
+	
+	Para ello, habrá tres tipos de ejercicios:
+
+	Ejercicios Tipo 1: El alumno racionaliza expresiones de la forma a/(raíz_n-ésima(c))
+	Ejercicios Tipo 2: El alumno racionaliza expresiones de la forma 1/(más-menos raíz(a) más-menos sqrt(b))
+	Ejercicios Tipo 3: El alumno racionaliza expresiones de la forma 1/(más-menos a más-menos sqrt(b) )-->
+
+	<!-- ratRoot
+
+	Los números de la forma (a*raíz_n-ésima(b))/(c*raíz_n-ésima(d)) se modelaran mediante
+	arreglos de la forma [[a, c], n, [b, d]], esto es, un arreglo donde el primer elemento 
+	es el racional a/c, el segundo elemento es el índice de la raíz, y el tercer elemento
+	es el radicando b/d.
+
+	SE ASUME QUE a, b, c, d, n son enteros positivos, y que c y d son distintos de cero. Además, se asume que n es mayor o igual a 2.
+
+	La siguiente sección contiene funciones especializadas en objetos de tipo ratRoot. -->
+
+	<!-- En el archivo code.js se encuentra la función que genera los ejercicios de racionalización. Esta función se llamará EjercicioT1, y generará
+	en ejercicios de tipo 1, y se llamará EjercicioT1.
+	Tendrá únicamente dos parámetros: 
+
+	EjercicioT1(n, tipo):
+
+	n: Es el número de Ejercicio. 
+	tipo: Puede ser 1, 2, 3 o 4.
+		Es 1 si se necesita que el numerador sea 1,
+		Es 2 si se necesita que el numerador sea un primo distinto al de la raíz
+		Es 3 si se necesita que el numerador sea igual al radicando
+		Es 4 si se necesita que el numerador sea un múltiplo del radicando -->
+
+	<!--Ejercicio 1: Racionalizar un número de la forma 1/raíz_n-ésima(c) -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 1</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Racionalizar la expresión</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una expresión con raíces. Tu trabajo es racionalizarla de tal manera que
+					no haya una raíz en el denominador.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver la forma racionalizada de la expresión.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box big-box">
+				<button type = "button" id = "ejercicio1" onclick = "EjercicioT1(1, 1)">Generar problema</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part">
+							<!-- De entrada, el display de la parte normal es none -->
+							<mrow id = "normal_part_1" style = "display: none;" class = "contenedor-signo">
+								<mn id = "intA_1"></mn>
+								<mroot>
+									<mn id = "rootA_1" class = "raiz-custom"></mn>
+									<mn id = "indexA_1"></mn>
+								</mroot>
+							</mrow>
+
+							<!-- De entrada, el display de la parte fraccionaria es none -->
+							<mfrac id = "fraction_part_1" style = "display: none;" class = "contenedor-signo">
+								<!-- Primero, todo lo correspondiente a intB_1, rootB_1, indexB_1 -->
+								<mrow>
+									<mn id = "intB_1"></mn>
+									<mroot>
+										<mn id = "rootB_1" class = "raiz-custom"></mn>
+										<mn id = "indexB_1"></mn>
+									</mroot>
+								</mrow>
+								<!-- Después, todo lo correspondiente al denominador con C -->
+								<mrow>
+									<mn id = "intC_1"></mn>
+									<mroot>
+										<mn id = "rootC_1" class = "raiz-custom"></mn>
+										<mn id = "indexC_1"></mn>
+									</mroot>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box big-box">
+				<button type = "button" id = "repuesta1" onclick="RespuestaT1(1)">Respuesta</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part">
+							<!-- Tiene la misma estructura del ejercicio, pero con nombres como
+							intAr_1, rootAr_1, indexAr_1, etc... -->
+							<mrow id = "normal_part_r_1" style = "display: none;">
+								<mn id = "intAr_1"></mn>
+								<mroot>
+									<mn id = "rootAr_1" class = "raiz-custom"></mn>
+									<mn id = "indexAr_1"></mn>
+								</mroot>
+							</mrow>
+
+							<!-- De entrada, el display de la parte fraccionaria es none -->
+							<mfrac id = "fraction_part_r_1" style = "display: none;">
+								<mrow>
+									<mn id = "intBr_1"></mn>
+									<mroot>
+										<mn id = "rootBr_1" class = "raiz-custom"></mn>
+										<mn id = "indexBr_1"></mn>
+									</mroot>
+								</mrow>
+								<mrow>
+									<mn id = "intCr_1"></mn>
+									<mroot>
+										<mn id = "rootCr_1" class = "raiz-custom"></mn>
+										<mn id = "indexCr_1"></mn>
+									</mroot>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 1 -->
+
+	<!-- Ejercicio 2:
+	Es similar al Ejercicio 1. Solo hace falta cambiar los ID's y las funciones correspondientes.
+	En esta ocasión, se llaman EjercicioT1(2, 2) y Respuesta(2) -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 2</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Racionalizar la expresión</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una expresión con raíces. Tu trabajo es racionalizarla de tal manera que
+					no haya una raíz en el denominador.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver la forma racionalizada de la expresión.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+
+			<div class = "particular general-box big-box">
+				<button type = "button" id = "ejercicio2" onclick = "EjercicioT1(2, 2)">Generar problema</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part">
+							<mrow id = "normal_part_2" style = "display: none;" class = "contenedor-signo">
+								<mn id = "intA_2"></mn>
+								<mroot>
+									<mn id = "rootA_2" class = "raiz-custom"></mn>
+									<mn id = "indexA_2"></mn>
+								</mroot>
+							</mrow>
+
+							<mfrac id = "fraction_part_2" style = "display: none;" class = "contenedor-signo">
+								<mrow>
+									<mn id = "intB_2"></mn>
+									<mroot>
+										<mn id = "rootB_2" class = "raiz-custom"></mn>
+										<mn id = "indexB_2"></mn>
+									</mroot>
+								</mrow>
+
+								<mrow>
+									<mn id = "intC_2"></mn>
+									<mroot>
+										<mn id = "rootC_2" class = "raiz-custom"></mn>
+										<mn id = "indexC_2"></mn>
+									</mroot>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box big-box">
+				<button type = "button" id = "repuesta2" onclick="RespuestaT1(2)">Respuesta</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part">
+							<mrow id = "normal_part_r_2" style = "display: none;">
+								<mn id = "intAr_2"></mn>
+								<mroot>
+									<mn id = "rootAr_2" class = "raiz-custom"></mn>
+									<mn id = "indexAr_2"></mn>
+								</mroot>
+							</mrow>
+
+							<mfrac id = "fraction_part_r_2" style = "display: none;">
+								<mrow>
+									<mn id = "intBr_2"></mn>
+									<mroot>
+										<mn id = "rootBr_2" class = "raiz-custom"></mn>
+										<mn id = "indexBr_2"></mn>
+									</mroot>
+								</mrow>
+
+								<mrow>
+									<mn id = "intCr_2"></mn>
+									<mroot>
+										<mn id = "rootCr_2" class = "raiz-custom"></mn>
+										<mn id = "indexCr_2"></mn>
+									</mroot>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 2 -->
+
+	<!-- Ejercicio 3:
+	Es muy similar al Ejercicio 3. Solo hace falta cambiar
+	los ID's y las funciones correspondientes. -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 3</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Racionalizar la expresión</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una expresión con raíces. Tu trabajo es racionalizarla de tal manera que
+					no haya una raíz en el denominador.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver la forma racionalizada de la expresión.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+
+			<div class = "particular general-box big-box">
+				<button type = "button" id = "ejercicio3" onclick = "EjercicioT1(3, 3)">Generar problema</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part">
+							<mrow id = "normal_part_3" style = "display: none;" class = "contenedor-signo">
+								<mn id = "intA_3"></mn>
+								<mroot>
+									<mn id = "rootA_3" class = "raiz-custom"></mn>
+									<mn id = "indexA_3"></mn>
+								</mroot>
+							</mrow>
+
+							<mfrac id = "fraction_part_3" style = "display: none;" class = "contenedor-signo">
+								<mrow>
+									<mn id = "intB_3"></mn>
+									<mroot>
+										<mn id = "rootB_3" class = "raiz-custom"></mn>
+										<mn id = "indexB_3"></mn>
+									</mroot>
+								</mrow>
+
+								<mrow>
+									<mn id = "intC_3"></mn>
+									<mroot>
+										<mn id = "rootC_3" class = "raiz-custom"></mn>
+										<mn id = "indexC_3"></mn>
+									</mroot>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box big-box">
+				<button type = "button" id = "repuesta3" onclick="RespuestaT1(3)">Respuesta</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part">
+							<mrow id = "normal_part_r_3" style = "display: none;">
+								<mn id = "intAr_3"></mn>
+								<mroot>
+									<mn id = "rootAr_3" class = "raiz-custom"></mn>
+									<mn id = "indexAr_3"></mn>
+								</mroot>
+							</mrow>
+
+							<mfrac id = "fraction_part_r_3" style = "display: none;">
+								<mrow>
+									<mn id = "intBr_3"></mn>
+									<mroot>
+										<mn id = "rootBr_3" class = "raiz-custom"></mn>
+										<mn id = "indexBr_3"></mn>
+									</mroot>
+								</mrow>
+
+								<mrow>
+									<mn id = "intCr_3"></mn>
+									<mroot>
+										<mn id = "rootCr_3" class = "raiz-custom"></mn>
+										<mn id = "indexCr_3"></mn>
+									</mroot>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 3 -->
+
+	<!-- Ejercicio 4:
+	Es similar al Ejercicio 3. Solo hace falta cambiar los IDs
+	y las funciones correspondientes. -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 4</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Racionalizar la expresión</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una expresión con raíces. Tu trabajo es racionalizarla de tal manera que
+					no haya una raíz en el denominador.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver la forma racionalizada de la expresión.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+
+			<div class = "particular general-box big-box">
+				<button type = "button" id = "ejercicio4" onclick = "EjercicioT1(4, 4)">Generar problema</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part">
+							<mrow id = "normal_part_4" style = "display: none;" class = "contenedor-signo">
+								<mn id = "intA_4"></mn>
+								<mroot>
+									<mn id = "rootA_4" class = "raiz-custom"></mn>
+									<mn id = "indexA_4"></mn>
+								</mroot>
+							</mrow>
+
+							<mfrac id = "fraction_part_4" style = "display: none;" class = "contenedor-signo">
+								<mrow>
+									<mn id = "intB_4"></mn>
+									<mroot>
+										<mn id = "rootB_4" class = "raiz-custom"></mn>
+										<mn id = "indexB_4"></mn>
+									</mroot>
+								</mrow>
+
+								<mrow>
+									<mn id = "intC_4"></mn>
+									<mroot>
+										<mn id = "rootC_4" class = "raiz-custom"></mn>
+										<mn id = "indexC_4"></mn>
+									</mroot>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box big-box">
+				<button type = "button" id = "repuesta4" onclick="RespuestaT1(4)">Respuesta</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part">
+							<mrow id = "normal_part_r_4" style = "display: none;">
+								<mn id = "intAr_4"></mn>
+								<mroot>
+									<mn id = "rootAr_4" class = "raiz-custom"></mn>
+									<mn id = "indexAr_4"></mn>
+								</mroot>
+							</mrow>
+
+							<mfrac id = "fraction_part_r_4" style = "display: none;">
+								<mrow>
+									<mn id = "intBr_4"></mn>
+									<mroot>
+										<mn id = "rootBr_4" class = "raiz-custom"></mn>
+										<mn id = "indexBr_4"></mn>
+									</mroot>
+								</mrow>
+
+								<mrow>
+									<mn id = "intCr_4"></mn>
+									<mroot>
+										<mn id = "rootCr_4" class = "raiz-custom"></mn>
+										<mn id = "indexCr_4"></mn>
+									</mroot>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 4 -->
+
+	<!-- La función EjercicioT2 se especializa en generar ejercicios de tipo 2. En estos ejercicios,
+	el alumno debe racionalizar números de la forma 
+	1 / (\pm sqrt(a) \pm sqrt(b)), donde \pm significa más menos.
+
+	Esta función tendrá tres parámetros.
+
+	EjercicioT2(n, signo1, signo2)
+
+	n: Número de ejercicio.
+	signo1: Puede ser 1 o -1. Es 1 si el signo para sqrt(a) será positivo y
+			-1 si el signo para sqrt(a) será negativo.
+	signo2: Puede ser 1 o -1. Es 1 si el signo para sqrt(b) será positivo y
+			-1 si el signo para sqrt(b) será negativo.
+
+	El ejercicio está diseñado para que no se pueda que ambos signos sean negativos al mismo tiempo.
+	
+	Los siguientes 3 ejercicios tienen la misma estructura, por lo cual son controlados por
+	la misma función EjercicioT2 -->
+
+	<!-- Ejercicio 5:
+	El propósito de este ejercicio es que el alumno pueda racionalizar
+	expresiones de la forma 1 / (\pm sqrt(a) \pm sqrt(b)), donde \pm significa más menos. -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 5</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Racionalizar la expresión</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una expresión con raíces. Tu trabajo es racionalizarla de tal manera que
+					no haya una raíz en el denominador.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver la forma racionalizada de la expresión.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+
+			<div class = "particular general-box big-box">
+				<button type = "button" id = "ejercicio5" onclick = "EjercicioT2(5, 1, 1)">Generar problema</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part" id = "ejercicio_math_5" style = "display: none;">
+							<mfrac>
+								<mrow>
+									<mn>1</mn>
+								</mrow>
+								<mrow>
+									<mo id = "sgn1_5"></mo>
+									<msqrt>
+										<mn id = "int1_5" class = "raiz-custom"></mn>
+									</msqrt>
+									<mo id = "sgn2_5"></mo>
+									<msqrt>
+										<mn id = "int2_5" class = "raiz-custom"></mn>
+									</msqrt>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<!-- La respuesta siempre tendrá la forma rat1*sqrt(a) \pm rat2*sqrt(b)
+		Los racionales se representan como signo int <mfrac> ... </mfrac> -->
+		<section class = "answer">
+			<div class = "answer-box general-box big-box">
+				<button type = "button" id = "repuesta5" onclick="RespuestaT2(5)">Respuesta</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part" id = "respuesta_math_5" style = "display: none;">
+							<mrow class = "contenedor-signo">
+								<mo id = "signo1r_5"></mo>
+								<mn id = "int1r_5"></mn>
+								<mfrac>
+									<mrow>
+										<mn id = "num1r_5"></mn>
+									</mrow>
+									<mrow>
+										<mn id = "den1r_5"></mn>
+									</mrow>
+								</mfrac>
+								<msqrt>
+									<mn id = "root1r_5" class = "raiz-custom"></mn>
+								</msqrt>
+
+								<mo id = "signo2r_5"></mo>
+
+								<mn id = "int2r_5"></mn>
+								<mfrac>
+									<mrow>
+										<mn id = "num2r_5"></mn>
+									</mrow>
+									<mrow>
+										<mn id = "den2r_5"></mn>
+									</mrow>
+								</mfrac>
+
+								<msqrt>
+									<mn id = "root2r_5" class = "raiz-custom"></mn>
+								</msqrt>
+
+							</mrow>	
+						</mrow>	
+					</math>	
+				</p>	
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 5 -->
+
+	<!-- Ejercicio 6:
+	Es muy similar al Ejercicio 5. Solo hace falta cambiar los IDs y las funciones
+	correspondientes. En esta ocasión, se llaman Ejercicio(6, 1, -1) y Respuesta(6) -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 6</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Racionalizar la expresión</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una expresión con raíces. Tu trabajo es racionalizarla de tal manera que
+					no haya una raíz en el denominador.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver la forma racionalizada de la expresión.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+
+			<div class = "particular general-box big-box">
+				<button type = "button" id = "ejercicio6" onclick = "EjercicioT2(6, 1, -1)">Generar problema</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part" id = "ejercicio_math_6" style = "display: none;">
+							<mfrac>
+								<mrow>
+									<mn>1</mn>
+								</mrow>
+								<mrow>
+									<mo id = "sgn1_6"></mo>
+									<msqrt>
+										<mn id = "int1_6" class = "raiz-custom"></mn>
+									</msqrt>
+									<mo id = "sgn2_6"></mo>
+									<msqrt>
+										<mn id = "int2_6" class = "raiz-custom"></mn>
+									</msqrt>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>	
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box big-box">
+				<button type = "button" id = "repuesta6" onclick="RespuestaT2(6)">Respuesta</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part" id = "respuesta_math_6" style = "display: none;">
+							<mrow class = "contenedor-signo">
+								<mo id = "signo1r_6"></mo>
+								<mn id = "int1r_6"></mn>
+								<mfrac>
+									<mrow>
+										<mn id = "num1r_6"></mn>
+									</mrow>
+									<mrow>
+										<mn id = "den1r_6"></mn>
+									</mrow>
+								</mfrac>
+								<msqrt>
+									<mn id = "root1r_6" class = "raiz-custom"></mn>
+								</msqrt>
+
+								<mo id = "signo2r_6"></mo>
+
+								<mn id = "int2r_6"></mn>
+								<mfrac>
+									<mrow>
+										<mn id = "num2r_6"></mn>
+									</mrow>
+									<mrow>
+										<mn id = "den2r_6"></mn>
+									</mrow>
+								</mfrac>
+
+								<msqrt>
+									<mn id = "root2r_6" class = "raiz-custom"></mn>
+								</msqrt>
+
+							</mrow>	
+						</mrow>	
+					</math>	
+				</p>	
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 6 -->
+
+	<!-- Ejercicio 7:
+	Es muy similar al Ejercicio 6. Solo hace falta cambiar los IDs
+	y las funciones correspondientes. En esta ocasión, se llama a la 
+	función Ejercicio(7, -1, 1) -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 7</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Racionalizar la expresión</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una expresión con raíces. Tu trabajo es racionalizarla de tal manera que
+					no haya una raíz en el denominador.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver la forma racionalizada de la expresión.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+
+			<div class = "particular general-box big-box">
+				<button type = "button" id = "ejercicio7" onclick = "EjercicioT2(7, -1, 1)">Generar problema</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part" id = "ejercicio_math_7" style = "display: none;">
+							<mfrac>
+								<mrow>
+									<mn>1</mn>
+								</mrow>
+								<mrow>
+									<mo id = "sgn1_7"></mo>
+									<msqrt>
+										<mn id = "int1_7" class = "raiz-custom"></mn>
+									</msqrt>
+									<mo id = "sgn2_7"></mo>
+									<msqrt>
+										<mn id = "int2_7" class = "raiz-custom"></mn>
+									</msqrt>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>	
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box big-box">
+				<button type = "button" id = "repuesta7" onclick="RespuestaT2(7)">Respuesta</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part" id = "respuesta_math_7" style = "display: none;">
+							<mrow class = "contenedor-signo">
+								<mo id = "signo1r_7"></mo>
+								<mn id = "int1r_7"></mn>
+								<mfrac>
+									<mrow>
+										<mn id = "num1r_7"></mn>
+									</mrow>
+									<mrow>
+										<mn id = "den1r_7"></mn>
+									</mrow>
+								</mfrac>
+								<msqrt>
+									<mn id = "root1r_7" class = "raiz-custom"></mn>
+								</msqrt>
+
+								<mo id = "signo2r_7"></mo>
+
+								<mn id = "int2r_7"></mn>
+								<mfrac>
+									<mrow>
+										<mn id = "num2r_7"></mn>
+									</mrow>
+									<mrow>
+										<mn id = "den2r_7"></mn>
+									</mrow>
+								</mfrac>
+
+								<msqrt>
+									<mn id = "root2r_7" class = "raiz-custom"></mn>
+								</msqrt>
+
+							</mrow>	
+						</mrow>	
+					</math>	
+				</p>	
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 7 -->
+
+	<!-- Los siguientes ejercicios son para que el alumno aprenda a racionalizar
+	expresiones de la forma 1/(\pm a \pm sqrt(b)). Por tal razón, la estructura
+	es muy similar a la de los ejercicios previos pero, en esta ocasión, hay una raíz
+	menos en el ejercicio y una raíz menos en la respuesta. -->
+
+	<!-- Ejercicio 8:
+	Es muy similar al Ejercicio 5, solo que, en esta ocasión,
+	el alumno debe aprender a racionalizar expresiones de la forma 1/(\pm a \pm \sqrt{b}). -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 8</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Racionalizar la expresión</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una expresión con raíces. Tu trabajo es racionalizarla de tal manera que
+					no haya una raíz en el denominador.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver la forma racionalizada de la expresión.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+
+			<div class = "particular general-box big-box">
+				<button type = "button" id = "ejercicio8" onclick = "EjercicioT3(8, 1, 1)">Generar problema</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part" id = "ejercicio_math_8" style = "display: none;">
+							<mfrac>
+								<mrow>
+									<mn>1</mn>
+								</mrow>
+								<mrow>
+									<mo id = "sgn1_8"></mo>
+									<mn id = "int1_8"></mn>
+									<mo id = "sgn2_8"></mo>
+									<msqrt>
+										<mn id = "int2_8" class = "raiz-custom"></mn>
+									</msqrt>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>	
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box big-box">
+				<button type = "button" id = "repuesta8" onclick="RespuestaT3(8)">Respuesta</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part" id = "respuesta_math_8" style = "display: none;">
+							<mrow class = "contenedor-signo">
+								<mo id = "signo1r_8"></mo>
+								<mn id = "int1r_8"></mn>
+								<mfrac>
+									<mrow>
+										<mn id = "num1r_8"></mn>
+									</mrow>
+									<mrow>
+										<mn id = "den1r_8"></mn>
+									</mrow>
+								</mfrac>
+
+								<mo id = "signo2r_8"></mo>
+
+								<mn id = "int2r_8"></mn>
+								<mfrac>
+									<mrow>
+										<mn id = "num2r_8"></mn>
+									</mrow>
+									<mrow>
+										<mn id = "den2r_8"></mn>
+									</mrow>
+								</mfrac>
+
+								<msqrt>
+									<mn id = "root2r_8" class = "raiz-custom"></mn>
+								</msqrt>
+
+							</mrow>	
+						</mrow>	
+					</math>	
+				</p>	
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 8 -->
+
+	<!-- Ejercicio 9:
+	Es muy similar al Ejercicio 8. Solo hace falta cambiar los IDs y 
+	las funciones correspondientes. En esta ocasión, se llama la función 
+	EjercicioT3(9, 1, -1). -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 9</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Racionalizar la expresión</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una expresión con raíces. Tu trabajo es racionalizarla de tal manera que
+					no haya una raíz en el denominador.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver la forma racionalizada de la expresión.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+
+			<div class = "particular general-box big-box">
+				<button type = "button" id = "ejercicio9" onclick = "EjercicioT3(9, 1, -1)">Generar problema</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part" id = "ejercicio_math_9" style = "display: none;">
+							<mfrac>
+								<mrow>
+									<mn>1</mn>
+								</mrow>
+								<mrow>
+									<mo id = "sgn1_9"></mo>
+									<mn id = "int1_9"></mn>
+									<mo id = "sgn2_9"></mo>
+									<msqrt>
+										<mn id = "int2_9" class = "raiz-custom"></mn>
+									</msqrt>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>	
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box big-box">
+				<button type = "button" id = "repuesta9" onclick="RespuestaT3(9)">Respuesta</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part" id = "respuesta_math_9" style = "display: none;">
+							<mrow class = "contenedor-signo">
+								<mo id = "signo1r_9"></mo>
+								<mn id = "int1r_9"></mn>
+								<mfrac>
+									<mrow>
+										<mn id = "num1r_9"></mn>
+									</mrow>
+									<mrow>
+										<mn id = "den1r_9"></mn>
+									</mrow>
+								</mfrac>
+
+								<mo id = "signo2r_9"></mo>
+
+								<mn id = "int2r_9"></mn>
+								<mfrac>
+									<mrow>
+										<mn id = "num2r_9"></mn>
+									</mrow>
+									<mrow>
+										<mn id = "den2r_9"></mn>
+									</mrow>
+								</mfrac>
+
+								<msqrt>
+									<mn id = "root2r_9" class = "raiz-custom"></mn>
+								</msqrt>
+
+							</mrow>	
+						</mrow>	
+					</math>	
+				</p>	
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 9 -->
+
+	<!-- Ejercicio 10:
+	Es muy similar al Ejercicio 9. Solo hace falta cambiar los IDs
+	y las funciones correspondientes. En esta ocasión, se llamará
+	la función EjercicioT3(10, -1, 1). -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 10</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Racionalizar la expresión</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una expresión con raíces. Tu trabajo es racionalizarla de tal manera que
+					no haya una raíz en el denominador.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver la forma racionalizada de la expresión.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+
+			<div class = "particular general-box big-box">
+				<button type = "button" id = "ejercicio10" onclick = "EjercicioT3(10, -1, 1)">Generar problema</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part" id = "ejercicio_math_10" style = "display: none;">
+							<mfrac>
+								<mrow>
+									<mn>1</mn>
+								</mrow>
+								<mrow>
+									<mo id = "sgn1_10"></mo>
+									<mn id = "int1_10"></mn>
+									<mo id = "sgn2_10"></mo>
+									<msqrt>
+										<mn id = "int2_10" class = "raiz-custom"></mn>
+									</msqrt>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>	
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box big-box">
+				<button type = "button" id = "repuesta10" onclick="RespuestaT3(10)">Respuesta</button>
+				<p>
+					<math>
+						<mrow class = "contenedor-signo fraction-part" id = "respuesta_math_10" style = "display: none;">
+							<mrow class = "contenedor-signo">
+								<mo id = "signo1r_10"></mo>
+								<mn id = "int1r_10"></mn>
+								<mfrac>
+									<mrow>
+										<mn id = "num1r_10"></mn>
+									</mrow>
+									<mrow>
+										<mn id = "den1r_10"></mn>
+									</mrow>
+								</mfrac>
+
+								<mo id = "signo2r_10"></mo>
+
+								<mn id = "int2r_10"></mn>
+								<mfrac>
+									<mrow>
+										<mn id = "num2r_10"></mn>
+									</mrow>
+									<mrow>
+										<mn id = "den2r_10"></mn>
+									</mrow>
+								</mfrac>
+
+								<msqrt>
+									<mn id = "root2r_10" class = "raiz-custom"></mn>
+								</msqrt>
+
+							</mrow>	
+						</mrow>	
+					</math>	
+				</p>	
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 10 -->
+	
+
+
+
+	<section id = "congrats">
+		<h2>¡Felicidades!</h2>
+		<p>Has llegado al final de este tema. Ya puedes pasar al siguiente.</p>
+	</section>
+
+	<section id = "desplazar">
+		<a class = "desp izq no--decoration" href = "../06leyes_exp_frac/problems.html">
+			<i class="fa fa-arrow-left"></i>
+			<div class = "desp-text">
+				Leyes <br>Fraccionarias
+			</div>
+		</a>
+		
+		<a class = "desp der no--decoration" href = "../../02monomios/01monomios_semejantes/problems.html">
+			<div class = "desp-text">
+				Monomios <br>Semejantes
+			</div>
+			<i class="fa fa-arrow-right"></i>
+		</a>
+	</section>
+	
+	<section id = "website-end"> </section>
+	
+	
+	</body>
+	
+	
+</html>

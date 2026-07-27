@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Título del sitio de inicio -->
+		<title> Exponentes y Radicales - Exponentes Enteros </title>
+		
+		<!-- Para ligar con el archivo CSS -->
+		<link rel = "stylesheet" href = "styles.css">
+
+		<!-- Para el javascript-->
+		<script src = "code.js"></script>
+		
+		<!--Para la fuente "Mulish"-->
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		
+		<!-- Para el favicon -->
+		<link rel = "icon" type = "image/x-icon" href = "../../../images/favicon.jpg">
+		
+		<!-- Para que se ajuste al dispositivo -->
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		
+		<!-- Para emojis y acentos (un poco como en LaTeX)-->
+		<meta charset = "UTF-8">
+		
+		<!-- Para íconos japo pro-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	</head>
+	
+	<!-- Empieza el cuerpo del sitio -->
+	<body>
+	
+	<!-- Empieza con el banner -->
+	<section id = "banner">
+		<img src = "../../../images/utm.jpg" class = "fadeInUp animacion--normal banner-img">
+		
+		<!-- Caja para el texto -->
+		<div class = "banner-text">
+			<!-- UTM, IFM y Jefatura de carrera -->
+			<h2 class = "fadeInUp animacion--normal">Universidad Tecnológica de la Mixteca</h2>
+			<h2 class = "fadeInUp animacion--normal">Instituto de Física y Matemáticas</h2>
+			<h2 class = "fadeInUp animacion--normal">Jefatura de Carrera de la Licenciatura en Matemáticas Aplicadas</h2>
+		</div>
+	
+	<!-- Termina el banner -->
+	</section>
+
+	<!-- Sección principal (exponentes y radicales)-->
+	<div id = "tema-title">
+		<h3>Exponentes y Radicales</h3>
+	</div>
+	
+	<!-- Empieza la lista de temas -->
+	<div class = "top-nav">
+		<a href = "../../../index.html" id = "home"><span></span>Volver al inicio</a>
+		
+		<nav>
+			<a href = "../01exp_ent_pos/problems.html"><span></span>Exponentes Enteros Positivos</a>
+			<a href = "../02exp_ent_neg/problems.html"><span></span>Exponentes Enteros Negativos</a>
+			<a href = "../03leyes_exp_enteros/problems.html"><span></span>Leyes de los Exponentes (Enteros)</a>
+			<a href = "../04radicales/problems.html"><span></span>Radicales</a>
+			<a href = "../05exp_frac/problems.html"><span></span>Exponentes Fraccionarios</a>
+			<a href = "../06leyes_exp_frac/problems.html"><span></span>Leyes de los Exponentes (Fraccionarios)</a>
+			<a href = "../07racionalizacion/problems.html"><span></span>Racionalización</a>
+		</nav>
+	</div>
+	<!-- Termina la lista de temas -->
+
+	<!-- Subtema en el que está-->
+	<section id = "subtema" >
+		<div id = "subtema-title">
+			<h2>Leyes de los Exponentes (Enteros)</h2>
+		</div>
+	</section>
+
+	<!-- Ejercicio 1: 
+	Simplificar una multiplicación utilizando las leyes de los exponentes -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 1</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la multiplicación</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una multiplicación. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio1" onclick = "Ejercicio1()">Generar problema</button>
+				<p>
+					<math class = "power-part">
+						<mrow>
+							<msup>
+								<mi id="l11"></mi>
+								<mn id="e11"></mn>
+							</msup>
+							<msup>
+								<mi id="l12"></mi>
+								<mn id="e12"></mn>
+							</msup>						
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta1" onclick="Respuesta1()">Respuesta</button>
+				<p>
+					<math class = "power-part">
+						<mrow>
+							<msup>
+								<mi id="lr1"></mi>
+								<mn id="er1"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 1-->
+
+	<!-- Ejercicio 2:
+	Es muy similar al Ejercicio 1. Solo hace falta cambiar ID's y las funciones correspondientes -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 2</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la multiplicación</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una multiplicación. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio2" onclick = "Ejercicio2()">Generar problema</button>
+				<p>
+					<math class = "power-part">
+						<mrow>
+							<msup>
+								<mi id="l21"></mi>
+								<mn id="e21"></mn>
+							</msup>
+							<msup>
+								<mi id="l22"></mi>
+								<mn id="e22"></mn>
+							</msup>						
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta2" onclick="Respuesta2()">Respuesta</button>
+				<p>
+					<math class = "power-part">
+						<mrow>
+							<mi id="lr2"></mi>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 2-->
+
+	<!-- Ejercicio 3:
+	Es muy similar al Ejercicio 2. Solo hace falta cambiar ID's y las funciones correspondientes -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 3</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la multiplicación</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una multiplicación. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio3" onclick = "Ejercicio3()">Generar problema</button>
+				<p>
+					<math class = "power-part">
+						<mrow>
+							<msup>
+								<mi id="l31"></mi>
+								<mn id="e31"></mn>
+							</msup>
+							<msup>
+								<mi id="l32"></mi>
+								<mn id="e32"></mn>
+							</msup>						
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta3" onclick="Respuesta3()">Respuesta</button>
+				<p>
+					<math class = "power-part">
+						<mrow>
+							<msup>
+								<mi id="lr3"></mi>
+								<mn id="er3"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 3-->
+
+	<!-- Ejercicio 4:
+	Es muy similar al Ejercicio 3. Solamente hace falta cambiar los ID's y las funciones correspondientes -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 4</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la multiplicación</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una multiplicación. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio4" onclick = "Ejercicio4()">Generar problema</button>
+				<p>
+					<math class = "power-part">
+						<mrow>
+							<msup>
+								<mi id="l41"></mi>
+								<mn id="e41"></mn>
+							</msup>
+							<msup>
+								<mi id="l42"></mi>
+								<mn id="e42"></mn>
+							</msup>						
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta4" onclick="Respuesta4()">Respuesta</button>
+				<p>
+					<math class = "power-part">
+						<mrow>
+							<msup>
+								<mi id="lr4"></mi>
+								<mn id="er4"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 4-->
+
+	<!-- Ejercicio 5:
+	Es similar al Ejercicio 4, pero esta vez, en vez de tratarse de una multiplicación,
+	se hace una división. Por tal razón, se utiliza mfrac para representar la fracción que se debe simplificar
+	utilizando las leyes de los exponentes -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 5</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la división</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box fraction-power-box">
+				<button type = "button" id = "ejercicio5" onclick = "Ejercicio5()">Generar problema</button>
+				<p>
+					<math class = "fraction-part">
+						<mrow>
+							<mfrac>
+								<mrow>
+									<msup>
+										<mi id="l51"></mi>
+										<mn id="e51"></mn>
+									</msup>
+								</mrow>
+								<mrow>
+									<msup>
+										<mi id="l52"></mi>
+										<mn id="e52"></mn>
+									</msup>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta5" onclick="Respuesta5()">Respuesta</button>
+				<p>
+					<math class = "power-part">
+						<mrow>
+							<msup>
+								<mi id="lr5"></mi>
+								<mn id="er5"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 5 -->
+
+	<!-- Ejercicio 6:
+	Es muy similar al Ejercicio 5. Solo hace falta cambiar los ID's y las funciones correspondientes -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 6</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la división</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box fraction-power-box">
+				<button type = "button" id = "ejercicio6" onclick = "Ejercicio6()">Generar problema</button>
+				<p>
+					<math class = "fraction-part">
+						<mrow>
+							<mfrac>
+								<mrow>
+									<msup>
+										<mi id="l61"></mi>
+										<mn id="e61"></mn>
+									</msup>
+								</mrow>
+								<mrow>
+									<msup>
+										<mi id="l62"></mi>
+										<mn id="e62"></mn>
+									</msup>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta6" onclick="Respuesta6()">Respuesta</button>
+				<p>
+					<math class = "power-part">
+						<mrow>
+							<msup>
+								<mi id="lr6"></mi>
+								<mn id="er6"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 6 -->
+
+	<!-- Ejercicio 7:
+	Es muy similar al Ejercicio 6. Solo hace falta cambiar los ID's y las funciones correspondientes -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 7</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la división</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una división. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box fraction-power-box">
+				<button type = "button" id = "ejercicio7" onclick = "Ejercicio7()">Generar problema</button>
+				<p>
+					<math class = "fraction-part">
+						<mrow>
+							<mfrac>
+								<mrow>
+									<msup>
+										<mi id="l71"></mi>
+										<mn id="e71"></mn>
+									</msup>
+								</mrow>
+								<mrow>
+									<msup>
+										<mi id="l72"></mi>
+										<mn id="e72"></mn>
+									</msup>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta7" onclick="Respuesta7()">Respuesta</button>
+				<p>
+					<math class = "power-part">
+						<mrow>
+							<msup>
+								<mi id="lr7"></mi>
+								<mn id="er7"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 7 -->
+
+	<!-- Ejercicio 8:
+	Este ejercicio ya no consiste en simplificar una multiplicación o una división,
+	sino en simplificar una potenciación. Para ello, se utilizarán paréntesis que rodeen a la 
+	literal elevada a una cierta potencia, y esto se elevará a una segunda potencia. Por tal razón,
+	se utilizará msup para la potenciación -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 8</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la potenciación</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una potenciación. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box power-power-box">
+				<button type = "button" id = "ejercicio8" onclick = "Ejercicio8()">Generar problema</button>
+				<p>
+					<math class = "power-part">
+						<mrow>
+							<msup>
+								<mrow>
+									<mo id="pl8"></mo>
+										<msup>
+											<mi id="l8"></mi>
+											<mn id="e81"></mn>
+										</msup>
+									<mo id="pr8"></mo>
+								</mrow>
+								<mn id="e82"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta8" onclick="Respuesta8()">Respuesta</button>
+				<p>
+					<math class = "power-part">
+						<mrow>
+							<msup>
+								<mi id="lr8"></mi>
+								<mn id="er8"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 8 -->
+
+	<!-- Ejercicio 9:
+	Es similar al Ejercicio 8, pero ahora se utilizan dos literales en lugar de una
+	para que el alumno pueda practicar con más de una literal a la vez. -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 9</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la potenciación</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una potenciación. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box power-power-box">
+				<button type = "button" id = "ejercicio9" onclick = "Ejercicio9()">Generar problema</button>
+				<p>
+					<math class = "power-part">
+						<mrow>
+							<msup>
+								<mrow>
+									<mo id="pl9"></mo>
+										<mi id="l91"></mi>
+										<mi id="l92"></mi>
+									<mo id="pr9"></mo>
+								</mrow>
+								<mn id="e9"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta9" onclick="Respuesta9()">Respuesta</button>
+				<p>
+					<math class = "power-part">
+						<mrow>
+							<msup>
+								<mi id="lr91"></mi>
+								<mn id="er91"></mn>
+							</msup>
+							<msup>
+								<mi id="lr92"></mi>
+								<mn id="er92"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 9 -->
+
+	<!-- Ejercicio 10:
+	En este último ejercicio, el alumno debe simplificar la potenciación de una 
+	división de dos literales. Con este ejercicio, el alumno puede practicar las leyes de los exponentes en este contexto. -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 10</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Simplificar la potenciación</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una potenciación. Tu trabajo es simplificarla utilizando las leyes de los exponentes.
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado simplificado.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box fraction-power-box">
+				<button type = "button" id = "ejercicio10" onclick = "Ejercicio10()">Generar problema</button>
+				<p>
+					<math class = "fraction-part">
+						<mrow>
+							<msup>
+								<mrow>
+									<mo id="pl10"></mo>
+									<mfrac>
+										<mi id="l101"></mi>
+										<mi id="l102"></mi>
+									</mfrac>
+									<mo id="pr10"></mo>
+								</mrow>	
+								<mn id="e10"></mn>													
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta10" onclick="Respuesta10()">Respuesta</button>
+				<p>
+					<math class = "fraction-part">
+						<mrow>
+							<mfrac>
+								<mrow>
+									<msup>
+										<mi id="lr101"></mi>
+										<mn id="er101"></mn>
+									</msup>
+								</mrow>
+								<mrow>
+									<msup>
+										<mi id="lr102"></mi>
+										<mn id="er102"></mn>
+									</msup>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 10 -->
+	
+
+
+
+	<section id = "congrats">
+		<h2>¡Felicidades!</h2>
+		<p>Has llegado al final de este tema. Ya puedes pasar al siguiente.</p>
+	</section>
+
+	<section id = "desplazar">
+		<a class = "desp izq no--decoration" href = "../02exp_ent_neg/problems.html">
+			<i class="fa fa-arrow-left"></i>
+			<div class = "desp-text">
+				Exponentes <br> enteros <br>negativos
+			</div>
+		</a>
+		
+		<a class = "desp der no--decoration" href = "../04radicales/problems.html">
+			<div class = "desp-text">
+				Radicales
+			</div>
+			<i class="fa fa-arrow-right"></i>
+		</a>
+	</section>
+	
+	<section id = "website-end"> </section>
+	
+	
+	</body>
+	
+	
+</html>

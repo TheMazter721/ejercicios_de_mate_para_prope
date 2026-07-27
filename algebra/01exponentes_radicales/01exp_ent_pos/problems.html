@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Título del sitio de inicio -->
+		<title> Exponentes y Radicales - Enteros Positivos </title>
+		
+		<!-- Para ligar con el archivo CSS -->
+		<link rel = "stylesheet" href = "styles.css">
+
+		<!-- Para el javascript-->
+		<script src = "code.js"></script>
+		
+		<!--Para la fuente "Mulish"-->
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		
+		<!-- Para el favicon -->
+		<link rel = "icon" type = "image/x-icon" href = "../../../images/favicon.jpg">
+		
+		<!-- Para que se ajuste al dispositivo -->
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		
+		<!-- Para emojis y acentos (un poco como en LaTeX)-->
+		<meta charset = "UTF-8">
+		
+		<!-- Para íconos japo pro-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	</head>
+	
+	<!-- Empieza el cuerpo del sitio -->
+	<body>
+	
+	<!-- Empieza con el banner -->
+	<section id = "banner">
+		<img src = "../../../images/utm.jpg" class = "fadeInUp animacion--normal banner-img">
+		
+		<!-- Caja para el texto -->
+		<div class = "banner-text">
+			<!-- UTM, IFM y Jefatura de carrera -->
+			<h2 class = "fadeInUp animacion--normal">Universidad Tecnológica de la Mixteca</h2>
+			<h2 class = "fadeInUp animacion--normal">Instituto de Física y Matemáticas</h2>
+			<h2 class = "fadeInUp animacion--normal">Jefatura de Carrera de la Licenciatura en Matemáticas Aplicadas</h2>
+		</div>
+	
+	<!-- Termina el banner -->
+	</section>
+
+	<!-- Sección principal (exponentes y radicales)-->
+	<div id = "tema-title">
+		<h3>Exponentes y Radicales</h3>
+	</div>
+	
+	<!-- Empieza la lista de temas -->
+	<div class = "top-nav">
+		<a href = "../../../index.html" id = "home"><span></span>Volver al inicio</a>
+		
+		<nav>
+			<a href = "../01exp_ent_pos/problems.html"><span></span>Exponentes Enteros Positivos</a>
+			<a href = "../02exp_ent_neg/problems.html"><span></span>Exponentes Enteros Negativos</a>
+			<a href = "../03leyes_exp_enteros/problems.html"><span></span>Leyes de los Exponentes (Enteros)</a>
+			<a href = "../04radicales/problems.html"><span></span>Radicales</a>
+			<a href = "../05exp_frac/problems.html"><span></span>Exponentes Fraccionarios</a>
+			<a href = "../06leyes_exp_frac/problems.html"><span></span>Leyes de los Exponentes (Fraccionarios)</a>
+			<a href = "../07racionalizacion/problems.html"><span></span>Racionalización</a>
+		</nav>
+	</div>
+	<!-- Termina la lista de temas -->
+
+	<!-- Subtema en el que está-->
+	<section id = "subtema" >
+		<div id = "subtema-title">
+			<h2>Enteros Positivos</h2>
+		</div>
+	</section>
+
+	<!--Ejercicio 1: 
+	Elevar un número entero a una cierta potencia-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 1</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Potencias de números enteros</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá un número entero y una potencia a la cual debes elevarlo. Tu trabajo es resolver esa operación.
+					Cuando creas tener la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado de la operación.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio1" onclick = "Ejercicio1()">Generar problema</button>
+				<p>
+					<math class = "power-part">
+						<mrow>
+							<msup>
+								<mrow class = "contenedor-signo">
+									<!-- Paréntesis izquierdo en caso de ser necesario. De entrada, su display está en none -->
+									<mo id = "par_izq_1" style="display:none">(</mo>
+									<!-- Signo en caso de ser necesario -->
+									<mo id = "signo_1" style="display:none">- </mo>
+									<!-- Número entero con su exponente -->
+									<mn id = "n_1"></mn>
+									<!-- Paréntesis derecho en caso de ser necesario -->
+									<mo id = "par_der_1" style="display:none">)</mo>
+								</mrow>
+
+
+								<mn id = "exp_1"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta1" onclick="Respuesta1()">Respuesta</button>
+				<p>
+					<math class = "power-part">
+						<mrow class = "contenedor-signo">
+							<!-- Signo en caso de ser necesario. De entrada su display está en none -->
+							<mo id = "signo_r_1" style="display:none">-</mo>
+							<mn id = "r_1"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 1-->
+
+	<!--Ejercicio 2:
+	Es similar al Ejercicio 1, pero ahora se eleva un número racional a alguna potencia.
+	Se utiliza mfrac para representar el número racional y mfenced para que los paréntesis,
+	en caso de ser necesarios, se adapten al tamaño de la fracción.-->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 2</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Potencias de números racionales</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá un número racional y una potencia a la cual debes elevarlo. Tu trabajo es resolver esa operación.
+					Cuando creas tener la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado de la operación.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box fraction-power-box">
+				<button type = "button" id = "ejercicio2" onclick = "Ejercicio2()">Generar problema</button>
+				<p>
+					<math class = "fraction-part" >
+						<mrow>
+							<msup>
+								<mrow>
+									<!-- Se utiliza mfenced para los paréntesis-->
+									<mfenced open = "(" close = ")" class = "contenedor-signo">
+										<!-- Paréntesis izquierdo en caso de ser necesario. De entrada, su display está en none -->
+										<mo id = "par_izq_2" style="display:none">(</mo>
+										<!-- Signo en caso de ser necesario -->
+										<mo id = "signo_2" style="display:none">- </mo>
+										<!-- Número racional con su exponente -->
+										<mfrac>
+											<mrow>
+												<mn id = "n1_2"></mn>
+											</mrow>
+											<mrow>
+												<mn id = "n2_2"></mn>
+											</mrow>
+										</mfrac>
+										<!-- Paréntesis derecho en caso de ser necesario -->
+										<mo id = "par_der_2" style="display:none">)</mo>
+									</mfenced>
+								</mrow>
+
+								<mn id = "exp_2"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta2" onclick="Respuesta2()">Respuesta</button>
+				<p>
+					<math class = "fraction-part">
+						<mrow class = "contenedor-signo">
+							<!-- Signo en caso de ser necesario. De entrada su display está en none -->
+							<mo id = "signo_r_2" style="display:none">- </mo>
+							<mfrac id = "r_2">
+								<mrow>
+									<mn id = "num_2"></mn>
+								</mrow>
+								<mrow>
+									<mn id = "denom_2"></mn>
+								</mrow>
+							</mfrac>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 2-->
+
+	<!-- Ejercicio 3:
+	Es muy similar al Ejercicio 1, pero en esta ocasión solo se va a elevar 0 a potencias enteras positivas -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 3</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Potencias de cero</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá el número 0 y una potencia a la cual debes elevarlo. Tu trabajo es resolver esa operación.
+					Cuando creas tener la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado de la operación.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio3" onclick = "Ejercicio3()">Generar problema</button>
+				<p>
+					<math class = "power-part">
+						<mrow>
+							<msup>
+								<!-- Número entero con su exponente -->
+								<mn id = "n_3"></mn>
+								<mn id = "exp_3"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta3" onclick="Respuesta3()">Respuesta</button>
+				<p>
+					<math class = "power-part">
+						<mrow class = "contenedor-signo">
+							<!-- Signo en caso de ser necesario. De entrada su display está en none -->
+							<mo id = "signo_r_3" style="display:none">- </mo>
+							<mn id = "r_3"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 3-->
+
+	<!-- Ejercicio 4:
+	Es muy similar al Ejercicio 3, pero ahora se elevará 1 a potencias enteras positivas -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 4</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Potencias de uno</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá el número 1 y una potencia a la cual debes elevarlo. Tu trabajo es resolver esa operación.
+					Cuando creas tener la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado de la operación.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio4" onclick = "Ejercicio4()">Generar problema</button>
+				<p>
+					<math class = "power-part">
+						<mrow>
+							<msup>
+								<!-- Número entero con su exponente -->
+								<mn id = "n_4"></mn>
+								<mn id = "exp_4"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta4" onclick="Respuesta4()">Respuesta</button>
+				<p>
+					<math class = "power-part">
+						<mrow class = "contenedor-signo">
+							<!-- Signo en caso de ser necesario. De entrada su display está en none -->
+							<mo id = "signo_r_4" style="display:none">- </mo>
+							<mn id = "r_4"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 4-->
+
+	<!-- Ejercicio 5: 
+	Este ejercicio es muy similar al Ejercicio 4, pero ahora se elevará -1 a alguna potencia entre 1 y 100.
+	Por tal razón, en esta ocasión, se deben mostrar los paréntesis y el signo negativo -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 5</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Potencias de -1</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá el número -1 y una potencia a la cual debes elevarlo. Tu trabajo es resolver esa operación.
+					Cuando creas tener la respuesta, haz click en "Respuesta" y podrás ver cuál era el resultado de la operación.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box">
+				<button type = "button" id = "ejercicio5" onclick = "Ejercicio5()">Generar problema</button>
+				<p>
+					<math class = "power-part">
+						<mrow>
+							<msup>
+								<mrow class = "contenedor-signo">
+									<!-- Paréntesis izquierdo en caso de ser necesario. De entrada, su display está en none -->
+									<mo id = "par_izq_5" style="display:none">(</mo>
+									<!-- Signo en caso de ser necesario -->
+									<mo id = "signo_5" style="display:none">- </mo>
+									<!-- Número entero con su exponente -->
+									<mn id = "n_5"></mn>
+									<!-- Paréntesis derecho en caso de ser necesario -->
+									<mo id = "par_der_5" style="display:none">)</mo>
+								</mrow>
+
+								<mn id = "exp_5"></mn>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "repuesta5" onclick="Respuesta5()">Respuesta</button>
+				<p>
+					<math class = "power-part">
+						<mrow class = "contenedor-signo">
+							<!-- Signo en caso de ser necesario. De entrada su display está en none -->
+							<mo id = "signo_r_5" style="display:none">- </mo>
+							<mn id = "r_5"></mn>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!--Termina el Ejercicio 5-->
+	
+
+
+
+	<section id = "congrats">
+		<h2>¡Felicidades!</h2>
+		<p>Has llegado al final de este tema. Ya puedes pasar al siguiente.</p>
+	</section>
+
+	<section id = "desplazar">
+		<a class = "desp izq no--decoration" href = "../../../arithmetic/03racionales/07division/problems.html">
+			<i class="fa fa-arrow-left"></i>
+			<div class = "desp-text">
+				División <br> de <br> Racionales
+			</div>
+		</a>
+		
+		<a class = "desp der no--decoration" href = "../02exp_ent_neg/problems.html">
+			<div class = "desp-text">
+				Exponentes <br> enteros <br>negativos
+			</div>
+			<i class="fa fa-arrow-right"></i>
+		</a>
+	</section>
+	
+	<section id = "website-end"> </section>
+	
+	
+	</body>
+	
+	
+</html>

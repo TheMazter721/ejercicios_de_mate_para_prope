@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Título del sitio de inicio -->
+		<title> Exponentes y Radicales - Exponentes Fraccionarios </title>
+		
+		<!-- Para ligar con el archivo CSS -->
+		<link rel = "stylesheet" href = "styles.css">
+
+		<!-- Para el javascript-->
+		<script src = "code.js"></script>
+		
+		<!--Para la fuente "Mulish"-->
+		<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		
+		<!-- Para el favicon -->
+		<link rel = "icon" type = "image/x-icon" href = "../../../images/favicon.jpg">
+		
+		<!-- Para que se ajuste al dispositivo -->
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		
+		<!-- Para emojis y acentos (un poco como en LaTeX)-->
+		<meta charset = "UTF-8">
+		
+		<!-- Para íconos japo pro-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	</head>
+	
+	<!-- Empieza el cuerpo del sitio -->
+	<body>
+	
+	<!-- Empieza con el banner -->
+	<section id = "banner">
+		<img src = "../../../images/utm.jpg" class = "fadeInUp animacion--normal banner-img">
+		
+		<!-- Caja para el texto -->
+		<div class = "banner-text">
+			<!-- UTM, IFM y Jefatura de carrera -->
+			<h2 class = "fadeInUp animacion--normal">Universidad Tecnológica de la Mixteca</h2>
+			<h2 class = "fadeInUp animacion--normal">Instituto de Física y Matemáticas</h2>
+			<h2 class = "fadeInUp animacion--normal">Jefatura de Carrera de la Licenciatura en Matemáticas Aplicadas</h2>
+		</div>
+	
+	<!-- Termina el banner -->
+	</section>
+
+	<!-- Sección principal (exponentes y radicales)-->
+	<div id = "tema-title">
+		<h3>Exponentes y Radicales</h3>
+	</div>
+	
+	<!-- Empieza la lista de temas -->
+	<div class = "top-nav">
+		<a href = "../../../index.html" id = "home"><span></span>Volver al inicio</a>
+		
+		<nav>
+			<a href = "../01exp_ent_pos/problems.html"><span></span>Exponentes Enteros Positivos</a>
+			<a href = "../02exp_ent_neg/problems.html"><span></span>Exponentes Enteros Negativos</a>
+			<a href = "../03leyes_exp_enteros/problems.html"><span></span>Leyes de los Exponentes (Enteros)</a>
+			<a href = "../04radicales/problems.html"><span></span>Radicales</a>
+			<a href = "../05exp_frac/problems.html"><span></span>Exponentes Fraccionarios</a>
+			<a href = "../06leyes_exp_frac/problems.html"><span></span>Leyes de los Exponentes (Fraccionarios)</a>
+			<a href = "../07racionalizacion/problems.html"><span></span>Racionalización</a>
+		</nav>
+	</div>
+	<!-- Termina la lista de temas -->
+
+	<!-- Subtema en el que está-->
+	<section id = "subtema" >
+		<div id = "subtema-title">
+			<h2>Exponentes Fraccionarios</h2>
+		</div>
+	</section>
+
+	<!-- Ejercicio 1: 
+	Pasar un radical de una literal a exponente fraccionario -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 1</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Conversión de radicales</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá un radical. Tu trabajo es convertirlo a un exponente fraccionario. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el exponente fraccionario.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box raiz-custom-box">
+				<button type = "button" id = "ejercicio1" onclick = "Ejercicio01()">Generar problema</button>
+				<p>
+					<math class = "visible-part">
+						<mrow>
+							<!-- Para cuando la raíz no sea cuadrada -->
+							<mrow id = "normal_root1" style = "display: none;">
+								<!-- Aquí se genera el radical en general -->
+								<mroot>
+									<!-- Para la letra -->
+									<mi id = "radical1_1" class = "raiz-custom"></mi>
+
+									<!-- El índice se muestra si y sólo si es distinto de 2 -->
+									<mn id = "indice1_1"></mn>
+								</mroot> 
+							</mrow>
+
+							<!-- Para cuando se trate de una raíz cuadrada -->
+							<mrow id = "cuadrada_root1" style = "display: none;">
+								<msqrt>
+									<mi id = "radical2_1" class = "raiz-custom"></mi>
+								</msqrt>
+							</mrow>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box">
+				<button type = "button" id = "respuesta1" onclick="Respuesta01()">Respuesta</button>
+				<p>
+					<math class = "fraction-part">
+						<mrow>
+							<!-- Es una literal elevada a una fracción. La fracción se representa con <mfrac> -->
+							<msup>
+								<mi id = "radicalr_1" class = "raiz-custom"></mi>
+								<mfrac>
+									<mn id = "numr_1"></mn>
+									<mn id = "denr_1"></mn>
+								</mfrac>
+							</msup>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 1 -->
+
+	<!-- Ejercicio 2:
+	Es algo similar al Ejercicio 1, pero en este caso no solo habrá un radical, sino también
+	un exponente. Por tal razón, el exponente en el resultado también podría ser un entero.
+	Es por ello que, antes de la fracción, también se usará un <mo> por si hay un entero.
+	Esto se manejará adecuadamente en el JavaScript -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 2</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Conversión de radicales con exponentes</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá un radical con un exponente. Tu trabajo es convertirlo a un exponente fraccionario. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el exponente fraccionario.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box raiz-custom-box">
+				<button type = "button" id = "ejercicio2" onclick = "Ejercicio02()">Generar problema</button>
+				<p>
+					<math class = "visible-part">
+						<mrow>
+							<!-- Para cuando la raíz no sea cuadrada -->
+							<mrow id = "normal_root2" style = "display: none;">
+								<!-- Aquí se genera el radical en general -->
+								<mroot>
+									<!-- Para la letra y su exponente -->
+									<msup>
+										<mi id = "radical1_2" class = "raiz-custom"></mi>
+										<mn id = "exp1_2"></mn>
+									</msup>
+
+									<!-- El índice se muestra si y sólo si es distinto de 2 -->
+									<mn id = "indice1_2"></mn>
+								</mroot> 
+							</mrow>
+
+							<!-- Para cuando se trate de una raíz cuadrada -->
+							<mrow id = "cuadrada_root2" style = "display: none;">
+								<msqrt>
+									<!-- Para su exponente -->
+									<msup>
+										<mi id = "radical2_2" class = "raiz-custom"></mi>
+										<mn id = "exp2_2"></mn>
+									</msup>
+								</msqrt>
+							</mrow>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box raiz-custom-box">
+				<button type = "button" id = "respuesta2" onclick="Respuesta02()">Respuesta</button>
+				<p>
+					<math class = "fraction-part">
+						<mrow>
+							<!-- Es una literal elevada a una fracción. La fracción se representa con <mfrac> -->
+							<msup>
+								<mi id = "radicalr_2" class = "raiz-custom"></mi>
+								<mrow id = "expr_2" style = "display: none;">
+									<mo id = "intr_2"></mo>
+									<mfrac>
+										<mn id = "numr_2">&ZeroWidthSpace;</mn>
+										<mn id = "denr_2">&ZeroWidthSpace;</mn>
+									</mfrac>
+								</mrow>
+							</msup>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 2 -->
+
+	<!-- Ejercicio 3:
+	Es como el Ejercicio 1, pero al revés. Esto es, al alumno se le da una expresión en la forma
+	a^(1/n), y debe transformarla a radical. Para ello, nuevamente, se deben manejar por separado
+	los casos en los que n=2 y n>2 -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 3</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Conversión de exponentes fraccionarios a radicales</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una expresión con un exponente fraccionario. Tu trabajo es convertirlo a un radical. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el radical.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box raiz-custom-box">
+				<button type = "button" id = "ejercicio3" onclick = "Ejercicio03()">Generar problema</button>
+				<p>
+					<math class = "fraction-part" id = "exp_frac3" style = "display: none;">
+						<mrow>
+							<!-- Es una literal elevada a una fracción. La fracción se representa con <mfrac> -->
+							<msup>
+								<mi id = "radical1_3" class = "raiz-custom"></mi>
+								<mfrac>
+									<mn id = "num1_3">&ZeroWidthSpace;</mn>
+									<mn id = "den1_3">&ZeroWidthSpace;</mn>
+								</mfrac>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box raiz-custom-box">
+				<button type = "button" id = "respuesta3" onclick="Respuesta03()">Respuesta</button>
+				<p>
+					<math class = "visible-part">
+						<mrow>
+							<!-- Si la raíz es cuadrada, indice se deja vacío -->
+							<mrow id = "normal_root3" style = "display: none;">
+								<!-- Aquí se genera el radical en general -->
+								<mroot>
+									<!-- Para la letra -->
+									<mi id = "radicalr_3" class = "raiz-custom"></mi>
+
+									<!-- El índice se muestra si y sólo si es distinto de 2 -->
+									<mn id = "indicer_3"></mn>
+								</mroot> 
+							</mrow>
+						</mrow>
+					</math>	
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 3 -->
+
+	<!-- Ejercicio 4:
+	Es muy similar al Ejercicio 3. Solo hace falta cambiar los ID's 
+	y las funciones correspondientes -->
+	<section class = "problem">
+		<section class = "enunciado">
+			<h2>Ejercicio 4</h2>
+			<div class = "general-box instructions">
+				<h3>Instrucciones</h3>
+				<p>
+					<strong>Conversión de exponentes fraccionarios a radicales con exponentes</strong><br>
+					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
+					aparecerá una expresión con un exponente fraccionario. Tu trabajo es convertirlo a un radical. 
+					Cuando creas tener 
+					la respuesta, haz click en "Respuesta" y podrás ver cuál era el radical.
+					<br>
+					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
+					sientas listo, pasa al siguiente Ejercicio.
+				</p>
+			</div>
+			<div class = "particular general-box raiz-custom-box">
+				<button type = "button" id = "ejercicio4" onclick = "Ejercicio04()">Generar problema</button>
+				<p>
+					<math class = "fraction-part" id = "exp_frac4" style = "display: none;">
+						<mrow>
+							<!-- Es una literal elevada a una fracción. La fracción se representa con <mfrac> -->
+							<msup>
+								<mi id = "radical1_4" class = "raiz-custom"></mi>
+								<mfrac>
+									<mn id = "num1_4">&ZeroWidthSpace;</mn>
+									<mn id = "den1_4">&ZeroWidthSpace;</mn>
+								</mfrac>
+							</msup>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+
+		<section class = "answer">
+			<div class = "answer-box general-box raiz-custom-box">
+				<button type = "button" id = "respuesta4" onclick="Respuesta04()">Respuesta</button>
+				<p>
+					<math class = "visible-part">
+						<mrow>
+							<!-- Si la raíz es cuadrada, indice se deja vacío -->
+							<mrow id = "normal_root4" style = "display: none;">
+								<!-- Aquí se genera el radical en general -->
+								<mroot>
+									<!-- Para la letra y su exponente -->
+									<msup>
+										<mi id = "radicalr_4" class = "raiz-custom"></mi>
+										<mn id = "expr_4">&ZeroWidthSpace;</mn>
+									</msup>
+									<!-- El índice se muestra si y sólo si es distinto de 2 -->
+									<mn id = "indicer_4"></mn>
+								</mroot>
+							</mrow>
+						</mrow>
+					</math>
+				</p>
+			</div>
+		</section>
+	</section> <!-- Termina el Ejercicio 4 -->
+	
+
+
+
+	<section id = "congrats">
+		<h2>¡Felicidades!</h2>
+		<p>Has llegado al final de este tema. Ya puedes pasar al siguiente.</p>
+	</section>
+
+	<section id = "desplazar">
+		<a class = "desp izq no--decoration" href = "../04radicales/problems.html">
+			<i class="fa fa-arrow-left"></i>
+			<div class = "desp-text">
+				Radicales
+			</div>
+		</a>
+		
+		<a class = "desp der no--decoration" href = "../06leyes_exp_frac/problems.html">
+			<div class = "desp-text">
+				Leyes <br>Fraccionarias
+			</div>
+			<i class="fa fa-arrow-right"></i>
+		</a>
+	</section>
+	
+	<section id = "website-end"> </section>
+	
+	
+	</body>
+	
+	
+</html>
