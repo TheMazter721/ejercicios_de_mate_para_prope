@@ -70,19 +70,19 @@
 		</div>
 	</section>
 
-	<!--Ejercicio 1: Determinar si un número entero es positivo, negativo
-	o cero cuando el número siempre es negativo-->
+	<!-- Ejercicio 1: El alumno debe determinar si dos 
+	monomios son semejantes -->
 	<section class = "problem">
 		<section class = "enunciado">
 			<h2>Ejercicio 1</h2>
 			<div class = "general-box instructions">
 				<h3>Instrucciones</h3>
 				<p>
-					<strong>Determinar el signo</strong><br>
+					<strong>Determinar si dos monomios son semejantes</strong><br>
 					Cuando estés listo, haz click en "Generar problema". Una vez que lo hagas,
-					aparecerá un número. Tu trabajo es determinar si el número es positivo, negativo o cero. 
+					aparecerán dos monomios. Tu trabajo es determinar si son semejantes. 
 					Cuando creas tener 
-					la respuesta, haz click en "Respuesta" y podrás ver cuál era el signo del número.
+					la respuesta, haz click en "Respuesta" y podrás ver si eran semejantes.
 					<br>
 					<strong>Puedes repetir esto las veces que quieras.</strong> Cuando te 
 					sientas listo, pasa al siguiente Ejercicio.
@@ -92,8 +92,31 @@
 				<button type = "button" id = "ejercicio1" onclick = "Ejercicio01()">Generar problema</button>
 				<p>
 					<math>
-						<mrow>
-							<mn id = "n_1"></mn>
+						<mrow style = "display: none;">
+							<!-- Para el primer monomio -->
+							<mn id = "coef1_1"></mn>
+							<msup>
+								<mi id = "var1_1"></mi>
+								<mn id = "exp1_1"></mn>
+							</msup>
+							<msup >
+								<mi id = "var1_2"></mi>
+								<mn id = "exp1_2"></mn>
+							</msup>
+
+							<!-- Para la coma -->
+							<mo id = "coma1"></mo>
+
+							<!-- Para el segundo monomio -->
+							<mn id = "coef2_1"></mn>
+							<msup>
+								<mi id = "var2_1"></mi>
+								<mn id = "exp2_1"></mn>
+							</msup>
+							<msup>
+								<mi id = "var2_2"></mi>
+								<mn id = "exp2_2"></mn>
+							</msup>
 						</mrow>
 					</math>
 				</p>
@@ -106,7 +129,7 @@
 				<p>
 					<math>
 						<mrow>
-							<mn id = "r_1"></mn>
+							<mtext id = "respuesta_1"></mtext>
 						</mrow>
 					</math>	
 				</p>
