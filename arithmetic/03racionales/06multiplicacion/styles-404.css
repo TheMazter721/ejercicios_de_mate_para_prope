@@ -1,0 +1,250 @@
+/* El * indica que abarca todo */
+/* Es buena práctica de programación que inicialices todo en 0  */
+*{
+	margin: 0;
+	padding: 0;}
+	
+/* Animaciones aprendidas en Geolympics    */
+
+
+/* Animaciones*/
+@keyframes fadeInUp{
+	from{
+		transform: translateY(50%);
+		opacity: 0;
+	}
+	to{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.fadeInUp{
+	animation: fadeInUp;
+}
+
+.animacion--normal{
+	animation-duration: 0.8s;
+}
+
+.animacion--rapida{
+	animation-duration: 0.5s;
+}
+
+.animacion--lenta{
+	animation-duration: 2s;
+}
+
+
+.retrasar--normal{
+	animation-delay: 1s;
+}
+
+.retrasar--rapida{
+	animation-delay: 0.5s;
+}
+
+.retrasar--lenta{
+	animation-delay: 3s;
+}
+
+.centered{
+	text-align: center !important;
+}
+
+.bigger{
+	font-size: 1.5rem !important;
+}
+
+.spaced{
+	line-height: 2;
+}
+
+/* Elementos del sitio web */
+
+#banner{
+	background: #fff;
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	
+	/*¿Se puede hacer flex?*/
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.banner-text{
+	text-align: center;
+	/*padding-top: 300px;*/
+	font-family: "Mulish";
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.banner-text h2{
+	color: #000;
+	font-size: 1.7rem;
+	text-align: center;
+	padding: 45px 5px;
+}
+
+.banner-img{
+	max-width: 40%;
+	min-width: 30%;
+	padding: 0px 10px;
+}
+
+.tema-title{
+	width: 70%;
+	text-align: center;
+	margin: 30px 0px;
+	font-family: "Mulish";
+}
+
+.tema-title h3{
+	font-size: 3rem;
+}
+
+
+.top-nav{
+	text-align: center;
+	font-family: "Mulish";
+	background-color: #4a1110;
+	width: 100%;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.top-nav h2{
+	color: #fff;
+	padding: 10px 0px;
+	font-size: 1.3rem;
+}
+
+nav{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 20px 5px;
+	flex-wrap: wrap;
+	gap: 40px;
+}
+
+.top-nav h2 a{
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+	font-size: 3rem;
+	position: relative;
+	z-index: 1; /*Tiene mayor prioridad*/
+	transition: color 0.5s; /* El color tarde 0.5 segundosen cambiar */
+	padding: 5px 0px;
+}
+
+.top-nav h2 a span{
+	width: 0; /*Al principio no se ve*/
+	height: 100%;
+	position: absolute;
+	top: 0; /* Pegado arriba */
+	left: 0; /* Pegado a la izquierda */
+	background: #fff; /* Barra completamente blanca */
+	z-index: -1; /* Al principio tiene menos prioridad */
+	transition: width 0.5s; /* El ancho tarde 0.5 segundos en cambiar */
+}
+
+/* Cuando le pongan el mouse, el texto cambia a guinda */
+.top-nav h2 a:hover{
+	color: #4a1110;
+}
+
+/* Cuando le pongan el mouse, la barra se vuelve blanca */
+.top-nav h2 a:hover span{
+	width: 100%;
+}
+
+
+
+
+
+
+
+#temas{
+	width: 100%;
+	min-height: 35rem;
+	font-family: "Mulish";
+	position: relative;
+	
+	font-family: "Mulish";
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 3rem;
+	padding-bottom: 40px;
+}
+
+.tema-title{
+	width: 100%;
+	text-align: center;
+	margin: 30px 0px;
+	font-size: 2rem;
+}
+
+.tema-box{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	
+	border: 5px solid #4a1110;
+	border-radius: 25px;
+	padding: 5px;
+	max-width: 28%;
+}
+
+.tema-box h3{
+	margin-top: 10px;
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.tema-box ul{
+	margin: 20px 30px;
+	font-size: 1.2rem;
+}
+
+.tema-box h3 a{
+	text-decoration: none;
+	color: #000;
+	transition: color 0.5s;
+}
+
+.tema-box ul li a{
+	text-decoration: none;
+	color: #000;
+	transition: color 0.5s;
+	transition: font-weight 0.5s;
+}
+
+.tema-box h3 a:hover{
+	color: #3138F5;
+}
+
+.tema-box ul li a:hover{
+	color: #3138F5;
+	font-weight: bold;
+}
+
+#website-end{
+	background: #4a1110;
+	width: 100%;
+	height: 70px;
+}
+
+
+
